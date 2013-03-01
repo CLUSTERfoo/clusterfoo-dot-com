@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CLUSTERfoo.com - <%= @item[:title] %></title>
+    <link rel="stylesheet" href="style/style.css">
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc <%= Nanoc::VERSION %>"> 
+  </head>
+  <body>
+    <div id="everything">
+      <div id="main">
+        <header>
+          <hgroup>
+            <h1>CLUSTERFOO.com</h1>
+            <h2>Possibly the best blog on the topic of me.</h2>
+          <hgourp>
+          <nav id="main-menu">
+          </nav>
+        </header>
+        <div id="content">
+          <%= yield %>
+        </div>
+        <footer>
+          &copy; 2012, Noam Gagliardi
+        </footer>
+      </div>
+      <aside id="sidebar">
+      </aside>
+    </div>
+  </body>
+</html>

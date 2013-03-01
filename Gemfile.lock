@@ -1,0 +1,38 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    adsf (1.1.1)
+      rack (>= 1.0.0)
+    chunky_png (1.2.7)
+    coderay (1.0.9)
+    colored (1.2)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    cri (2.3.0)
+      colored (>= 1.2)
+    fssm (0.2.10)
+    kramdown (0.14.2)
+    nanoc (3.6.1)
+      cri (~> 2.3)
+    nokogiri (1.5.6)
+    rack (1.5.2)
+    sass (3.2.6)
+    susy (1.0.5)
+      compass (>= 0.12.2)
+      sass (>= 3.2.0)
+    systemu (2.5.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  adsf
+  coderay
+  compass
+  kramdown
+  nanoc (~> 3.5)
+  nokogiri
+  susy (~> 1.0)
+  systemu
