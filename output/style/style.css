@@ -85,7 +85,7 @@ html {
   line-height: 1.5em;
 }
 
-/* line 93, content/style/stylesheet.scss */
+/* line 98, content/style/stylesheet.scss */
 #everything {
   *zoom: 1;
   max-width: 1189.5px;
@@ -104,14 +104,22 @@ html {
   display: table;
   clear: both;
 }
-/* line 100, content/style/stylesheet.scss */
+/* line 105, content/style/stylesheet.scss */
 #everything #main {
   width: 66.37243%;
   float: left;
   margin-right: 0.88272%;
   display: inline;
 }
-/* line 103, content/style/stylesheet.scss */
+/* line 108, content/style/stylesheet.scss */
+#everything #main header {
+  padding-bottom: 10.5px;
+}
+/* line 109, content/style/stylesheet.scss */
+#everything #main header, #everything #main #content {
+  clear: both;
+}
+/* line 114, content/style/stylesheet.scss */
 #everything #sidebar {
   width: 32.74485%;
   float: right;
@@ -119,23 +127,46 @@ html {
   #margin-left: -10.5px;
   display: inline;
 }
-/* line 106, content/style/stylesheet.scss */
+/* line 117, content/style/stylesheet.scss */
+#everything #sidebar #sidebar-content {
+  clear: both;
+  padding: 0 10.5px;
+}
+/* line 123, content/style/stylesheet.scss */
 #everything footer {
-  width: 100%;
-  float: right;
-  margin-right: 0;
-  #margin-left: -10.5px;
-  display: inline;
+  clear: both;
+  padding-top: 10.5px;
+  margin-top: 10.5px;
 }
 
-/* line 115, content/style/stylesheet.scss */
+/* line 134, content/style/stylesheet.scss */
+header {
+  margin-bottom: 10.5px;
+  border-bottom: solid thin black;
+}
+
+/* line 138, content/style/stylesheet.scss */
+#sidebar {
+  border-left: solid thin black;
+}
+
+/* line 141, content/style/stylesheet.scss */
+footer {
+  border-top: solid thin black;
+}
+
+/* line 148, content/style/stylesheet.scss */
 body {
   font-family: "Armata", sans-serif;
   font-size: 14px;
   line-height: 21px;
 }
 
-/* line 120, content/style/stylesheet.scss */
+/* line 153, content/style/stylesheet.scss */
 pre {
   font-family: "Oxygen Mono", monospace;
+}
+/* line 156, content/style/stylesheet.scss */
+pre .line-numbers {
+  margin-right: 10.5px;
 }

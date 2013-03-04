@@ -68,6 +68,11 @@ img {
   max-width: 100%;
   height: auto;
 }
+// -----------------------------------------------------------------------------
+// Establish color-scheme 
+// -----------------------------------------------------------------------------
+$primary-color: black;
+$secondary-color: #ddd;
 
 // -----------------------------------------------------------------------------
 // Establish base
@@ -99,14 +104,42 @@ $desktop        : 960px 12;
 
   #main {
     @include span-columns(8,12);
+    
+    header { padding-bottom: $padding; }
+    header, #content {
+      clear: both;
+    }
   }
+
   #sidebar {
-    @include span-columns(4 omega, 12)
+    @include span-columns(4 omega, 12);
+
+    #sidebar-content {
+      clear: both;
+      padding: 0 $padding;
+    }
   }
+
   footer {
-    @include span-columns(12 omega, 12)
+    clear: both;
+    padding-top: $padding;
+    margin-top: $padding;
   }
   
+}
+
+// -----------------------------------------------------------------------------
+// Main layout 
+// -----------------------------------------------------------------------------
+header {
+  margin-bottom: $padding;
+  border-bottom: solid thin $primary-color; 
+}
+#sidebar {
+  border-left: solid thin $primary-color;
+}
+footer {
+  border-top: solid thin $primary-color;
 }
 
 // -----------------------------------------------------------------------------
@@ -119,4 +152,6 @@ body {
 }
 pre {
   font-family: $code-font;
+
+  .line-numbers { margin-right: $padding; }
 }
