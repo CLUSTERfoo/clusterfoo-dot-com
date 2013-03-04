@@ -72,7 +72,7 @@ img {
 // Establish color-scheme 
 // -----------------------------------------------------------------------------
 $primary-color: black;
-$secondary-color: #ddd;
+$secondary-color: black;
 
 // -----------------------------------------------------------------------------
 // Establish base
@@ -133,13 +133,10 @@ $desktop        : 960px 12;
 // -----------------------------------------------------------------------------
 header {
   margin-bottom: $padding;
-  border-bottom: solid thin $primary-color; 
+  border-bottom: solid thin $secondary-color; 
 }
 #sidebar {
-  border-left: solid thin $primary-color;
-}
-footer {
-  border-top: solid thin $primary-color;
+  border-left: solid thin $secondary-color;
 }
 
 // -----------------------------------------------------------------------------
@@ -149,9 +146,43 @@ body {
   font-family:  $paragraph-font;
   font-size:    $base-font-size;
   line-height: $base-line-height;
+  color: $primary-color;
+}
+
+// headers
+h1, h2, h3, h4, h5, h5 { 
+  font-weight: bold;
+  @include margin-leader(0.75)
+}
+h1 {
+  @include adjust-font-size-to(18px);
+}
+h2 {
+  @include adjust-font-size-to(16px);
+}
+
+// paragraphs
+p {
+  @include margin-leader(0.75)
 }
 pre {
   font-family: $code-font;
 
   .line-numbers { margin-right: $padding; }
 }
+
+// -----------------------------------------------------------------------------
+// Sidebar 
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// Header 
+// -----------------------------------------------------------------------------
+header {
+  h1, h2 {
+    font-weight: normal;
+    @include adjust-font-size-to($base-font-size);
+    margin: 0;
+  }
+}
+

@@ -150,23 +150,50 @@ header {
   border-left: solid thin black;
 }
 
-/* line 141, content/style/stylesheet.scss */
-footer {
-  border-top: solid thin black;
-}
-
-/* line 148, content/style/stylesheet.scss */
+/* line 145, content/style/stylesheet.scss */
 body {
   font-family: "Armata", sans-serif;
   font-size: 14px;
   line-height: 21px;
+  color: black;
 }
 
 /* line 153, content/style/stylesheet.scss */
+h1, h2, h3, h4, h5, h5 {
+  font-weight: bold;
+  margin-top: 1.125em;
+}
+
+/* line 157, content/style/stylesheet.scss */
+h1 {
+  font-size: 1.28571em;
+  line-height: 1.75em;
+}
+
+/* line 160, content/style/stylesheet.scss */
+h2 {
+  font-size: 1.14286em;
+  line-height: 1.3125em;
+}
+
+/* line 165, content/style/stylesheet.scss */
+p {
+  margin-top: 1.125em;
+}
+
+/* line 168, content/style/stylesheet.scss */
 pre {
   font-family: "Oxygen Mono", monospace;
 }
-/* line 156, content/style/stylesheet.scss */
+/* line 171, content/style/stylesheet.scss */
 pre .line-numbers {
   margin-right: 10.5px;
+}
+
+/* line 182, content/style/stylesheet.scss */
+header h1, header h2 {
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0;
 }

@@ -16,23 +16,16 @@
             <h1>CLUSTERFOO.com</h1>
             <h2>Possibly the best blog on the topic of me.</h2>
           <hgourp>
-          <nav id="main-menu">
-          </nav>
         </header>
         <div id="content">
           <%= yield %>
         </div>
         <footer>
-          &copy; 2012, Noam Gagliardi
+          &copy; 2013, Noam Gagliardi
         </footer>
       </div>
       <aside id="sidebar">
-        <div id="sidebar-content">
-          <p>Some filler stuff to go in the sidebar. Maybe write a paragraph about
-          something that's truly fascinating.
-
-          <p> And here goes another paragraph. Say hello to everyone.
-        </div>
+        <%= render 'sidebar' %>
       </aside>
     </div>
   </body>
