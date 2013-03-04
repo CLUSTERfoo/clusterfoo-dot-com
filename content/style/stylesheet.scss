@@ -1,13 +1,16 @@
 // -----------------------------------------------------------------------------
-// Base
+// Imports
 // -----------------------------------------------------------------------------
-
+@import "compass";
 @import "susy";
+
+@import url(http://fonts.googleapis.com/css?family=Armata|Oxygen+Mono);
+$paragraph-font:  'Armata', sans-serif;
+$code-font:       'Oxygen Mono', monospace;
 
 // -----------------------------------------------------------------------------
 // Reset
 // -----------------------------------------------------------------------------
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -60,18 +63,60 @@ blockquote, q {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+// don't let images overflow
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 // -----------------------------------------------------------------------------
-// Susy Grid
+// Establish base
 // -----------------------------------------------------------------------------
+$base-font-size: 14px;
+$padding: $base-font-size * 0.75;
+$base-line-height: $base-font-size * 1.5;
+$round-to-nearest-half-line: true;
+@include establish-baseline;
 
+// -----------------------------------------------------------------------------
+// Grid (using Susy Grid)
+// -----------------------------------------------------------------------------
 // define grid
-$total-columns  : 6;
-$column-width   : 90px;
-$gutter-width   : 10px;
+$total-columns  : 12;
+$column-width   : 100px - $padding;
+$gutter-width   : $padding;
 $grid-padding   : $gutter-width;
 
 // layouts
-$desktop        : 900px 12;
+$desktop        : 960px 12;
 
+#everything {
+  @include container;
+  max-width: 1024px;
 
+  margin-top: $padding;
+  margin-bottom: $padding;
+
+  #main {
+    @include span-columns(8,12);
+  }
+  #sidebar {
+    @include span-columns(4 omega, 12)
+  }
+  footer {
+    @include span-columns(12 omega, 12)
+  }
+  
+}
+
+// -----------------------------------------------------------------------------
+// Paragraph style 
+// -----------------------------------------------------------------------------
+body {
+  font-family:  $paragraph-font;
+  font-size:    $base-font-size;
+  line-height: $base-line-height;
+}
+pre {
+  font-family: $code-font;
+}

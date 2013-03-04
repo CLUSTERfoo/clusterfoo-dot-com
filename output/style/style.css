@@ -1,4 +1,5 @@
-/* line 18, content/style/stylesheet.scss */
+@import url(http://fonts.googleapis.com/css?family=Armata|Oxygen+Mono);
+/* line 21, content/style/stylesheet.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -19,50 +20,122 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 /* remember to define focus styles! */
-/* line 30, content/style/stylesheet.scss */
+/* line 33, content/style/stylesheet.scss */
 :focus {
   outline: 0;
 }
 
-/* line 33, content/style/stylesheet.scss */
+/* line 36, content/style/stylesheet.scss */
 body {
   line-height: 1;
   color: black;
   background: white;
 }
 
-/* line 38, content/style/stylesheet.scss */
+/* line 41, content/style/stylesheet.scss */
 ol, ul {
   list-style: none;
 }
 
 /* tables still need 'cellspacing="0"' in the markup */
-/* line 42, content/style/stylesheet.scss */
+/* line 45, content/style/stylesheet.scss */
 table {
   border-collapse: separate;
   border-spacing: 0;
 }
 
-/* line 46, content/style/stylesheet.scss */
+/* line 49, content/style/stylesheet.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
 }
 
-/* line 51, content/style/stylesheet.scss */
+/* line 54, content/style/stylesheet.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: "";
 }
 
-/* line 54, content/style/stylesheet.scss */
+/* line 57, content/style/stylesheet.scss */
 blockquote, q {
   quotes: "" "";
 }
 
-/* line 58, content/style/stylesheet.scss */
+/* line 61, content/style/stylesheet.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+/* line 67, content/style/stylesheet.scss */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 61, /home/computer/.rvm/gems/ruby-1.9.3-head@cf-nanoc/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+* html {
+  font-size: 87.5%;
+}
+
+/* line 64, /home/computer/.rvm/gems/ruby-1.9.3-head@cf-nanoc/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html {
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+/* line 93, content/style/stylesheet.scss */
+#everything {
+  *zoom: 1;
+  max-width: 1189.5px;
+  _width: 1189.5px;
+  padding-left: 10.5px;
+  padding-right: 10.5px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+  margin-top: 10.5px;
+  margin-bottom: 10.5px;
+}
+/* line 38, /home/computer/.rvm/gems/ruby-1.9.3-head@cf-nanoc/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+#everything:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 100, content/style/stylesheet.scss */
+#everything #main {
+  width: 66.37243%;
+  float: left;
+  margin-right: 0.88272%;
+  display: inline;
+}
+/* line 103, content/style/stylesheet.scss */
+#everything #sidebar {
+  width: 32.74485%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -10.5px;
+  display: inline;
+}
+/* line 106, content/style/stylesheet.scss */
+#everything footer {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -10.5px;
+  display: inline;
+}
+
+/* line 115, content/style/stylesheet.scss */
+body {
+  font-family: "Armata", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+/* line 120, content/style/stylesheet.scss */
+pre {
+  font-family: "Oxygen Mono", monospace;
 }

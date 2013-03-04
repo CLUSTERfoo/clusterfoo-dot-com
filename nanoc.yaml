@@ -77,13 +77,13 @@ watcher:
   notify_on_compilation_failure: true
 
 # Set base url for Atom feed
-base_url: http://clusterfoo.com
+base_url: http://nanoc.clusterfoo.com
 
 # Deployment with rsync
 deploy:
   default:
     kind: rsync
-    dst: "clusterfoo.com:/..."
+    dst: "clusterfoo.com:/www/nanoc"
     options: [ '-aP', '--delete-after']
   staging: 
     kind: rsync
