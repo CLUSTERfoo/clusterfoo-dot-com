@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Armata|Oxygen+Mono);
+@import url(http://fonts.googleapis.com/css?family=Tauri|Oxygen+Mono);
 /* line 21, content/style/stylesheet.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -85,7 +85,7 @@ html {
   line-height: 1.5em;
 }
 
-/* line 98, content/style/stylesheet.scss */
+/* line 99, content/style/stylesheet.scss */
 #everything {
   *zoom: 1;
   max-width: 1189.5px;
@@ -104,22 +104,22 @@ html {
   display: table;
   clear: both;
 }
-/* line 105, content/style/stylesheet.scss */
+/* line 106, content/style/stylesheet.scss */
 #everything #main {
   width: 66.37243%;
   float: left;
   margin-right: 0.88272%;
   display: inline;
 }
-/* line 108, content/style/stylesheet.scss */
+/* line 109, content/style/stylesheet.scss */
 #everything #main header {
   padding-bottom: 10.5px;
 }
-/* line 109, content/style/stylesheet.scss */
+/* line 110, content/style/stylesheet.scss */
 #everything #main header, #everything #main #content {
   clear: both;
 }
-/* line 114, content/style/stylesheet.scss */
+/* line 115, content/style/stylesheet.scss */
 #everything #sidebar {
   width: 32.74485%;
   float: right;
@@ -127,73 +127,92 @@ html {
   #margin-left: -10.5px;
   display: inline;
 }
-/* line 117, content/style/stylesheet.scss */
+/* line 118, content/style/stylesheet.scss */
 #everything #sidebar #sidebar-content {
   clear: both;
   padding: 0 10.5px;
 }
-/* line 123, content/style/stylesheet.scss */
+/* line 124, content/style/stylesheet.scss */
 #everything footer {
   clear: both;
   padding-top: 10.5px;
   margin-top: 10.5px;
 }
 
-/* line 134, content/style/stylesheet.scss */
+/* line 135, content/style/stylesheet.scss */
 header {
   margin-bottom: 10.5px;
   border-bottom: solid thin black;
 }
 
-/* line 138, content/style/stylesheet.scss */
-#sidebar {
-  border-left: solid thin black;
-}
-
-/* line 145, content/style/stylesheet.scss */
+/* line 143, content/style/stylesheet.scss */
 body {
-  font-family: "Armata", sans-serif;
+  font-family: "Tauri", sans-serif;
   font-size: 14px;
   line-height: 21px;
   color: black;
+  background-color: white;
 }
 
-/* line 153, content/style/stylesheet.scss */
+/* line 152, content/style/stylesheet.scss */
 h1, h2, h3, h4, h5, h5 {
   font-weight: bold;
   margin-top: 1.125em;
 }
 
-/* line 157, content/style/stylesheet.scss */
+/* line 156, content/style/stylesheet.scss */
 h1 {
   font-size: 1.28571em;
   line-height: 1.75em;
 }
 
-/* line 160, content/style/stylesheet.scss */
+/* line 159, content/style/stylesheet.scss */
 h2 {
   font-size: 1.14286em;
   line-height: 1.3125em;
 }
 
-/* line 165, content/style/stylesheet.scss */
+/* line 164, content/style/stylesheet.scss */
 p {
   margin-top: 1.125em;
 }
 
-/* line 168, content/style/stylesheet.scss */
+/* line 167, content/style/stylesheet.scss */
 pre {
   font-family: "Oxygen Mono", monospace;
+  margin-top: 1.125em;
 }
-/* line 171, content/style/stylesheet.scss */
+/* line 170, content/style/stylesheet.scss */
 pre .line-numbers {
   margin-right: 10.5px;
 }
 
-/* line 182, content/style/stylesheet.scss */
+/* line 174, content/style/stylesheet.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 177, content/style/stylesheet.scss */
+i, em {
+  font-style: italic;
+}
+
+/* line 185, content/style/stylesheet.scss */
+#sidebar #reading-about {
+  font-size: 0.71429em;
+  line-height: 2.1em;
+}
+
+/* line 192, content/style/stylesheet.scss */
 header h1, header h2 {
   font-weight: normal;
   font-size: 1em;
   line-height: 1.5em;
   margin: 0;
+}
+
+/* line 202, content/style/stylesheet.scss */
+footer {
+  font-size: 0.85714em;
+  line-height: 1.75em;
 }

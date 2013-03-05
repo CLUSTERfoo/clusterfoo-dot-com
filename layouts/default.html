@@ -13,20 +13,21 @@
       <div id="main">
         <header>
           <hgroup>
-            <h1>CLUSTERFOO.com</h1>
+            <h1>CLUSTERfoo.com</h1>
             <h2>Possibly the best blog on the topic of me.</h2>
           <hgourp>
         </header>
         <div id="content">
           <%= yield %>
         </div>
-        <footer>
-          &copy; 2013 Noam Gagliardi
-        </footer>
+
       </div>
       <aside id="sidebar">
-        <%= render 'sidebar' %>
+        <%= render 'sidebar/sidebar' %>
       </aside>
+      <footer>
+        &copy; 2013 Noam Gagliardi
+      </footer>
     </div>
   </body>
 </html>

@@ -4,8 +4,8 @@
 @import "compass";
 @import "susy";
 
-@import url(http://fonts.googleapis.com/css?family=Armata|Oxygen+Mono);
-$paragraph-font:  'Armata', sans-serif;
+@import url(http://fonts.googleapis.com/css?family=Tauri|Oxygen+Mono);
+$paragraph-font:  'Tauri', sans-serif;
 $code-font:       'Oxygen Mono', monospace;
 
 // -----------------------------------------------------------------------------
@@ -71,8 +71,9 @@ img {
 // -----------------------------------------------------------------------------
 // Establish color-scheme 
 // -----------------------------------------------------------------------------
+$background-color: white;
 $primary-color: black;
-$secondary-color: black;
+$secondary-color: $primary-color;
 
 // -----------------------------------------------------------------------------
 // Establish base
@@ -135,9 +136,6 @@ header {
   margin-bottom: $padding;
   border-bottom: solid thin $secondary-color; 
 }
-#sidebar {
-  border-left: solid thin $secondary-color;
-}
 
 // -----------------------------------------------------------------------------
 // Paragraph style 
@@ -147,6 +145,7 @@ body {
   font-size:    $base-font-size;
   line-height: $base-line-height;
   color: $primary-color;
+  background-color: $background-color;
 }
 
 // headers
@@ -161,19 +160,30 @@ h2 {
   @include adjust-font-size-to(16px);
 }
 
-// paragraphs
+// Blocks
 p {
-  @include margin-leader(0.75)
+  @include margin-leader(0.75);
 }
 pre {
   font-family: $code-font;
-
+  @include margin-leader(0.75);
   .line-numbers { margin-right: $padding; }
+}
+
+// Inline style
+b, strong {
+  font-weight: bold;
+}
+i, em {
+  font-style: italic;
 }
 
 // -----------------------------------------------------------------------------
 // Sidebar 
 // -----------------------------------------------------------------------------
+#sidebar {
+  #reading-about { @include adjust-font-size-to(10px); }
+}
 
 // -----------------------------------------------------------------------------
 // Header 
@@ -186,3 +196,9 @@ header {
   }
 }
 
+// -----------------------------------------------------------------------------
+// Footer 
+// -----------------------------------------------------------------------------
+footer {
+  @include adjust-font-size-to(12px);
+}
