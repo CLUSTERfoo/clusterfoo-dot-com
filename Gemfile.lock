@@ -14,11 +14,17 @@ GEM
       colored (>= 1.2)
     fssm (0.2.10)
     kramdown (0.14.2)
+    method_source (0.8.1)
     nanoc (3.6.1)
       cri (~> 2.3)
     nokogiri (1.5.6)
+    pry (0.9.12)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     rack (1.5.2)
     sass (3.2.6)
+    slop (3.4.3)
     susy (1.0.5)
       compass (>= 0.12.2)
       sass (>= 3.2.0)
@@ -34,5 +40,6 @@ DEPENDENCIES
   kramdown
   nanoc (~> 3.5)
   nokogiri
+  pry
   susy (~> 1.0)
   systemu

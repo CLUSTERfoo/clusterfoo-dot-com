@@ -31,8 +31,11 @@ compile '*' do
     # don’t filter binary items
   else
     case item[:extension]
-    when 'html', 'markdown'
+    when 'html'
       filter :erb
+      filter :colorize_syntax
+      layout 'default'
+    when 'markdown'
       filter :kramdown
       filter :colorize_syntax
       layout 'default'

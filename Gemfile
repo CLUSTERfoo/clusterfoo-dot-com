@@ -12,3 +12,6 @@ gem 'coderay'
 
 # Needed for deploy
 gem 'systemu'
+
+# Needed for nanoc shell
+gem 'pry'
