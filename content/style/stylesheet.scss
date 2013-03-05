@@ -73,7 +73,7 @@ img {
 // -----------------------------------------------------------------------------
 $background-color: white;
 $primary-color: black;
-$secondary-color: $primary-color;
+$secondary-color: #444;
 
 // -----------------------------------------------------------------------------
 // Establish base
@@ -134,7 +134,7 @@ $desktop        : 960px 12;
 // -----------------------------------------------------------------------------
 header {
   margin-bottom: $padding;
-  border-bottom: solid thin $secondary-color; 
+  border-bottom: solid thin black; 
 }
 
 // -----------------------------------------------------------------------------
@@ -164,10 +164,17 @@ h2 {
 p {
   @include margin-leader(0.75);
 }
+pre, code { font-family: $code-font; }
+
 pre {
   font-family: $code-font;
   @include margin-leader(0.75);
   .line-numbers { margin-right: $padding; }
+}
+blockquote {
+  @include margin-leader(0.75);
+  color: $secondary-color;
+  margin-left: $padding;
 }
 
 // Inline style
@@ -176,6 +183,21 @@ b, strong {
 }
 i, em {
   font-style: italic;
+}
+
+// -----------------------------------------------------------------------------
+// Lists 
+// -----------------------------------------------------------------------------
+#content, #sidebar {
+  ul, ol {
+    margin: $padding 0;
+    padding-left: $padding * 2;
+    li { display: list-item; }
+  }
+
+  ul { list-style-type: disc; }
+  ol { list-style-type: decimal; }
+
 }
 
 // -----------------------------------------------------------------------------

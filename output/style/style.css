@@ -178,32 +178,62 @@ p {
 }
 
 /* line 167, content/style/stylesheet.scss */
+pre, code {
+  font-family: "Oxygen Mono", monospace;
+}
+
+/* line 169, content/style/stylesheet.scss */
 pre {
   font-family: "Oxygen Mono", monospace;
   margin-top: 1.125em;
 }
-/* line 170, content/style/stylesheet.scss */
+/* line 172, content/style/stylesheet.scss */
 pre .line-numbers {
   margin-right: 10.5px;
 }
 
 /* line 174, content/style/stylesheet.scss */
+blockquote {
+  margin-top: 1.125em;
+  color: #444444;
+  margin-left: 10.5px;
+}
+
+/* line 181, content/style/stylesheet.scss */
 b, strong {
   font-weight: bold;
 }
 
-/* line 177, content/style/stylesheet.scss */
+/* line 184, content/style/stylesheet.scss */
 i, em {
   font-style: italic;
 }
 
-/* line 185, content/style/stylesheet.scss */
+/* line 192, content/style/stylesheet.scss */
+#content ul, #content ol, #sidebar ul, #sidebar ol {
+  margin: 10.5px 0;
+  padding-left: 21px;
+}
+/* line 195, content/style/stylesheet.scss */
+#content ul li, #content ol li, #sidebar ul li, #sidebar ol li {
+  display: list-item;
+}
+/* line 198, content/style/stylesheet.scss */
+#content ul, #sidebar ul {
+  list-style-type: disc;
+}
+/* line 199, content/style/stylesheet.scss */
+#content ol, #sidebar ol {
+  list-style-type: decimal;
+}
+
+/* line 207, content/style/stylesheet.scss */
 #sidebar #reading-about {
   font-size: 0.71429em;
   line-height: 2.1em;
 }
 
-/* line 192, content/style/stylesheet.scss */
+/* line 214, content/style/stylesheet.scss */
 header h1, header h2 {
   font-weight: normal;
   font-size: 1em;
@@ -211,7 +241,7 @@ header h1, header h2 {
   margin: 0;
 }
 
-/* line 202, content/style/stylesheet.scss */
+/* line 224, content/style/stylesheet.scss */
 footer {
   font-size: 0.85714em;
   line-height: 1.75em;

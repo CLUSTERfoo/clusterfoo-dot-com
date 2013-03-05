@@ -4,16 +4,30 @@ kind: article
 created_at: 2013-03-04
 ---
 
-I'm using my free time to rebuild my blog with 
-[nanoc](http://nanoc.ws){: target="_blank" }. It's a pretty awesome static 
-site generator (sory Wordpress. It's been fun). 
+I've been thinking about rebuilding this blog with 
+[nanoc](http://nanoc.ws){: target="_blank" } for a while now. 
 
-Expect lots of ugliness while I figure out how to do things. Here's a random 
-code snippet to prove syntax highlighting works:
+Well, yesterday I
+decided to finally get to it, and here it is, in all its minimalistic glory. I'm
+still figuring out how to add all the features I want, so everything is still 
+pretty half-baked. But here's what I'm liking so far:
 
-~~~
-def something
- puts "Hey hey hey"
-end
-~~~
-{: class="language-ruby" }
+* I can back up my entire site in a github repo. Everything from the layout to
+the actual content of my articles lives as real files I can open, edit, and 
+move around, not as an entry in a database. 
+
+* Extremely portable and small. To deploy, I simply dump static HTML files 
+into an affordable shared server at 
+[A Small Orange](http://asmallorange.com){: target="_blank" } and barely see a
+dent in my data usage.
+
+* Nothing to maintain. No security issues to worry about. Everything is static 
+HTML/CSS/Javascipt. Any interactivity I wish to add (comments, etc) can be taken 
+care of by a third party like [Disqus](http://disqus.com){: target="_blank" }... 
+let *them* worry about security issues and database backups :p
+
+* I can write all my posts in markdown, or whatever markup I choose. 
+
+* My content is not tied to a platform.
+
+* It's fun to roll your own! 

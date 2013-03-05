@@ -19,23 +19,89 @@
         </header>
         <div id="content">
           
-  <article class="front-page"><h2><a href="/me/blog/2013/march/new-blog/">New Blog</a></h2>
-    <aside>Day poted: <time timestamp="2013-03-04">2013-03-04</time></aside><p>I’m using my free time to rebuild my blog with 
-<a href="http://nanoc.ws" target="_blank">nanoc</a>. It’s a pretty awesome static 
-site generator (sory Wordpress. It’s been fun). </p>
+  <article class="front-page"><h2><a href="/quick-guides/screencasting-in-linux/">Screencasting In Linux</a></h2>
+    <aside>Day poted: <time timestamp="2013-03-05">2013-03-05</time></aside><!-- i_i --><p>These are my notes for my guide on screencasting in Linux. The instructional
+screencast can be found here <a href="#">link</a>. </p>
 
-<p>Expect lots of ugliness while I figure out how to do things. Here’s a random 
-code snippet to prove syntax highlighting works:</p>
+<h2 id="tools-used">Tools used</h2>
 
-<div>
-<div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">something</span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span> puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Hey hey hey</span><span style="color:#710">"</span></span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
-</div>
-  </article>
+<ul>
+<li>
+    <p>arandr (easily manage your screens and their resolution)</p>
+  </li>
+  <li>
+    <p>recordmydesktop (record your desktop activity)</p>
+  </li>
+  <li>
+    <p>key-mon (display keyboard activity)</p>
+  </li>
+  <li>
+    <p>pavucontrol (GUI for managing PulseAudio volume and stuff)</p>
+  </li>
+  <li>
+    <p>vlc (to extract OGG audio file)</p>
+  </li>
+  <li>
+    <p>audacity (edit your audioi for proper volume levels)</p>
+  </li>
+  <li>
+    <p>openshot (edit and export final video)</p>
+  </li>
+</ul>
+<h2 id="preparation">Preparation</h2>
+
+<p>Using arandr, change screen resolution to 1280x720 (720p) and switch to
+a large terminal font.</p>
+
+<p>Use pavucontrol to make sure audio levels are decent.</p>
+
+<p>For the actual recording, the following command gives me best results:</p>
+
+<pre><code>recordmydesktop --freq 48000 -o [path]
+</code></pre>
+
+<p><code>CTRL-C</code> when finished. </p>
+
+<h1 id="exporting-for-youtube">Exporting for YouTube</h1>
+
+<p>I export the file as a 720p flv, using aac for audio codec.</p>
+  </article><article class="front-page"><h2><a href="/me/blog/2013/march/new-blog/">New Blog</a></h2>
+    <aside>Day poted: <time timestamp="2013-03-04">2013-03-04</time></aside><p>I’ve been thinking about rebuilding this blog with 
+<a href="http://nanoc.ws" target="_blank">nanoc</a> for a while now. </p>
+
+<p>Well, yesterday I
+decided to finally get to it, and here it is, in all its minimalistic glory. I’m
+still figuring out how to add all the features I want, so everything is still 
+pretty half-baked. But here’s what I’m liking so far:</p>
+
+<ul>
+<li>
+    <p>I can back up my entire site in a github repo. Everything from the layout to
+the actual content of my articles lives as real files I can open, edit, and 
+move around, not as an entry in a database. </p>
+  </li>
+  <li>
+    <p>Extremely portable and small. To deploy, I simply dump static HTML files 
+into an affordable shared server at 
+<a href="http://asmallorange.com" target="_blank">A Small Orange</a> and barely see a
+dent in my data usage.</p>
+  </li>
+  <li>
+    <p>Nothing to maintain. No security issues to worry about. Everything is static 
+HTML/CSS/Javascipt. Any interactivity I wish to add (comments, etc) can be taken 
+care of by a third party like <a href="http://disqus.com" target="_blank">Disqus</a>… 
+let <em>them</em> worry about security issues and database backups :p</p>
+  </li>
+  <li>
+    <p>I can write all my posts in markdown, or whatever markup I choose. </p>
+  </li>
+  <li>
+    <p>My content is not tied to a platform.</p>
+  </li>
+  <li>
+    <p>It’s fun to roll your own!</p>
+  </li>
+</ul></article>
         </div>
 
       </div>
