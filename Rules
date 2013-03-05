@@ -20,7 +20,7 @@ compile '/style/stylesheet/' do
   filter :sass, Compass.sass_engine_options   #syntax: :scss
 end
 
-compile '/' do
+compile '/*' do
   filter :kramdown
   filter :colorize_syntax
   layout 'default'
