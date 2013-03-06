@@ -159,6 +159,11 @@ h1 {  @include adjust-font-size-to(20px); }
 h2 {  @include adjust-font-size-to(18px); }
 h3 { @include adjust-font-size-to(16px); }
 h5 { text-decoration: underline; }
+.section-header {
+  background: black;
+  color: white;
+  text-align: center;
+}
 
 // Blocks
 p {
@@ -228,4 +233,14 @@ header {
 // -----------------------------------------------------------------------------
 footer {
   @include adjust-font-size-to(12px);
+}
+
+// -----------------------------------------------------------------------------
+// Third Party 
+// -----------------------------------------------------------------------------
+#twitter-feed {
+  @include margin-leader(0.75);
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -7,6 +7,17 @@
     <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom Feed">
     <!-- you don't need to keep this, but it's cool for stats! -->
     <meta name="generator" content="nanoc 3.6.1"> 
+    <!-- Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33332254-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </head>
   <body>
     <div id="everything">
@@ -69,11 +80,23 @@ something else. </p>
   <nav id="main-menu">
     <ul>
       <li><a href="/" title="Homepage">Home</a>
+      <li><a href="/all-articles">All Articles<a>
+      <li><a href="/links">Check it out!<a>
       <li><a href="http://github.com/clusterfoo" title="My code on github" 
-      target="_blank">My Github</a>
+        target="_blank">My Github</a>
       <li><a href="/me/about" title="About Me">About Me</a>
     </ul>
   </nav>
+
+  <h3>Subscribe in a Reader:</h3>
+
+  <p><a href="http://feeds.feedburner.com/Clusterfoo" title="Subscribe to my feed" 
+    rel="alternate" type="application/rss+xml"><img 
+      src="//feedburner.google.com/fb/images/pub/feed-icon32x32.png" alt="" 
+      style="border:0"/></a>
+      <a href="http://feeds.feedburner.com/Clusterfoo" 
+        title="Subscribe to my feed" rel="alternate" 
+        type="application/rss+xml">Click me!</a>
 
   <h3>I'm Reading About...</h3>
   <div id="reading-about">
