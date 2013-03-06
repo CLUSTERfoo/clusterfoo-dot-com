@@ -35,3 +35,7 @@ Wordpress or Drupal can be a pain to migrate if you decide to switch to
 something else. 
 
 * It's fun to roll your own! 
+
+You can see the source for this blog on 
+[my github](http://github.com/clusterfoo/clusterfoo-dot-com){: target="_blank" }
+

@@ -52,9 +52,10 @@ Wordpress or Drupal can be a pain to migrate if you decide to switch to
 something else. &lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;It’s fun to roll your own!&lt;/p&gt;
+    &lt;p&gt;It’s fun to roll your own! &lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content>
+&lt;/ul&gt;&lt;p&gt;You can see the source for this blog on 
+&lt;a href="http://github.com/clusterfoo/clusterfoo-dot-com" target="_blank"&gt;my github&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:clusterfoo.com,2013-03-01:/quick-guides/rails-cheatsheet/</id>

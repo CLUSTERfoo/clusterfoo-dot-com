@@ -164,17 +164,22 @@ h5 { text-decoration: underline; }
 p {
   @include margin-leader(0.75);
 }
-pre, code { font-family: $code-font; }
+pre, code { 
+  font-family: $code-font; 
+  background: #ddd;
+}
 
 pre {
   font-family: $code-font;
   @include margin-leader(0.75);
+  padding: $padding ($padding * 2);
   .line-numbers { margin-right: $padding; }
 }
 blockquote {
   @include margin-leader(0.75);
+  background: #eee;
   color: $secondary-color;
-  margin-left: $padding;
+  padding: 0 ($padding * 2) $padding ($padding * 2);
 }
 
 // Inline style
