@@ -145,7 +145,12 @@ header {
   border-bottom: solid thin black;
 }
 
-/* line 143, content/style/stylesheet.scss */
+/* line 140, content/style/stylesheet.scss */
+article.front-page {
+  margin-bottom: 21px;
+}
+
+/* line 145, content/style/stylesheet.scss */
 body {
   font-family: "Arial", sans-serif;
   font-size: 14px;
@@ -154,22 +159,33 @@ body {
   background-color: white;
 }
 
-/* line 152, content/style/stylesheet.scss */
-h1, h2, h3, h4, h5, h5 {
+/* line 154, content/style/stylesheet.scss */
+h1, h2, h3, h4 {
   font-weight: bold;
   margin-top: 1.125em;
 }
 
-/* line 156, content/style/stylesheet.scss */
+/* line 158, content/style/stylesheet.scss */
 h1 {
-  font-size: 1.28571em;
-  line-height: 1.75em;
+  font-size: 1.42857em;
+  line-height: 1.575em;
 }
 
 /* line 159, content/style/stylesheet.scss */
 h2 {
+  font-size: 1.28571em;
+  line-height: 1.75em;
+}
+
+/* line 160, content/style/stylesheet.scss */
+h3 {
   font-size: 1.14286em;
   line-height: 1.3125em;
+}
+
+/* line 161, content/style/stylesheet.scss */
+h5 {
+  text-decoration: underline;
 }
 
 /* line 164, content/style/stylesheet.scss */

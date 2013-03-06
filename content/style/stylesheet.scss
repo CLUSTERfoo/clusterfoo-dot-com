@@ -137,6 +137,8 @@ header {
   border-bottom: solid thin black; 
 }
 
+article.front-page { margin-bottom: $padding * 2; }
+
 // -----------------------------------------------------------------------------
 // Paragraph style 
 // -----------------------------------------------------------------------------
@@ -149,16 +151,14 @@ body {
 }
 
 // headers
-h1, h2, h3, h4, h5, h5 { 
+h1, h2, h3, h4 { 
   font-weight: bold;
   @include margin-leader(0.75)
 }
-h1 {
-  @include adjust-font-size-to(18px);
-}
-h2 {
-  @include adjust-font-size-to(16px);
-}
+h1 {  @include adjust-font-size-to(20px); }
+h2 {  @include adjust-font-size-to(18px); }
+h3 { @include adjust-font-size-to(16px); }
+h5 { text-decoration: underline; }
 
 // Blocks
 p {

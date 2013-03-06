@@ -15,3 +15,6 @@ gem 'systemu'
 
 # Needed for nanoc shell
 gem 'pry'
+
+# Needed for Atom feed
+gem 'builder'

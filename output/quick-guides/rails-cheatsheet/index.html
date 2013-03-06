@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>CLUSTERfoo.com - Home</title>
+    <title>CLUSTERfoo.com - Rails Cheatsheet</title>
     <link rel="stylesheet" href="/style/style.css">
     <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom Feed">
     <!-- you don't need to keep this, but it's cool for stats! -->
@@ -18,49 +18,9 @@
           <hgourp>
         </header>
         <div id="content">
-          
-  <article class="front-page"><h2><a href="/me/blog/2013/march/new-blog/">New Blog</a></h2>
-    <aside>Day poted: <time timestamp="2013-03-04">2013-03-04</time></aside><p>I’ve been thinking about rebuilding this blog with 
-<a href="http://nanoc.ws" target="_blank">nanoc</a> for a while now. </p>
+          <!-- _. -->
 
-<p>Well, yesterday I
-decided to finally get to it, and here it is, in all its minimalistic glory. I’m
-still figuring out how to add all the features I want, so everything is still 
-pretty half-baked. But here’s what I’m liking so far:</p>
-
-<ul>
-<li>
-    <p>I can back up my entire site in a github repo. Everything from the layout to
-the actual content of my articles lives as real text files I can open, edit, and 
-move around. </p>
-  </li>
-  <li>
-    <p>Extremely portable and small. To deploy, I simply dump static HTML files 
-into an affordable shared server at 
-<a href="http://asmallorange.com" target="_blank">A Small Orange</a> and barely see a
-dent in my data usage.
-<!-- _. --></p>
-  </li>
-  <li>
-    <p>Nothing to maintain. No security issues to worry about. Everything is static 
-HTML/CSS/Javascipt. Any interactivity I wish to add (comments, etc) can be taken 
-care of by a third party like <a href="http://disqus.com" target="_blank">Disqus</a>… 
-let <em>them</em> worry about security issues and database backups :p
-<!-- _. --></p>
-  </li>
-  <li>
-    <p>I can write all my posts in markdown, or whatever markup I choose. </p>
-  </li>
-  <li>
-    <p>My content is not tied to a platform or database. Even an open platform like
-Wordpress or Drupal can be a pain to migrate if you decide to switch to 
-something else. </p>
-  </li>
-  <li>
-    <p>It’s fun to roll your own!</p>
-  </li>
-</ul></article><article class="front-page"><h2><a href="/quick-guides/rails-cheatsheet/">Rails Cheatsheet</a></h2>
-    <aside>Day poted: <time timestamp="2013-03-01">2013-03-01</time></aside><!-- _. --><p>A little cheatsheet of Rails stuff I don’t want to forget. Many of these
+<p>A little cheatsheet of Rails stuff I don’t want to forget. Many of these
 tips come from 
 <a href="http://ruby.railstutorial.org/" target="_blank">Michael Hartl’s Rails tutorial</a>.</p>
 
@@ -224,54 +184,6 @@ $ rake db:test:prepare
 
 <pre><code>$ rails console --sandbox
 </code></pre>
-  </article><article class="front-page"><h2><a href="/quick-guides/screencasting-in-linux/">Screencasting In Linux</a></h2>
-    <aside>Day poted: <time timestamp="2013-02-28">2013-02-28</time></aside><!-- i_i --><p>A quick screencast and some notes on screencasting in Linux. </p>
-
-<iframe width="560" height="315" src="http://www.youtube.com/embed/c3EFVviXS40" frameborder="0" allowfullscreen=""></iframe>
-
-<h3 id="tools-used">Tools used</h3>
-
-<ul>
-<li>
-    <p>arandr (easily manage your screens and their resolution)</p>
-  </li>
-  <li>
-    <p>recordmydesktop (record your desktop activity)</p>
-  </li>
-  <li>
-    <p>key-mon (display keyboard activity)</p>
-  </li>
-  <li>
-    <p>pavucontrol (GUI for managing PulseAudio volume and stuff)</p>
-  </li>
-  <li>
-    <p>vlc (to extract OGG audio file)</p>
-  </li>
-  <li>
-    <p>audacity (edit your audioi for proper volume levels)</p>
-  </li>
-  <li>
-    <p>openshot (edit and export final video)</p>
-  </li>
-</ul>
-<h3 id="preparation">Preparation</h3>
-
-<p>Using arandr, change screen resolution to 1280x720 (720p) and switch to
-a large terminal font.</p>
-
-<p>Use pavucontrol to make sure audio levels are decent.</p>
-
-<p>For the actual recording, the following command gives me best results:</p>
-
-<pre><code>recordmydesktop --freq 48000 -o [path]
-</code></pre>
-
-<p><code>CTRL-C</code> when finished. </p>
-
-<h3 id="exporting-for-youtube">Exporting for YouTube</h3>
-
-<p>I export the file as a 720p flv, using aac for audio codec.</p>
-  </article>
         </div>
 
       </div>

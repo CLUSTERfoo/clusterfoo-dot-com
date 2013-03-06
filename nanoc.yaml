@@ -77,7 +77,11 @@ watcher:
   notify_on_compilation_failure: true
 
 # Set base url for Atom feed
+title: CLUSTERfoo.com
 base_url: http://clusterfoo.com
+author_name: Noam Gagliardi
+author_uri: http://CLUSTERfoo.com
+
 
 # Deployment with rsync
 deploy:

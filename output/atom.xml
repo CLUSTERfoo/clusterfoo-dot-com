@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://clusterfoo.com/</id>
+  <title>CLUSTERfoo.com</title>
+  <updated>2013-03-04T05:00:00Z</updated>
+  <link rel="alternate" href="http://clusterfoo.com/"/>
+  <link rel="self" href="http://clusterfoo.com/atom.xml"/>
+  <author>
+    <name>Noam Gagliardi</name>
+    <uri>http://CLUSTERfoo.com</uri>
+  </author>
+  <entry>
+    <id>tag:clusterfoo.com,2013-03-04:/me/blog/2013/march/new-blog/</id>
+    <title type="html">New Blog</title>
+    <published>2013-03-04T05:00:00Z</published>
+    <updated>2013-03-04T05:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/me/blog/2013/march/new-blog/"/>
+    <content type="html">&lt;p&gt;I’ve been thinking about rebuilding this blog with 
+&lt;a href="http://nanoc.ws" target="_blank"&gt;nanoc&lt;/a&gt; for a while now. &lt;/p&gt;
+
+&lt;p&gt;Well, yesterday I
+decided to finally get to it, and here it is, in all its minimalistic glory. I’m
+still figuring out how to add all the features I want, so everything is still 
+pretty half-baked. But here’s what I’m liking so far:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+    &lt;p&gt;I can back up my entire site in a github repo. Everything from the layout to
+the actual content of my articles lives as real text files I can open, edit, and 
+move around. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Extremely portable and small. To deploy, I simply dump static HTML files 
+into an affordable shared server at 
+&lt;a href="http://asmallorange.com" target="_blank"&gt;A Small Orange&lt;/a&gt; and barely see a
+dent in my data usage.
+&lt;!-- _. --&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Nothing to maintain. No security issues to worry about. Everything is static 
+HTML/CSS/Javascipt. Any interactivity I wish to add (comments, etc) can be taken 
+care of by a third party like &lt;a href="http://disqus.com" target="_blank"&gt;Disqus&lt;/a&gt;… 
+let &lt;em&gt;them&lt;/em&gt; worry about security issues and database backups :p
+&lt;!-- _. --&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I can write all my posts in markdown, or whatever markup I choose. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;My content is not tied to a platform or database. Even an open platform like
+Wordpress or Drupal can be a pain to migrate if you decide to switch to 
+something else. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It’s fun to roll your own!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:clusterfoo.com,2013-03-01:/quick-guides/rails-cheatsheet/</id>
+    <title type="html">Rails Cheatsheet</title>
+    <published>2013-03-01T05:00:00Z</published>
+    <updated>2013-03-01T05:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/quick-guides/rails-cheatsheet/"/>
+    <content type="html">&lt;!-- _. --&gt;
+
+&lt;p&gt;A little cheatsheet of Rails stuff I don’t want to forget. Many of these
+tips come from 
+&lt;a href="http://ruby.railstutorial.org/" target="_blank"&gt;Michael Hartl’s Rails tutorial&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!-- _. --&gt;
+
+&lt;h3 id="setting-up-environment"&gt;Setting Up Environment&lt;/h3&gt;
+
+&lt;h4 id="install-rvm-ruby-bundler"&gt;Install RVM, Ruby, Bundler&lt;/h4&gt;
+
+&lt;p&gt;Install RVM through instructions on &lt;a href="http://rvm.io" target="_blank"&gt;rvm.io&lt;/a&gt;.
+&lt;!-- _. --&gt;
+RVM now also eliminates the need to use &lt;code&gt;bundle exec&lt;/code&gt; when used with bundler. &lt;/p&gt;
+
+&lt;p&gt;Install latest ruby. The following OpenSSL option is needed on Ubuntu:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rvm install 1.9.3-head --with-openssl-dir=$HOME/.rvm/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Aside:&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;If you ever get the following warning:&lt;/p&gt;
+
+  &lt;p&gt;&lt;code&gt;make: /usr/bin/gcc-4.2: No such file or directory&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;You will also need to run&lt;/p&gt;
+
+  &lt;p&gt;&lt;code&gt;$ rvm reinstall 1.9.3-head --with-gcc=clang&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Create project gemset and be in it before installing Rails:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rvm use 1.9.3-head@projectname --create
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Project-specific gemsets prevent big headaches. Don’t forget to set a 
+project &lt;code&gt;rvmrc&lt;/code&gt; file after Rail app is generated (see below).&lt;/p&gt;
+
+&lt;h4 id="install-rails"&gt;Install Rails&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gem install rails
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And if on Linux, also run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install libxslt-dev libxml2-dev libsqlite3-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install node.js so that rails server can run properly in your development
+environment.&lt;/p&gt;
+
+&lt;h3 id="initialize-rails-app"&gt;Initialize Rails App&lt;/h3&gt;
+
+&lt;h4 id="set-up-rails-app-and-rvmrc"&gt;Set up Rails App and rvmrc&lt;/h4&gt;
+
+&lt;p&gt;Skip TestUnit if you’re using rspec:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rails new project_name --skip-test-unit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now create an rvmrc inside the project’s root directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rvm --rvmrc --create 1.9.3-head@projectname
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now &lt;code&gt;cd&lt;/code&gt; in and out of the directory and make sure that rvm is switching to the 
+correct gemset with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rvm gemset list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id="set-up-rspec"&gt;Set up Rspec&lt;/h4&gt;
+
+&lt;p&gt;Add rspec, guard and spork to development / test environment in Gemfile:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;group :development, :test do
+  gem 'rspec-rails', '~&amp;gt; 2'
+
+  # If using guard and spork:
+  gem 'guard-rspec', '~&amp;gt; 2'
+  gem 'guard-spork', '~&amp;gt; 1'
+  gem 'spork', '~&amp;gt; 0.9'
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Make Rails use rspec instead of TestUnit:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rails g rspec:install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id="speeding-up-tests-with-spork-and-guard"&gt;Speeding up Tests with Spork and Guard&lt;/h4&gt;
+
+&lt;p&gt;Follow 
+&lt;a href="http://ruby.railstutorial.org/chapters/static-pages#sec-guard" target="_blank"&gt;these instructions&lt;/a&gt;.
+&lt;!-- _. --&gt;&lt;/p&gt;
+
+&lt;h4 id="heroku--deployment"&gt;Heroku / Deployment&lt;/h4&gt;
+
+&lt;p&gt;Add PostgreSQL gem and production-environment-specific gems. In gem file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;group :production do
+  gem 'pg'
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To run bundler without production gems&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ bundle install --without production
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Bundler remembers this setting, no need to use it again.&lt;/p&gt;
+
+&lt;p&gt;Initialize Heroku:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ heroku login
+$ heroku create
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Push to Heroku and rename:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git push heroku
+$ heroku rename project_name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="maintenance"&gt;Maintenance&lt;/h3&gt;
+
+&lt;h4 id="after-migrations"&gt;After Migrations&lt;/h4&gt;
+
+&lt;p&gt;After running&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rake db:migrate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The following come in handy:&lt;/p&gt;
+
+&lt;p&gt;Stop the Rails server. This is obvious, but forgetting to restart the server
+after a migration is a sure way to waste time wondering why half your tests are
+suddenly failing.&lt;/p&gt;
+
+&lt;p&gt;Annotate models and migrations (requires the &lt;code&gt;annotate&lt;/code&gt; gem):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ annotate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Tell the test database about the migration too:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rake db:test:prepare
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Restart the Rails server.&lt;/p&gt;
+
+&lt;p&gt;Sometimes you want to reset your test database:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rake db:reset
+$ rake db:test:prepare
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id="run-console-in-sandbox-mode"&gt;Run Console in Sandbox Mode!&lt;/h4&gt;
+
+&lt;p&gt;Don’t break things:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rails console --sandbox
+&lt;/code&gt;&lt;/pre&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:clusterfoo.com,2013-02-28:/quick-guides/screencasting-in-linux/</id>
+    <title type="html">Screencasting In Linux</title>
+    <published>2013-02-28T05:00:00Z</published>
+    <updated>2013-02-28T05:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/quick-guides/screencasting-in-linux/"/>
+    <content type="html">&lt;!-- i_i --&gt;
+
+&lt;p&gt;A quick screencast and some notes on screencasting in Linux. &lt;/p&gt;
+
+&lt;iframe width="560" height="315" src="http://www.youtube.com/embed/c3EFVviXS40" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
+
+&lt;h3 id="tools-used"&gt;Tools used&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+    &lt;p&gt;arandr (easily manage your screens and their resolution)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;recordmydesktop (record your desktop activity)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;key-mon (display keyboard activity)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;pavucontrol (GUI for managing PulseAudio volume and stuff)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;vlc (to extract OGG audio file)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;audacity (edit your audioi for proper volume levels)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;openshot (edit and export final video)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;&lt;h3 id="preparation"&gt;Preparation&lt;/h3&gt;
+
+&lt;p&gt;Using arandr, change screen resolution to 1280x720 (720p) and switch to
+a large terminal font.&lt;/p&gt;
+
+&lt;p&gt;Use pavucontrol to make sure audio levels are decent.&lt;/p&gt;
+
+&lt;p&gt;For the actual recording, the following command gives me best results:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;recordmydesktop --freq 48000 -o [path]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;CTRL-C&lt;/code&gt; when finished. &lt;/p&gt;
+
+&lt;h3 id="exporting-for-youtube"&gt;Exporting for YouTube&lt;/h3&gt;
+
+&lt;p&gt;I export the file as a 720p flv, using aac for audio codec.&lt;/p&gt;</content>
+  </entry>
+</feed>
+

@@ -1,14 +1,15 @@
 ---
 title: Screencasting In Linux
 kind: article
-created_at: 2013-03-05
+created_at: 2013-02-28
 ---
 <!-- i_i -->
 
-These are my notes for my guide on screencasting in Linux. The instructional
-screencast can be found here [link](#). 
+A quick screencast and some notes on screencasting in Linux. 
 
-## Tools used
+<iframe width="560" height="315" src="http://www.youtube.com/embed/c3EFVviXS40" frameborder="0" allowfullscreen></iframe>
+
+### Tools used
 
 * arandr (easily manage your screens and their resolution)
 
@@ -24,7 +25,7 @@ screencast can be found here [link](#).
 
 * openshot (edit and export final video)
 
-## Preparation
+### Preparation
 
 Using arandr, change screen resolution to 1280x720 (720p) and switch to
 a large terminal font.
@@ -39,6 +40,6 @@ recordmydesktop --freq 48000 -o [path]
 
 `CTRL-C` when finished. 
 
-# Exporting for YouTube
+### Exporting for YouTube
 
 I export the file as a 720p flv, using aac for audio codec.

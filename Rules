@@ -26,6 +26,10 @@ end
 #  layout 'default'
 #end
 
+compile '/atom/' do
+  filter :erb
+end
+
 compile '*' do
   if item.binary?
     # don’t filter binary items
@@ -45,6 +49,10 @@ end
 
 route '/style/stylesheet/' do
   '/style/style.css'
+end
+
+route '/atom/' do
+  '/atom.xml'
 end
 
 route '*' do
