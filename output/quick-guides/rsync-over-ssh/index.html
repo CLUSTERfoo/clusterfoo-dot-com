@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>CLUSTERfoo.com - Syncing with a Remote Server with Rsync Over SSH</title>
+    <title>CLUSTERfoo.com - Syncing with a Remote Server Using Rsync Over SSH</title>
     <link rel="stylesheet" href="/style/style.css">
     <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom Feed">
     <!-- you don't need to keep this, but it's cool for stats! -->
@@ -29,8 +29,10 @@
           </hgroup>
         </header>
         <div id="content">
-          <p>Rsync is a command line utility for copying and syncing files. Rsync can be 
-used over ssh to sync files between remote servers. The basic rsync command
+          <!-- _. -->
+
+<p>Rsync is a command-line utility for copying and syncing files. Rsync can be 
+used over ssh to sync files between remote servers. The basic command
 for use over ssh is</p>
 
 <pre><code>$ rsync [options] -e "ssh" source target
@@ -50,7 +52,7 @@ a small shared server at <a href="http://asmallorange.com">A Small Ornage</a>. <
 <p>I use the following simple command:</p>
 
 <pre><code>$ rsync -avh [-n] --progress --delete-after -e "ssh -i /home/username/.ssh/id_rsa" \
-  output/ clusterf@clusterfoo.com:/home/clusterf/public_html/
+  output/ username@clusterfoo.com:/home/username/public_html/
 </code></pre>
 
 <ul>

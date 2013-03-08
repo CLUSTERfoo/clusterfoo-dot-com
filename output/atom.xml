@@ -11,12 +11,14 @@
   </author>
   <entry>
     <id>tag:clusterfoo.com,2013-03-08:/quick-guides/rsync-over-ssh/</id>
-    <title type="html">Syncing with a Remote Server with Rsync Over SSH</title>
+    <title type="html">Syncing with a Remote Server Using Rsync Over SSH</title>
     <published>2013-03-08T05:00:00Z</published>
     <updated>2013-03-08T05:00:00Z</updated>
     <link rel="alternate" href="http://clusterfoo.com/quick-guides/rsync-over-ssh/"/>
-    <content type="html">&lt;p&gt;Rsync is a command line utility for copying and syncing files. Rsync can be 
-used over ssh to sync files between remote servers. The basic rsync command
+    <content type="html">&lt;!-- _. --&gt;
+
+&lt;p&gt;Rsync is a command-line utility for copying and syncing files. Rsync can be 
+used over ssh to sync files between remote servers. The basic command
 for use over ssh is&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ rsync [options] -e "ssh" source target
@@ -36,7 +38,7 @@ a small shared server at &lt;a href="http://asmallorange.com"&gt;A Small Ornage&
 &lt;p&gt;I use the following simple command:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ rsync -avh [-n] --progress --delete-after -e "ssh -i /home/username/.ssh/id_rsa" \
-  output/ clusterf@clusterfoo.com:/home/clusterf/public_html/
+  output/ username@clusterfoo.com:/home/username/public_html/
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;

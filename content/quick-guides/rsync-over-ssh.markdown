@@ -1,11 +1,12 @@
 ---
-title: Syncing with a Remote Server with Rsync Over SSH
+title: Syncing with a Remote Server Using Rsync Over SSH
 kind: article
 created_at: 2013-03-08
 ---
+<!-- _. -->
 
-Rsync is a command line utility for copying and syncing files. Rsync can be 
-used over ssh to sync files between remote servers. The basic rsync command
+Rsync is a command-line utility for copying and syncing files. Rsync can be 
+used over ssh to sync files between remote servers. The basic command
 for use over ssh is
 
     $ rsync [options] -e "ssh" source target
@@ -24,7 +25,7 @@ I use the following simple command:
 
 ~~~
 $ rsync -avh [-n] --progress --delete-after -e "ssh -i /home/username/.ssh/id_rsa" \
-  output/ clusterf@clusterfoo.com:/home/clusterf/public_html/
+  output/ username@clusterfoo.com:/home/username/public_html/
 ~~~
 
 * `-a`: Archive mode. The most common option for syncing directories.

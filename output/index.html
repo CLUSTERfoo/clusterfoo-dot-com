@@ -43,9 +43,9 @@
 <h2 class="section-header">Latest Blog Posts and Articles</h2>
 
 
-  <article class="front-page"><h2><a href="/quick-guides/rsync-over-ssh/">Syncing with a Remote Server with Rsync Over SSH</a></h2>
-    <aside>Day posted: <time datetime="2013-03-08">2013-03-08</time></aside><p>Rsync is a command line utility for copying and syncing files. Rsync can be 
-used over ssh to sync files between remote servers. The basic rsync command
+  <article class="front-page"><h2><a href="/quick-guides/rsync-over-ssh/">Syncing with a Remote Server Using Rsync Over SSH</a></h2>
+    <aside>Day posted: <time datetime="2013-03-08">2013-03-08</time></aside><!-- _. --><p>Rsync is a command-line utility for copying and syncing files. Rsync can be 
+used over ssh to sync files between remote servers. The basic command
 for use over ssh is</p>
 
 <pre><code>$ rsync [options] -e "ssh" source target
@@ -65,7 +65,7 @@ a small shared server at <a href="http://asmallorange.com">A Small Ornage</a>. <
 <p>I use the following simple command:</p>
 
 <pre><code>$ rsync -avh [-n] --progress --delete-after -e "ssh -i /home/username/.ssh/id_rsa" \
-  output/ clusterf@clusterfoo.com:/home/clusterf/public_html/
+  output/ username@clusterfoo.com:/home/username/public_html/
 </code></pre>
 
 <ul>
