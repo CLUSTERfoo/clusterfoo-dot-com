@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>CLUSTERfoo.com - Screencasting In Linux</title>
+    <title>CLUSTERfoo.com - Syncing with a Remote Server with Rsync Over SSH</title>
     <link rel="stylesheet" href="/style/style.css">
     <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom Feed">
     <!-- you don't need to keep this, but it's cool for stats! -->
@@ -29,53 +29,54 @@
           </hgroup>
         </header>
         <div id="content">
-          <!-- i_i -->
+          <p>Rsync is a command line utility for copying and syncing files. Rsync can be 
+used over ssh to sync files between remote servers. The basic rsync command
+for use over ssh is</p>
 
-<p>A quick screencast and some notes on screencasting in Linux. </p>
+<pre><code>$ rsync [options] -e "ssh" source target
+</code></pre>
 
-<iframe class="centered" width="560" height="315" src="http://www.youtube.com/embed/c3EFVviXS40" frameborder="0" allowfullscreen=""></iframe>
+<p>If you’ve set up private and public keys to secure your ssh connection, you must 
+specify the location of the identity key (also known as “private key”), which 
+is usually found in the <code>~/.ssh</code> directory:</p>
 
-<h3 id="tools-used">Tools used</h3>
+<pre><code>$ rsync [options] -e "ssh -i /home/user/.ssh/private_key_file"
+</code></pre>
+
+<p>I use rsync to deploy my blog. All of its contents are found <a href="http://github.com/clusterfoo/clusterfoo-dot-com">in the <code>output</code>
+directory</a>, which I sync with
+a small shared server at <a href="http://asmallorange.com">A Small Ornage</a>. </p>
+
+<p>I use the following simple command:</p>
+
+<pre><code>$ rsync -avh [-n] --progress --delete-after -e "ssh -i /home/username/.ssh/id_rsa" \
+  output/ clusterf@clusterfoo.com:/home/clusterf/public_html/
+</code></pre>
 
 <ul>
 <li>
-    <p>arandr (easily manage your screens and their resolution)</p>
-  </li>
+<code>-a</code>: Archive mode. The most common option for syncing directories.</li>
   <li>
-    <p>recordmydesktop (record your desktop activity)</p>
-  </li>
+<code>-v</code>: Verbose mode.</li>
   <li>
-    <p>key-mon (display keyboard activity)</p>
-  </li>
+<code>-h</code>: Human readable. Print numbers in human-readable formats.</li>
   <li>
-    <p>pavucontrol (GUI for managing PulseAudio volume and stuff)</p>
-  </li>
+<code>-n</code>: Dry run.</li>
   <li>
-    <p>vlc (to extract OGG audio file)</p>
-  </li>
+<code>--progress</code>: Show progress during transfer.</li>
   <li>
-    <p>audacity (edit your audioi for proper volume levels)</p>
-  </li>
-  <li>
-    <p>openshot (edit and export final video)</p>
-  </li>
-</ul><h3 id="preparation">Preparation</h3>
+<code>--delete-after</code>: Sync new and updated files, and wait until transfer is 
+complete before deleting any superfluous files. This is important when deploying
+a website, since otherwise a visitor might stumble upon missing pages.</li>
+</ul><h3 id="always-dry-run-first">Always Dry-Run First!</h3>
 
-<p>Using arandr, change screen resolution to 1280x720 (720p) and switch to
-a large terminal font.</p>
+<p>It’s easy to make mistakes with rsync. A simple typo like <code>dir</code> instead of 
+<code>dir/</code> can mean a world of difference (and a world of pain if you accidentally 
+<code>-rm</code> an entire directory!).</p>
 
-<p>Use pavucontrol to make sure audio levels are decent.</p>
-
-<p>For the actual recording, the following command gives me best results:</p>
-
-<pre><code>recordmydesktop --freq 48000 -o [path]
-</code></pre>
-
-<p><code>CTRL-C</code> when finished. </p>
-
-<h3 id="exporting-for-youtube">Exporting for YouTube</h3>
-
-<p>I export the file as a 720p flv, using aac for audio codec.</p>
+<p>I always do a dry-run before I use an rsync command for the first time. The 
+dry-run option (<code>-n</code>) will show you the final output of the operation, 
+without actually running through it.</p>
         </div>
 
       </div>

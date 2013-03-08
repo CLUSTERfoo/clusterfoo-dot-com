@@ -137,7 +137,10 @@ header {
   border-bottom: solid thin black; 
 }
 
-article.front-page { margin-bottom: $padding * 2; }
+article.front-page { 
+  padding-bottom: $padding * 2;
+  border-bottom: dashed thin black;
+}
 
 // -----------------------------------------------------------------------------
 // Paragraph style 
@@ -175,6 +178,7 @@ pre, code {
 }
 
 pre {
+  overflow: auto;
   font-family: $code-font;
   @include margin-leader(0.75);
   padding: $padding ($padding * 2);
@@ -238,7 +242,7 @@ footer {
 // -----------------------------------------------------------------------------
 // Third Party 
 // -----------------------------------------------------------------------------
-#twitter-feed {
+.centered {
   @include margin-leader(0.75);
   display: table;
   margin-left: auto;

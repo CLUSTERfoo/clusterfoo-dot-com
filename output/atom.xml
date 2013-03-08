@@ -2,13 +2,68 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://clusterfoo.com/</id>
   <title>CLUSTERfoo.com</title>
-  <updated>2013-03-04T05:00:00Z</updated>
+  <updated>2013-03-08T05:00:00Z</updated>
   <link rel="alternate" href="http://clusterfoo.com/"/>
   <link rel="self" href="http://clusterfoo.com/atom.xml"/>
   <author>
     <name>Noam Gagliardi</name>
     <uri>http://CLUSTERfoo.com</uri>
   </author>
+  <entry>
+    <id>tag:clusterfoo.com,2013-03-08:/quick-guides/rsync-over-ssh/</id>
+    <title type="html">Syncing with a Remote Server with Rsync Over SSH</title>
+    <published>2013-03-08T05:00:00Z</published>
+    <updated>2013-03-08T05:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/quick-guides/rsync-over-ssh/"/>
+    <content type="html">&lt;p&gt;Rsync is a command line utility for copying and syncing files. Rsync can be 
+used over ssh to sync files between remote servers. The basic rsync command
+for use over ssh is&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rsync [options] -e "ssh" source target
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you’ve set up private and public keys to secure your ssh connection, you must 
+specify the location of the identity key (also known as “private key”), which 
+is usually found in the &lt;code&gt;~/.ssh&lt;/code&gt; directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rsync [options] -e "ssh -i /home/user/.ssh/private_key_file"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I use rsync to deploy my blog. All of its contents are found &lt;a href="http://github.com/clusterfoo/clusterfoo-dot-com"&gt;in the &lt;code&gt;output&lt;/code&gt;
+directory&lt;/a&gt;, which I sync with
+a small shared server at &lt;a href="http://asmallorange.com"&gt;A Small Ornage&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;I use the following simple command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rsync -avh [-n] --progress --delete-after -e "ssh -i /home/username/.ssh/id_rsa" \
+  output/ clusterf@clusterfoo.com:/home/clusterf/public_html/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;code&gt;-a&lt;/code&gt;: Archive mode. The most common option for syncing directories.&lt;/li&gt;
+  &lt;li&gt;
+&lt;code&gt;-v&lt;/code&gt;: Verbose mode.&lt;/li&gt;
+  &lt;li&gt;
+&lt;code&gt;-h&lt;/code&gt;: Human readable. Print numbers in human-readable formats.&lt;/li&gt;
+  &lt;li&gt;
+&lt;code&gt;-n&lt;/code&gt;: Dry run.&lt;/li&gt;
+  &lt;li&gt;
+&lt;code&gt;--progress&lt;/code&gt;: Show progress during transfer.&lt;/li&gt;
+  &lt;li&gt;
+&lt;code&gt;--delete-after&lt;/code&gt;: Sync new and updated files, and wait until transfer is 
+complete before deleting any superfluous files. This is important when deploying
+a website, since otherwise a visitor might stumble upon missing pages.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 id="always-dry-run-first"&gt;Always Dry-Run First!&lt;/h3&gt;
+
+&lt;p&gt;It’s easy to make mistakes with rsync. A simple typo like &lt;code&gt;dir&lt;/code&gt; instead of 
+&lt;code&gt;dir/&lt;/code&gt; can mean a world of difference (and a world of pain if you accidentally 
+&lt;code&gt;-rm&lt;/code&gt; an entire directory!).&lt;/p&gt;
+
+&lt;p&gt;I always do a dry-run before I use an rsync command for the first time. The 
+dry-run option (&lt;code&gt;-n&lt;/code&gt;) will show you the final output of the operation, 
+without actually running through it.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:clusterfoo.com,2013-03-04:/me/blog/2013/march/new-blog/</id>
     <title type="html">New Blog</title>
@@ -240,7 +295,7 @@ $ rake db:test:prepare
 
 &lt;p&gt;A quick screencast and some notes on screencasting in Linux. &lt;/p&gt;
 
-&lt;iframe width="560" height="315" src="http://www.youtube.com/embed/c3EFVviXS40" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
+&lt;iframe class="centered" width="560" height="315" src="http://www.youtube.com/embed/c3EFVviXS40" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
 
 &lt;h3 id="tools-used"&gt;Tools used&lt;/h3&gt;
 

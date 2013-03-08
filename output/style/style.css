@@ -147,10 +147,11 @@ header {
 
 /* line 140, content/style/stylesheet.scss */
 article.front-page {
-  margin-bottom: 21px;
+  padding-bottom: 21px;
+  border-bottom: dashed thin black;
 }
 
-/* line 145, content/style/stylesheet.scss */
+/* line 148, content/style/stylesheet.scss */
 body {
   font-family: "Arial", sans-serif;
   font-size: 14px;
@@ -159,65 +160,66 @@ body {
   background-color: white;
 }
 
-/* line 154, content/style/stylesheet.scss */
+/* line 157, content/style/stylesheet.scss */
 h1, h2, h3, h4 {
   font-weight: bold;
   margin-top: 1.125em;
 }
 
-/* line 158, content/style/stylesheet.scss */
+/* line 161, content/style/stylesheet.scss */
 h1 {
   font-size: 1.42857em;
   line-height: 1.575em;
 }
 
-/* line 159, content/style/stylesheet.scss */
+/* line 162, content/style/stylesheet.scss */
 h2 {
   font-size: 1.28571em;
   line-height: 1.75em;
 }
 
-/* line 160, content/style/stylesheet.scss */
+/* line 163, content/style/stylesheet.scss */
 h3 {
   font-size: 1.14286em;
   line-height: 1.3125em;
 }
 
-/* line 161, content/style/stylesheet.scss */
+/* line 164, content/style/stylesheet.scss */
 h5 {
   text-decoration: underline;
 }
 
-/* line 162, content/style/stylesheet.scss */
+/* line 165, content/style/stylesheet.scss */
 .section-header {
   background: black;
   color: white;
   text-align: center;
 }
 
-/* line 169, content/style/stylesheet.scss */
+/* line 172, content/style/stylesheet.scss */
 p {
   margin-top: 1.125em;
 }
 
-/* line 172, content/style/stylesheet.scss */
+/* line 175, content/style/stylesheet.scss */
 pre, code {
   font-family: "Oxygen Mono", monospace;
   background: #ddd;
 }
 
-/* line 177, content/style/stylesheet.scss */
+/* line 180, content/style/stylesheet.scss */
 pre {
+  overflow: auto;
   font-family: "Oxygen Mono", monospace;
   margin-top: 1.125em;
   padding: 10.5px 21px;
 }
-/* line 181, content/style/stylesheet.scss */
+/* line 185, content/style/stylesheet.scss */
 pre .line-numbers {
   margin-right: 10.5px;
 }
 
-/* line 183, content/style/stylesheet.scss */
+/* line 187, content/style/stylesheet.scss */
 blockquote {
   margin-top: 1.125em;
   background: #eee;
@@ -225,41 +227,41 @@ blockquote {
   padding: 0 21px 10.5px 21px;
 }
 
-/* line 191, content/style/stylesheet.scss */
+/* line 195, content/style/stylesheet.scss */
 b, strong {
   font-weight: bold;
 }
 
-/* line 194, content/style/stylesheet.scss */
+/* line 198, content/style/stylesheet.scss */
 i, em {
   font-style: italic;
 }
 
-/* line 202, content/style/stylesheet.scss */
+/* line 206, content/style/stylesheet.scss */
 #content ul, #content ol, #sidebar ul, #sidebar ol {
   margin: 10.5px 0;
   padding-left: 21px;
 }
-/* line 205, content/style/stylesheet.scss */
+/* line 209, content/style/stylesheet.scss */
 #content ul li, #content ol li, #sidebar ul li, #sidebar ol li {
   display: list-item;
 }
-/* line 208, content/style/stylesheet.scss */
+/* line 212, content/style/stylesheet.scss */
 #content ul, #sidebar ul {
   list-style-type: disc;
 }
-/* line 209, content/style/stylesheet.scss */
+/* line 213, content/style/stylesheet.scss */
 #content ol, #sidebar ol {
   list-style-type: decimal;
 }
 
-/* line 217, content/style/stylesheet.scss */
+/* line 221, content/style/stylesheet.scss */
 #sidebar #reading-about {
   font-size: 0.71429em;
   line-height: 2.1em;
 }
 
-/* line 224, content/style/stylesheet.scss */
+/* line 228, content/style/stylesheet.scss */
 header h1, header h2 {
   font-weight: normal;
   font-size: 1em;
@@ -267,14 +269,14 @@ header h1, header h2 {
   margin: 0;
 }
 
-/* line 234, content/style/stylesheet.scss */
+/* line 238, content/style/stylesheet.scss */
 footer {
   font-size: 0.85714em;
   line-height: 1.75em;
 }
 
-/* line 241, content/style/stylesheet.scss */
-#twitter-feed {
+/* line 245, content/style/stylesheet.scss */
+.centered {
   margin-top: 1.125em;
   display: table;
   margin-left: auto;

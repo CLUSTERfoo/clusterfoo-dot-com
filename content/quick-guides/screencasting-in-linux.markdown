@@ -7,7 +7,9 @@ created_at: 2013-02-28
 
 A quick screencast and some notes on screencasting in Linux. 
 
-<iframe width="560" height="315" src="http://www.youtube.com/embed/c3EFVviXS40" frameborder="0" allowfullscreen></iframe>
+<iframe class="centered" width="560" height="315" 
+    src="http://www.youtube.com/embed/c3EFVviXS40" 
+    frameborder="0" allowfullscreen></iframe>
 
 ### Tools used
 
