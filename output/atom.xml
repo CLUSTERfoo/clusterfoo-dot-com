@@ -295,9 +295,7 @@ $ rake db:test:prepare
     <link rel="alternate" href="http://clusterfoo.com/quick-guides/screencasting-in-linux/"/>
     <content type="html">&lt;!-- i_i --&gt;
 
-&lt;p&gt;A quick screencast and some notes on screencasting in Linux. &lt;/p&gt;
-
-&lt;iframe class="centered" width="560" height="315" src="http://www.youtube.com/embed/c3EFVviXS40" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
+&lt;p&gt;Some quick notes on screencasting in Linux. &lt;/p&gt;
 
 &lt;h3 id="tools-used"&gt;Tools used&lt;/h3&gt;
 
