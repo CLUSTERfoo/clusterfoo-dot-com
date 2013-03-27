@@ -1,5 +1,5 @@
 ---
-title: Specificity of Policy as a Marker of Organizational Dysfunction
+title: Dysfunctional Institutions and Their Totally Reasonable Policy
 kind: article
 created_at: 2013-03-26
 ---
@@ -32,7 +32,7 @@ I say "perceive" because, in practice, these regulatory measures are not only
 corrosive, but, in fact, engender 
 [a bureaucratic positive feedback loop](/articles/bureaucratic_bloat)
 out of which the organization cannot break, and which eventually permeates the 
-culture so fundamentally that the organization becomes too inefficient 
+culture so fundamentally that the institution may become too inefficient 
 to operate at all... this is the organizational equivalent of 
 [software bloat](https://en.wikipedia.org/wiki/Software_bloat).
 
@@ -48,8 +48,8 @@ we'd say she is too controlling.
 We immediately recognize that the healthiest, most robust partnerships are those
 marked not by efficient policy, but by a *lack* thereof. Not because rules of 
 conduct are a bad thing in and of themselves, but because we understand that, 
-when communication is strong, *there is no need* to explicitly define those 
-rules.
+when communication is strong, *there is no need to explicitly define those 
+rules in the first place.*
 
 To continue our thought experiment, we now climb down the ladder of 
 organizational robustness, lower and lower, until we reach the very bottom:
