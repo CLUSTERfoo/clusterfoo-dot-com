@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>CLUSTERfoo! - Bureaucratic Bloat</title>
+    <title>CLUSTERfoo! - Fizz-Buzz by Exhaustion in Ruby</title>
     <link rel="stylesheet" href="/style/style.css">
     <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom Feed">
     <!-- you don't need to keep this, but it's cool for stats! -->
@@ -37,43 +37,32 @@
 
           
             <article>
-              <h2>Bureaucratic Bloat</h2>
+              <h2>Fizz-Buzz by Exhaustion in Ruby</h2>
           
           <!-- _. -->
 
-<p>Bureaucratic bloat is the organizational equivalent of 
-<a href="https://en.wikipedia.org/wiki/Software_bloat">software bloat</a>. </p>
+<p>Here’s a cute solution to <a href="https://en.wikipedia.org/wiki/Bizz_buzz">Fizz-Buzz</a> 
+that occurred to me when I read about the 
+<code>unless</code> statement in Ruby; it uses only the unless statement. 
+I’m doing the Bitmaker Labs workshop, and one of the questions for the
+interview was Fizz-Buzz. </p>
 
-<p>Bureaucracies fetter the most productive members of an organization by impeding
-them from exercising their creativity and best judgement. To make matters worse, 
-within a bureaucratic institution, the atmosphere is such that advantage is most 
-easily gained not by fostering progress, but by gaming the system.</p>
+<p>I call it “by exhaustion” because, instead of using <code>if</code>-statements to look for 
+which terms to include, it uses <code>unless</code>-statements to look for which terms
+to exclude (until all possibilities are exhausted, in which case it just
+gives up and says “Let’s just assume it’s ‘Buzz’”).</p>
 
-<p>Individuals “rise to the top” most easily when they stifle the advancement of 
-others. These individuals will abuse the inflexible institutional rule-sets and 
-hierarchies, and use them as roadblocks with which to slow down their 
-competitors. At the same time, they will take advantage of the many 
-loopholes that inevitably arise within bureaucracies. </p>
-
-<p>This is not, as some would argue, “an unfortunate, but inevitable consequence of 
-the human character, for which there is no getting around,” but, rather, it is 
-an inextricable property of pyramidal hierarchies. </p>
-
-<p>A second inevitable consequence is 
-<a href="/articles/dysfunctional_institutions_and_policy">the bureaucratic positive feedback loop</a>:</p>
-
-<p>When the gaming of regulatory loopholes becomes pandemic, we fool ourselves into
-believing that the problem of inefficient policy must be remedied by… 
-what else, but the introduction of <em>more</em> policy! </p>
-
-<p>(In other words: 
-more loopholes to be exploited by charlatans, and more roadblocks for 
-innovators.)</p>
-
-<p>This is bureaucratic entropy. And fighting entropy is a losing battle. <strong>To expect
-new policy to make more efficient an institution that is already mired by
-inefficient policy, is to expect an egg to become less scrambled if only we
-turn up the heat and stir faster!</strong></p>
+<div>
+<div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>(<span style="color:#00D">1</span>..<span style="color:#00D">100</span>).each <span style="color:#080;font-weight:bold">do</span> |n|
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  (puts n.to_s; <span style="color:#080;font-weight:bold">next</span>) <span style="color:#080;font-weight:bold">unless</span> (n % <span style="color:#00D">3</span> == <span style="color:#00D">0</span>) <span style="color:#080;font-weight:bold">or</span> (n % <span style="color:#00D">5</span> == <span style="color:#00D">0</span>)
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  (puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Fizz</span><span style="color:#710">"</span></span>; <span style="color:#080;font-weight:bold">next</span>) <span style="color:#080;font-weight:bold">unless</span> (n % <span style="color:#00D">5</span> == <span style="color:#00D">0</span>) <span style="color:#080;font-weight:bold">or</span> (n % <span style="color:#00D">3</span> != <span style="color:#00D">0</span>)
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  (puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">FizzBuzz</span><span style="color:#710">"</span></span>; <span style="color:#080;font-weight:bold">next</span>) <span style="color:#080;font-weight:bold">unless</span> (n % <span style="color:#00D">3</span> != <span style="color:#00D">0</span>)
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Buzz</span><span style="color:#710">"</span></span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div>
+</div>
           
             </article>
             <div id="disqus_thread"></div>

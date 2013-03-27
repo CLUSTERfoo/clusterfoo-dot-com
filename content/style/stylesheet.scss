@@ -173,8 +173,9 @@ p {
   @include margin-leader(0.75);
 }
 pre, code { 
+  border-radius: 15px;
   font-family: $code-font; 
-  background: #ddd;
+  background: #efe;
 }
 
 pre {

@@ -27,7 +27,7 @@ an inextricable property of pyramidal hierarchies.
 A second inevitable consequence is 
 [the bureaucratic positive feedback loop](/articles/dysfunctional_institutions_and_policy):
 
-When the gaming of regulatory loopholes become pandemic, we fool ourselves into
+When the gaming of regulatory loopholes becomes pandemic, we fool ourselves into
 believing that the problem of inefficient policy must be remedied by... 
 what else, but the introduction of *more* policy! 
 

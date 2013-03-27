@@ -203,23 +203,24 @@ p {
 
 /* line 175, content/style/stylesheet.scss */
 pre, code {
+  border-radius: 15px;
   font-family: "Oxygen Mono", monospace;
-  background: #ddd;
+  background: #efe;
 }
 
-/* line 180, content/style/stylesheet.scss */
+/* line 181, content/style/stylesheet.scss */
 pre {
   overflow: auto;
   font-family: "Oxygen Mono", monospace;
   margin-top: 1.125em;
   padding: 10.5px 21px;
 }
-/* line 185, content/style/stylesheet.scss */
+/* line 186, content/style/stylesheet.scss */
 pre .line-numbers {
   margin-right: 10.5px;
 }
 
-/* line 187, content/style/stylesheet.scss */
+/* line 188, content/style/stylesheet.scss */
 blockquote {
   margin-top: 1.125em;
   background: #eee;
@@ -227,41 +228,41 @@ blockquote {
   padding: 0 21px 10.5px 21px;
 }
 
-/* line 195, content/style/stylesheet.scss */
+/* line 196, content/style/stylesheet.scss */
 b, strong {
   font-weight: bold;
 }
 
-/* line 198, content/style/stylesheet.scss */
+/* line 199, content/style/stylesheet.scss */
 i, em {
   font-style: italic;
 }
 
-/* line 206, content/style/stylesheet.scss */
+/* line 207, content/style/stylesheet.scss */
 #content ul, #content ol, #sidebar ul, #sidebar ol {
   margin: 10.5px 0;
   padding-left: 21px;
 }
-/* line 209, content/style/stylesheet.scss */
+/* line 210, content/style/stylesheet.scss */
 #content ul li, #content ol li, #sidebar ul li, #sidebar ol li {
   display: list-item;
 }
-/* line 212, content/style/stylesheet.scss */
+/* line 213, content/style/stylesheet.scss */
 #content ul, #sidebar ul {
   list-style-type: disc;
 }
-/* line 213, content/style/stylesheet.scss */
+/* line 214, content/style/stylesheet.scss */
 #content ol, #sidebar ol {
   list-style-type: decimal;
 }
 
-/* line 221, content/style/stylesheet.scss */
+/* line 222, content/style/stylesheet.scss */
 #sidebar #reading-about {
   font-size: 0.71429em;
   line-height: 2.1em;
 }
 
-/* line 228, content/style/stylesheet.scss */
+/* line 229, content/style/stylesheet.scss */
 header h1, header h2 {
   font-weight: normal;
   font-size: 1em;
@@ -269,13 +270,13 @@ header h1, header h2 {
   margin: 0;
 }
 
-/* line 238, content/style/stylesheet.scss */
+/* line 239, content/style/stylesheet.scss */
 footer {
   font-size: 0.85714em;
   line-height: 1.75em;
 }
 
-/* line 245, content/style/stylesheet.scss */
+/* line 246, content/style/stylesheet.scss */
 .centered {
   margin-top: 1.125em;
   display: table;
@@ -283,7 +284,7 @@ footer {
   margin-right: auto;
 }
 
-/* line 252, content/style/stylesheet.scss */
+/* line 253, content/style/stylesheet.scss */
 #disqus_thread {
   margin-top: 1.125em;
 }

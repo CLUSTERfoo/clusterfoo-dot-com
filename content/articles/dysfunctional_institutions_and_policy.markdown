@@ -1,20 +1,18 @@
 ---
-title: Dysfunctional Institutions and Their Totally Reasonable Policy
+title: Dysfunctional Institutions and their Totally Reasonable Policy
 kind: article
 created_at: 2013-03-26
 ---
 
 <!-- _. -->
 
-A reasonable metric for estimating the robustness of a group is how
-specifically its policies are worded. 
+There is an inverse relationship between the robustness of a social
+group, and how crucial it is deemed within that group to implement 
+and follow policy: the more punctilious its law books, 
+the more dysfunctional an institution is likely to be. 
 
-I argue that this is an inverse relationship: the 
-more punctilious its law books, the more dysfunctional an institution is 
-likely to be. 
-
-When a group is well-organized, there is no need for oversight. From personal
-experience, we know that our healthiest partnerships
+When a group is well-organized, there is no need for managerial
+oversight. From personal experience, we know that our healthiest partnerships
 can operate successfully for long periods of time without anyone finding the 
 need to introduce some inflexible set of rules of conduct. 
 
