@@ -146,7 +146,7 @@ header {
 }
 
 /* line 140, content/style/stylesheet.scss */
-article.front-page {
+article {
   padding-bottom: 21px;
   border-bottom: dashed thin black;
 }
@@ -281,4 +281,9 @@ footer {
   display: table;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* line 252, content/style/stylesheet.scss */
+#disqus_thread {
+  margin-top: 1.125em;
 }

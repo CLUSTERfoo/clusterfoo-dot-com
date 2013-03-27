@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>CLUSTERfoo.com - <%= @item[:title] %></title>
+    <title>CLUSTERfoo! - <%= @item[:title] %></title>
     <link rel="stylesheet" href="/style/style.css">
     <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom Feed">
     <!-- you don't need to keep this, but it's cool for stats! -->
@@ -24,12 +24,42 @@
       <div id="main">
         <header>
           <hgroup>
-            <h1>CLUSTERfoo.com</h1>
+            <h1>CLUSTERfoo!</h1>
             <h2>Possibly the best blog on the topic of me.</h2>
           </hgroup>
         </header>
         <div id="content">
+<!-- TODO: ================================================================= -->
+              
+             <!--  CLEAN UP THIS HORRIBLE MESS! -->
+
+<!-- ======================================================================= -->
+
+          <% if @item[:kind] == "article" %>
+            <article>
+              <h2><%= @item[:title] %></h2>
+          <% end %>
           <%= yield %>
+          <% if @item[:kind] == "article" %>
+            </article>
+            <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                  var disqus_shortname = 'clusterfoo'; // required: replace example with your forum shortname
+
+                  /* * * DON'T EDIT BELOW THIS LINE * * */
+                  (function() {
+                      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                  })();
+              </script>
+              <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <% end %>
+
+<!-- ======================== end of TODO =================================  -->
+
         </div>
 
       </div>

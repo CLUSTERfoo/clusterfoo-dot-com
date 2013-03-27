@@ -2,13 +2,116 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://clusterfoo.com/</id>
   <title>CLUSTERfoo.com</title>
-  <updated>2013-03-08T05:00:00Z</updated>
+  <updated>2013-03-26T04:00:00Z</updated>
   <link rel="alternate" href="http://clusterfoo.com/"/>
   <link rel="self" href="http://clusterfoo.com/atom.xml"/>
   <author>
     <name>Noam Gagliardi</name>
     <uri>http://CLUSTERfoo.com</uri>
   </author>
+  <entry>
+    <id>tag:clusterfoo.com,2013-03-26:/articles/specificity_of_policy_as_a_marker_of_organizational_dysfunction/</id>
+    <title type="html">Specificity of Policy as a Marker of Organizational Dysfunction</title>
+    <published>2013-03-26T04:00:00Z</published>
+    <updated>2013-03-26T04:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/articles/specificity_of_policy_as_a_marker_of_organizational_dysfunction/"/>
+    <content type="html">&lt;!-- _. --&gt;
+
+&lt;p&gt;A reasonable metric for estimating the robustness of a group is how
+specifically its policies are worded. &lt;/p&gt;
+
+&lt;p&gt;I argue that this is an inverse relationship: the 
+more punctilious its law books, the more dysfunctional an institution is 
+likely to be. &lt;/p&gt;
+
+&lt;p&gt;When a group is well-organized, there is no need for oversight. From personal
+experience, we know that our healthiest partnerships
+can operate successfully for long periods of time without anyone finding the 
+need to introduce some inflexible set of rules of conduct. &lt;/p&gt;
+
+&lt;p&gt;There is no need
+to meddle in the minutia of how this or that partner is to behave at all times,
+because communication is strong and the team is productive. A mere tacit 
+understanding of each partner’s strengths and boundaries will 
+suffice. At most, a written list of general guidelines. &lt;/p&gt;
+
+&lt;p&gt;It is only when trust, communication, and morale begin to break down that we
+perceive the need to introduce strict policies, carefully worded rules of proper
+and improper conduct, and, of course, arbitrary ranks of authority. &lt;/p&gt;
+
+&lt;p&gt;I say “perceive” because, in practice, these regulatory measures are not only
+corrosive, but, in fact, engender 
+&lt;a href="/articles/bureaucratic_bloat"&gt;a bureaucratic positive feedback loop&lt;/a&gt;
+out of which the organization cannot break, and which eventually permeates the 
+culture so fundamentally that the organization becomes too inefficient 
+to operate at all… this is the organizational equivalent of 
+&lt;a href="https://en.wikipedia.org/wiki/Software_bloat"&gt;software bloat&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We can follow this trend by starting with the example of a healthy, productive 
+partnerships. Even a friendship, perhaps. – These relationships are invariably 
+anarchistic. If a husband were to demand from his wife that she ask permission 
+to leave her 
+home, based on some arbitrary claim to authority, we’d say that husband is 
+overbearing. If the wife were to begin making unreasonable demands of her husband,
+and ask that he follow this and that rule, with no explanation as to why, 
+we’d say she is too controlling. &lt;/p&gt;
+
+&lt;p&gt;We immediately recognize that the healthiest, most robust partnerships are those
+marked not by efficient policy, but by a &lt;em&gt;lack&lt;/em&gt; thereof. Not because rules of 
+conduct are a bad thing in and of themselves, but because we understand that, 
+when communication is strong, &lt;em&gt;there is no need&lt;/em&gt; to explicitly define those 
+rules.&lt;/p&gt;
+
+&lt;p&gt;To continue our thought experiment, we now climb down the ladder of 
+organizational robustness, lower and lower, until we reach the very bottom:&lt;/p&gt;
+
+&lt;p&gt;We have before us the most inflexible, micro-managerial and arbitrarily 
+hierarchical institutions our society has to offer; which, not surprisingly, 
+are also the most dysfunctional and ineffective I could think to name: &lt;strong&gt;our 
+prisons, our governments, and our schools.&lt;/strong&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:clusterfoo.com,2013-03-26:/articles/bureaucratic_bloat/</id>
+    <title type="html">Bureaucratic Bloat</title>
+    <published>2013-03-26T04:00:00Z</published>
+    <updated>2013-03-26T04:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/articles/bureaucratic_bloat/"/>
+    <content type="html">&lt;!-- _. --&gt;
+
+&lt;p&gt;Bureaucratic bloat is the organizational equivalent of 
+&lt;a href="https://en.wikipedia.org/wiki/Software_bloat"&gt;software bloat&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;Bureaucracies fetter the most productive members of an organization by impeding
+them from exercising their creativity and best judgement. To make matters worse, 
+within a bureaucratic institution, the atmosphere is such that advantage is most 
+easily gained not by fostering progress, but by gaming the system.&lt;/p&gt;
+
+&lt;p&gt;Individuals “rise to the top” most easily when they stifle the advancement of 
+others. These individuals will abuse the inflexible institutional rule-sets and 
+hierarchies, and use them as roadblocks with which to slow down their 
+competitors. At the same time, they will take advantage of the many 
+loopholes that inevitably arise within bureaucracies. &lt;/p&gt;
+
+&lt;p&gt;This is not, as some would argue, “an unfortunate, but inevitable consequence of 
+the human character, for which there is no getting around,” but, rather, it is 
+an inextricable property of pyramidal hierarchies. &lt;/p&gt;
+
+&lt;p&gt;A second inevitable consequence is 
+&lt;a href="/articles/specificity_of_policy_as_a_marker_of_organizational_dysfunction"&gt;the bureaucratic positive feedback loop&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;When the gaming of regulatory loopholes become pandemic, we fool ourselves into
+believing that the problem of inefficient policy must be remedied by… 
+what else, but the introduction of &lt;em&gt;more&lt;/em&gt; policy! &lt;/p&gt;
+
+&lt;p&gt;(In other words: 
+more loopholes to be exploited by charlatans, and more roadblocks for 
+innovators.)&lt;/p&gt;
+
+&lt;p&gt;This is bureaucratic entropy. And fighting entropy is a losing battle. &lt;strong&gt;To expect
+new policy to make more efficient an institution that is already mired by
+inefficient policy, is to expect an egg to become less scrambled if only we
+turn up the heat and stir faster!&lt;/strong&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:clusterfoo.com,2013-03-08:/quick-guides/rsync-over-ssh/</id>
     <title type="html">Syncing with a Remote Server Using Rsync Over SSH</title>
