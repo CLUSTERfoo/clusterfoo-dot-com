@@ -27,7 +27,12 @@ it*. For example, this is a semantic property of a language:
 
 This is not a semantic property:
 
-* It takes my program $$m$$ steps to generate the first 100 strings in $$L$$. 
+* It takes my program $$n$$ steps to generate the first 100 strings in $$L$$. 
+
+Note the importance of differentiating between a semantic property
+and not:
+
+* The halting problem is actually decidable for [Linear Bouned Automata](https://en.wikipedia.org/wiki/Linear_bounded_automaton).
 
 #### "Non-Trivial"
 

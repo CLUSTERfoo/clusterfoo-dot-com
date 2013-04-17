@@ -56,7 +56,12 @@ it&lt;/em&gt;. For example, this is a semantic property of a language:&lt;/p&gt;
 &lt;/ul&gt;&lt;p&gt;This is not a semantic property:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;It takes my program &lt;script type="math/tex"&gt;m&lt;/script&gt; steps to generate the first 100 strings in &lt;script type="math/tex"&gt;L&lt;/script&gt;. &lt;/li&gt;
+&lt;li&gt;It takes my program &lt;script type="math/tex"&gt;n&lt;/script&gt; steps to generate the first 100 strings in &lt;script type="math/tex"&gt;L&lt;/script&gt;. &lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Note the importance of differentiating between a semantic property
+and not:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The halting problem is actually decidable for &lt;a href="https://en.wikipedia.org/wiki/Linear_bounded_automaton"&gt;Linear Bouned Automata&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;&lt;h4 id="non-trivial"&gt;“Non-Trivial”&lt;/h4&gt;
 
 &lt;p&gt;A trivial property is a property that either all languages have or no language 
