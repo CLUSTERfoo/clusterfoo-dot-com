@@ -1,0 +1,290 @@
+@import url(http://fonts.googleapis.com/css?family=Tauri|Oxygen+Mono);
+/* line 21, content/style/stylesheet.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* remember to define focus styles! */
+/* line 33, content/style/stylesheet.scss */
+:focus {
+  outline: 0;
+}
+
+/* line 36, content/style/stylesheet.scss */
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+/* line 41, content/style/stylesheet.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+/* line 45, content/style/stylesheet.scss */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* line 49, content/style/stylesheet.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+
+/* line 54, content/style/stylesheet.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+/* line 57, content/style/stylesheet.scss */
+blockquote, q {
+  quotes: "" "";
+}
+
+/* line 61, content/style/stylesheet.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 67, content/style/stylesheet.scss */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 61, /home/computer/.rvm/gems/ruby-1.9.3-p392@cf-nanoc/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+* html {
+  font-size: 87.5%;
+}
+
+/* line 64, /home/computer/.rvm/gems/ruby-1.9.3-p392@cf-nanoc/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html {
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+/* line 99, content/style/stylesheet.scss */
+#everything {
+  *zoom: 1;
+  max-width: 1189.5px;
+  _width: 1189.5px;
+  padding-left: 10.5px;
+  padding-right: 10.5px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+  margin-top: 10.5px;
+  margin-bottom: 10.5px;
+}
+/* line 38, /home/computer/.rvm/gems/ruby-1.9.3-p392@cf-nanoc/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+#everything:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 106, content/style/stylesheet.scss */
+#everything #main {
+  width: 66.37243%;
+  float: left;
+  margin-right: 0.88272%;
+  display: inline;
+}
+/* line 109, content/style/stylesheet.scss */
+#everything #main header {
+  padding-bottom: 10.5px;
+}
+/* line 110, content/style/stylesheet.scss */
+#everything #main header, #everything #main #content {
+  clear: both;
+}
+/* line 115, content/style/stylesheet.scss */
+#everything #sidebar {
+  width: 32.74485%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -10.5px;
+  display: inline;
+}
+/* line 118, content/style/stylesheet.scss */
+#everything #sidebar #sidebar-content {
+  clear: both;
+  padding: 0 10.5px;
+}
+/* line 124, content/style/stylesheet.scss */
+#everything footer {
+  clear: both;
+  padding-top: 10.5px;
+  margin-top: 10.5px;
+}
+
+/* line 135, content/style/stylesheet.scss */
+header {
+  margin-bottom: 10.5px;
+  border-bottom: solid thin black;
+}
+
+/* line 140, content/style/stylesheet.scss */
+article {
+  padding-bottom: 21px;
+  border-bottom: dashed thin black;
+}
+
+/* line 148, content/style/stylesheet.scss */
+body {
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  color: black;
+  background-color: white;
+}
+
+/* line 157, content/style/stylesheet.scss */
+h1, h2, h3, h4 {
+  font-weight: bold;
+  margin-top: 1.125em;
+}
+
+/* line 161, content/style/stylesheet.scss */
+h1 {
+  font-size: 1.42857em;
+  line-height: 1.575em;
+}
+
+/* line 162, content/style/stylesheet.scss */
+h2 {
+  font-size: 1.28571em;
+  line-height: 1.75em;
+}
+
+/* line 163, content/style/stylesheet.scss */
+h3 {
+  font-size: 1.14286em;
+  line-height: 1.3125em;
+}
+
+/* line 164, content/style/stylesheet.scss */
+h5 {
+  text-decoration: underline;
+}
+
+/* line 165, content/style/stylesheet.scss */
+.section-header {
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+/* line 172, content/style/stylesheet.scss */
+p {
+  margin-top: 1.125em;
+}
+
+/* line 175, content/style/stylesheet.scss */
+pre, code {
+  border-radius: 15px;
+  font-family: "Oxygen Mono", monospace;
+  background: #efe;
+}
+
+/* line 181, content/style/stylesheet.scss */
+pre {
+  overflow: auto;
+  font-family: "Oxygen Mono", monospace;
+  margin-top: 1.125em;
+  padding: 10.5px 21px;
+}
+/* line 186, content/style/stylesheet.scss */
+pre .line-numbers {
+  margin-right: 10.5px;
+}
+
+/* line 188, content/style/stylesheet.scss */
+blockquote {
+  margin-top: 1.125em;
+  background: #eee;
+  color: #444444;
+  padding: 0 21px 10.5px 21px;
+}
+
+/* line 196, content/style/stylesheet.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 199, content/style/stylesheet.scss */
+i, em {
+  font-style: italic;
+}
+
+/* line 207, content/style/stylesheet.scss */
+#content ul, #content ol, #sidebar ul, #sidebar ol {
+  margin: 10.5px 0;
+  padding-left: 21px;
+}
+/* line 210, content/style/stylesheet.scss */
+#content ul li, #content ol li, #sidebar ul li, #sidebar ol li {
+  display: list-item;
+}
+/* line 213, content/style/stylesheet.scss */
+#content ul, #sidebar ul {
+  list-style-type: disc;
+}
+/* line 214, content/style/stylesheet.scss */
+#content ol, #sidebar ol {
+  list-style-type: decimal;
+}
+
+/* line 222, content/style/stylesheet.scss */
+#sidebar #reading-about {
+  font-size: 0.71429em;
+  line-height: 2.1em;
+}
+
+/* line 229, content/style/stylesheet.scss */
+header h1, header h2 {
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+/* line 239, content/style/stylesheet.scss */
+footer {
+  font-size: 0.85714em;
+  line-height: 1.75em;
+}
+
+/* line 246, content/style/stylesheet.scss */
+.centered {
+  margin-top: 1.125em;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 253, content/style/stylesheet.scss */
+#disqus_thread {
+  margin-top: 1.125em;
+}

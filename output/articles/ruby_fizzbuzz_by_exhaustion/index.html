@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CLUSTERfoo! - Fizz-Buzz by Exhaustion in Ruby</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom Feed">
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.6.1"> 
+    <!-- MathJax for displaying math -->
+    <script type="text/javascript"
+      src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <!-- START Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33332254-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <!-- END Google Analytics -->
+  </head>
+  <body>
+    <div id="everything">
+      <div id="main">
+        <header>
+          <hgroup>
+            <h1>CLUSTERfoo!</h1>
+            <h2>Possibly the best blog on the topic of me.</h2>
+          </hgroup>
+        </header>
+        <div id="content">
+          
+            <article>
+  <h2>Fizz-Buzz by Exhaustion in Ruby</h2>
+  <!-- _. -->
+
+<p>Here’s a cute solution to <a href="https://en.wikipedia.org/wiki/Bizz_buzz">Fizz-Buzz</a> 
+that occurred to me when I read about the 
+<code>unless</code> statement in Ruby; it uses only the unless statement. 
+I’m doing the Bitmaker Labs workshop, and one of the questions for the
+interview was Fizz-Buzz. </p>
+
+<p>I call it “by exhaustion” because, instead of using <code>if</code>-statements to look for 
+which terms to include, it uses <code>unless</code>-statements to look for which terms
+to exclude (until all possibilities are exhausted, in which case it just
+gives up and says “Let’s just assume it’s ‘Buzz’”).</p>
+
+<div>
+<div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>(<span style="color:#00D">1</span>..<span style="color:#00D">100</span>).each <span style="color:#080;font-weight:bold">do</span> |n|
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  (puts n.to_s; <span style="color:#080;font-weight:bold">next</span>) <span style="color:#080;font-weight:bold">unless</span> (n % <span style="color:#00D">3</span> == <span style="color:#00D">0</span>) <span style="color:#080;font-weight:bold">or</span> (n % <span style="color:#00D">5</span> == <span style="color:#00D">0</span>)
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  (puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Fizz</span><span style="color:#710">"</span></span>; <span style="color:#080;font-weight:bold">next</span>) <span style="color:#080;font-weight:bold">unless</span> (n % <span style="color:#00D">5</span> == <span style="color:#00D">0</span>) <span style="color:#080;font-weight:bold">or</span> (n % <span style="color:#00D">3</span> != <span style="color:#00D">0</span>)
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  (puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">FizzBuzz</span><span style="color:#710">"</span></span>; <span style="color:#080;font-weight:bold">next</span>) <span style="color:#080;font-weight:bold">unless</span> (n % <span style="color:#00D">3</span> != <span style="color:#00D">0</span>)
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Buzz</span><span style="color:#710">"</span></span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div>
+</div>
+</article>
+<!-- START disqus copypasta: -->
+<div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'clusterfoo'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<!-- END disqus copypasta -->
+
+          
+        </div>
+      </div>
+      <aside id="sidebar">
+        <div id="sidebar-content">
+  <!-- menu -->
+  <h3>Browse:</h3>
+  <nav id="main-menu">
+    <ul>
+      <li><a href="/" title="Homepage">Home</a>
+      <li><a href="/all-articles">All Articles</a>
+      <li><a href="/links">Check it Out!</a>
+      <li><a href="/talks">Watch This!</a>
+      <li><a href="http://github.com/clusterfoo" title="My code on github" 
+        target="_blank">My Github</a>
+      <li><a href="/me/about" title="About Me">About Me</a>
+    </ul>
+  </nav>
+
+  <h3>My "Blurblog":</h3>
+  <p>News articles I'm sharing and talking about on NewsBlur:
+  <a href="http://clusterfoo.newsblur.com">Click it, ya dingus.</a>
+
+  <h3>Subscribe in a Reader:</h3>
+
+  <p><a href="http://feeds.feedburner.com/Clusterfoo" title="Subscribe to my feed" 
+    rel="alternate" type="application/rss+xml"><img 
+      src="//feedburner.google.com/fb/images/pub/feed-icon32x32.png" alt="" 
+      style="border:0"/></a>
+      <a href="http://feeds.feedburner.com/Clusterfoo" 
+        title="Subscribe to my feed" rel="alternate" 
+        type="application/rss+xml">Click me!</a>
+
+</div>
+
+
+      </aside>
+      <footer>
+        &copy; 2013 Noam Gagliardi
+      </footer>
+    </div>
+  </body>
+</html>

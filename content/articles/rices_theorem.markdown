@@ -6,6 +6,9 @@ created_at: 2013-04-16
 
 <!-- _. -->
 
+*The mathematical equations in this post require Javascript and will not 
+render if you are on RSS or email.*
+
 Rice's theorem can be stated thus:
 
 > Every non-trivial semantic property of a program is undecidable. 
