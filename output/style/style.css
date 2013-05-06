@@ -74,12 +74,12 @@ img {
   height: auto;
 }
 
-/* line 61, /home/computer/.rvm/gems/ruby-1.9.3-p392@cf-nanoc/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 61, /home/computer/.rvm/gems/ruby-2.0.0-p0@cf-nanoc/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 * html {
   font-size: 87.5%;
 }
 
-/* line 64, /home/computer/.rvm/gems/ruby-1.9.3-p392@cf-nanoc/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 64, /home/computer/.rvm/gems/ruby-2.0.0-p0@cf-nanoc/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 14px;
   line-height: 1.5em;
@@ -98,7 +98,7 @@ html {
   margin-top: 10.5px;
   margin-bottom: 10.5px;
 }
-/* line 38, /home/computer/.rvm/gems/ruby-1.9.3-p392@cf-nanoc/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, /home/computer/.rvm/gems/ruby-2.0.0-p0@cf-nanoc/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 #everything:after {
   content: "";
   display: table;
@@ -124,7 +124,7 @@ html {
   width: 32.74485%;
   float: right;
   margin-right: 0;
-  #margin-left: -10.5px;
+  *margin-left: -10.5px;
   display: inline;
 }
 /* line 118, content/style/stylesheet.scss */
