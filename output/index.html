@@ -50,11 +50,43 @@
 
 
   <article class="front-page">
+    <h2><a href="/quick-guides/multi-profile-bashrc/">Managing Multiple Computers with One bashrc/zshrc</a></h2>
+    <aside>Day posted: <time datetime="2013-05-06">2013-05-06</time></aside>
+    <!-- _. -->
+
+<p>Here is a simple way to share the same <code>.bashrc</code> / <code>.zshrc</code> / <code>.bash_profile</code> 
+across multiple computers, while still retaining unique settings in between 
+computers. </p>
+
+<p>Suppose you want some special setting to apply only to your laptop.</p>
+
+<p>First, create an empty file called <code>.setup_00</code>:</p>
+
+<pre><code>$ touch ~/.setup_00
+</code></pre>
+
+<p>Next, in your <code>rc</code> file, add the following <code>if</code> statement. Anything
+inside that <code>if</code> statement will only apply to your laptop:</p>
+
+<pre><code>if [ -f '.setup_00' ]; then
+    echo "This message only shows on my laptop!"
+fi
+</code></pre>
+
+<p>You can use this method to run any shell script uniquely on computers
+that contain the <code>.setup_00</code> file.</p>
+
+<p>That’s it. It’s not fancy, but it works.</p>
+
+    <p><a href="/quick-guides/multi-profile-bashrc/">Comments? Click me!</a>
+  </p></article>
+
+  <article class="front-page">
     <h2><a href="/quick-guides/rails-cheatsheet/">Rails Cheatsheet</a></h2>
     <aside>Day posted: <time datetime="2013-05-06">2013-05-06</time></aside>
     <!-- _. -->
 
-<p><strong>Updated:</strong> Instad of <code>.rvmrx</code>, I now use <code>.ruby-version</code> and <code>.ruby-gemset</code>.</p>
+<p><strong>Updated:</strong> Instad of <code>.rvmrc</code>, I now use <code>.ruby-version</code> and <code>.ruby-gemset</code>.</p>
 
 <hr>
 
@@ -250,190 +282,6 @@ convenience of MathJax. From now on, posts that include mathematical equations
 will include a warning, so readers on RSS know to check the original post.</p>
 
     <p><a href="/me/blog/2013/april/mathjax-rss/">Comments? Click me!</a>
-  </p></article>
-
-  <article class="front-page">
-    <h2><a href="/articles/rices_theorem/">Rice's Theorem</a></h2>
-    <aside>Day posted: <time datetime="2013-04-16">2013-04-16</time></aside>
-    <!-- _. -->
-
-<p><em>The mathematical equations in this post require Javascript and will not 
-render if you are on RSS or email.</em></p>
-
-<p>Rice’s theorem can be stated thus:</p>
-
-<blockquote>
-  <p>Every non-trivial semantic property of a program is undecidable. </p>
-</blockquote>
-
-<p>Before we prove the theorem, let’s break down that statement:</p>
-
-<hr>
-
-<h4 id="semantic-property">“Semantic Property”</h4>
-
-<p>A semantic property is a property of 
-the language, <em>not the machine that is computing 
-it</em>. For example, this is a semantic property of a language:</p>
-
-<ul>
-  <li>All strings in language <script type="math/tex">L</script> are of the form <script type="math/tex">1^n0^n</script>.</li>
-</ul>
-
-<p>This is not a semantic property:</p>
-
-<ul>
-  <li>It takes my program <script type="math/tex">n</script> steps to generate the first 100 strings in <script type="math/tex">L</script>. </li>
-</ul>
-
-<p>Note the importance of differentiating between a semantic property
-and not:</p>
-
-<ul>
-  <li>The halting problem is actually decidable for <a href="https://en.wikipedia.org/wiki/Linear_bounded_automaton">Linear Bouned Automata</a>.</li>
-</ul>
-
-<h4 id="non-trivial">“Non-Trivial”</h4>
-
-<p>A trivial property is a property that either all languages have or no language 
-has. A non-trivial property is everything else. </p>
-
-<h4 id="undecidable">“Undecidable”</h4>
-
-<p>A program can either <strong>accept</strong>, <strong>reject</strong>, or <strong>run forever</strong>. If a program
-reaches an accept or reject state, we say it <strong>halts</strong>.</p>
-
-<p>There are two types of programs: <strong>recognizers</strong> and <strong>deciders</strong>.</p>
-
-<p>A recognizer is a program that can only tell you with certainty when it has 
-succeeded to solve 
-a problem (reached the accept state). It cannot always tell you when it has 
-failed (if it goes into an infinite loop, there is no way to know if it’s in a
-loop, or if it’s just taking very long to solve the problem).</p>
-
-<p>A decider is a program that always reaches either accepts or rejects. That
-is, you not only know when the problem was solved, but you also know when it 
-was <em>not</em> solved.</p>
-
-<p>A language is <strong>recognizable</strong> if there exists at least one program that can 
-recognize it. For example, the following program reconizes <script type="math/tex">L = \{"342"\}</script>
-(the language made up of only the string “342”):</p>
-
-<ol>
-  <li>Read input.</li>
-  <li>If input == “342” print “accept”.</li>
-  <li>Else return to step 1. </li>
-</ol>
-
-<p>This program <em>recognizes</em> <script type="math/tex">L</script>, but it does not <em>decide</em> <script type="math/tex">L</script>: if the input is
-in <script type="math/tex">L</script>, it accepts, but if it’s not, then it will run forever, and you will 
-never know whether the input was not in <script type="math/tex">L</script> or the program is just taking a 
-long time.</p>
-
-<p>A language is <strong>decidable</strong> if there exists a program that can decide it. All
-decidable languages are also recognizable. Here is a program that decides <script type="math/tex">L</script>:</p>
-
-<ol>
-  <li>Read input.</li>
-  <li>If input == “342” print “accept”.</li>
-  <li>Else print “input rejected”. </li>
-</ol>
-
-<hr>
-
-<h3 id="the-halting-problem">The Halting Problem</h3>
-
-<p>Take the following language: </p>
-
-<p><script type="math/tex"> HALT_{ TM } = \{ \langle M, w \rangle | M </script> is a program and <script type="math/tex">M</script> halts on 
-input <script type="math/tex">w \} </script></p>
-
-<p>Remember, a program is itself just a string: any program can be written down as 
-a description, say an <code>.rb</code> file, and that file can be used as an input for 
-another program (or itself!). So <script type="math/tex">HALT_{ TM }</script> is a language that consists
-of all programs <script type="math/tex">M</script> and inputs <script type="math/tex">w</script> such that <script type="math/tex">M</script> halts on <script type="math/tex">w</script>.</p>
-
-<p>I won’t prove it in this post, but, as it turns out, <script type="math/tex">HALT_{ TM }</script> is 
-undecidable. Meaning it is not possible to write a program that decides
-whether an algorithm halts.</p>
-
-<p>With this in mind, we can finally prove Rice’s theorem:</p>
-
-<hr>
-
-<h3 id="rices-theorem">Rice’s Theorem</h3>
-
-<p>Recall the theorem:</p>
-
-<blockquote>
-  <p>Every non-trivial semantic property of a program is undecidable. </p>
-</blockquote>
-
-<p>Yet another way of stating this is as follows:</p>
-
-<blockquote>
-  <p>The language <script type="math/tex">P_{ TM }</script>, described below, is undecidable:</p>
-
-  <p><script type="math/tex">P_{ TM } = \{ \langle M \rangle | M</script> is a program and <script type="math/tex">L(M)</script> has 
-non-trivial property <script type="math/tex">P \}</script></p>
-
-  <p>Where <script type="math/tex">L(M)</script> means “The language of <script type="math/tex">M</script>”. <!-- _. --></p>
-</blockquote>
-
-<p>So, for example, it is not possible to write a program <script type="math/tex">R</script> that takes as its 
-input another program <script type="math/tex">M</script> and decides whether the language of <script type="math/tex">M</script> is 
-regular (that is, if <script type="math/tex">M</script> can be simplified and represented as a finite 
-automation).</p>
-
-<hr>
-
-<h3 id="proof">Proof</h3>
-
-<p>We can prove Rice’s theorem by contradiction. We will show that <strong>if</strong> 
-<script type="math/tex">P_{ TM }</script> is decidable <strong>then</strong> so is <script type="math/tex">HALT_{ TM }</script>. 
-Since we know that <script type="math/tex">HALT_{ TM }</script> is 
-undecidable, then <script type="math/tex">P_{ TM }</script> must be undecidable too. </p>
-
-<p>Assume that <script type="math/tex">P</script> is some non-trivial semantic property and that 
-it is possible to write a program <script type="math/tex">R</script> that decides <script type="math/tex">P_{ TM }</script>. Here is
-how we could solve the halting problem with that program:<!-- _. --></p>
-
-<p>First, we write a program <script type="math/tex">T</script> such that <script type="math/tex">\langle T \rangle </script> is in <script type="math/tex">P_{ TM }</script>.
-Because <script type="math/tex">P</script> is non-trivial, such a program must exist.</p>
-
-<p>Take input <script type="math/tex">\langle M, w \rangle</script> and use it to write a program <script type="math/tex">M_w</script>
-that takes <script type="math/tex">x</script> as its input and does the following:</p>
-
-<p><strong><script type="math/tex">M_w</script>:</strong></p>
-
-<ol>
-  <li>Run <script type="math/tex">M</script> on input <script type="math/tex">w</script>. If <script type="math/tex">M</script> halts, move on to step 2. </li>
-  <li>Run <script type="math/tex">T</script> on <script type="math/tex">x</script>. Accept if <script type="math/tex">T</script> accepts, and reject if <script type="math/tex">T</script> rejects.</li>
-</ol>
-
-<p>Here’s the clever part. <em>We don’t actually have to run <script type="math/tex">M_w</script></em>:</p>
-
-<p>All we need to know is that, if we <em>were</em> to run <script type="math/tex">M_w</script>, there are two possible 
-outcomes: </p>
-
-<ul>
-  <li>
-<script type="math/tex">M</script> halts on input <script type="math/tex">w</script>, in which case <script type="math/tex">M_w</script> reaches step 2.</li>
-  <li>
-<script type="math/tex">M</script> never halts and never reaches step 2. </li>
-</ul>
-
-<p>But note that, if <script type="math/tex">M</script> halts on <script type="math/tex">w</script>, then step 2 is simply to run <script type="math/tex">T</script>, which 
-means that <strong>when <script type="math/tex">M</script> halts on <script type="math/tex">w</script>, <script type="math/tex">\langle M_w \rangle</script> is in <script type="math/tex">P_{ TM }</script>.</strong></p>
-
-<p>So, if we were to run <script type="math/tex">R</script> with input <script type="math/tex">\langle M_w \rangle</script>, 
-it would be able to tell us whether it is in <script type="math/tex">P_{ TM }</script>, and that in
-turn would tell us if <script type="math/tex">M</script> halts on <script type="math/tex">w</script>. </p>
-
-<p>But this would mean that we
-could solve the halting problem, which we know  is not possible.</p>
-
-    <p><a href="/articles/rices_theorem/">Comments? Click me!</a>
   </p></article>
 
 

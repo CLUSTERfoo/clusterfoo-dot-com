@@ -10,6 +10,39 @@
     <uri>http://CLUSTERfoo.com</uri>
   </author>
   <entry>
+    <id>tag:clusterfoo.com,2013-05-06:/quick-guides/multi-profile-bashrc/</id>
+    <title type="html">Managing Multiple Computers with One bashrc/zshrc</title>
+    <published>2013-05-06T04:00:00Z</published>
+    <updated>2013-05-06T04:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/quick-guides/multi-profile-bashrc/"/>
+    <content type="html">&lt;!-- _. --&gt;
+
+&lt;p&gt;Here is a simple way to share the same &lt;code&gt;.bashrc&lt;/code&gt; / &lt;code&gt;.zshrc&lt;/code&gt; / &lt;code&gt;.bash_profile&lt;/code&gt; 
+across multiple computers, while still retaining unique settings in between 
+computers. &lt;/p&gt;
+
+&lt;p&gt;Suppose you want some special setting to apply only to your laptop.&lt;/p&gt;
+
+&lt;p&gt;First, create an empty file called &lt;code&gt;.setup_00&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ touch ~/.setup_00
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next, in your &lt;code&gt;rc&lt;/code&gt; file, add the following &lt;code&gt;if&lt;/code&gt; statement. Anything
+inside that &lt;code&gt;if&lt;/code&gt; statement will only apply to your laptop:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if [ -f '.setup_00' ]; then
+    echo "This message only shows on my laptop!"
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can use this method to run any shell script uniquely on computers
+that contain the &lt;code&gt;.setup_00&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;That’s it. It’s not fancy, but it works.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <id>tag:clusterfoo.com,2013-05-06:/quick-guides/rails-cheatsheet/</id>
     <title type="html">Rails Cheatsheet</title>
     <published>2013-05-06T04:00:00Z</published>
@@ -17,7 +50,7 @@
     <link rel="alternate" href="http://clusterfoo.com/quick-guides/rails-cheatsheet/"/>
     <content type="html">&lt;!-- _. --&gt;
 
-&lt;p&gt;&lt;strong&gt;Updated:&lt;/strong&gt; Instad of &lt;code&gt;.rvmrx&lt;/code&gt;, I now use &lt;code&gt;.ruby-version&lt;/code&gt; and &lt;code&gt;.ruby-gemset&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Updated:&lt;/strong&gt; Instad of &lt;code&gt;.rvmrc&lt;/code&gt;, I now use &lt;code&gt;.ruby-version&lt;/code&gt; and &lt;code&gt;.ruby-gemset&lt;/code&gt;.&lt;/p&gt;
 
 &lt;hr&gt;
 
@@ -687,61 +720,6 @@ something else. &lt;/p&gt;
 
 &lt;p&gt;You can see the source for this blog on 
 &lt;a href="http://github.com/clusterfoo/clusterfoo-dot-com" target="_blank"&gt;my github&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <id>tag:clusterfoo.com,2013-02-28:/quick-guides/screencasting-in-linux/</id>
-    <title type="html">Screencasting In Linux</title>
-    <published>2013-02-28T05:00:00Z</published>
-    <updated>2013-02-28T05:00:00Z</updated>
-    <link rel="alternate" href="http://clusterfoo.com/quick-guides/screencasting-in-linux/"/>
-    <content type="html">&lt;!-- i_i --&gt;
-
-&lt;p&gt;Some quick notes on screencasting in Linux. &lt;/p&gt;
-
-&lt;h3 id="tools-used"&gt;Tools used&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;arandr (easily manage your screens and their resolution)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;recordmydesktop (record your desktop activity)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;key-mon (display keyboard activity)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;pavucontrol (GUI for managing PulseAudio volume and stuff)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;vlc (to extract OGG audio file)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;audacity (edit your audioi for proper volume levels)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;openshot (edit and export final video)&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="preparation"&gt;Preparation&lt;/h3&gt;
-
-&lt;p&gt;Using arandr, change screen resolution to 1280x720 (720p) and switch to
-a large terminal font.&lt;/p&gt;
-
-&lt;p&gt;Use pavucontrol to make sure audio levels are decent.&lt;/p&gt;
-
-&lt;p&gt;For the actual recording, the following command gives me best results:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;recordmydesktop --freq 48000 -o [path]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;CTRL-C&lt;/code&gt; when finished. &lt;/p&gt;
-
-&lt;h3 id="exporting-for-youtube"&gt;Exporting for YouTube&lt;/h3&gt;
-
-&lt;p&gt;I export the file as a 720p flv, using aac for audio codec.&lt;/p&gt;
 </content>
   </entry>
 </feed>
