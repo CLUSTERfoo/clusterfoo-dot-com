@@ -64,7 +64,7 @@ a small shared server at <a href="http://asmallorange.com">A Small Ornage</a>. <
 </code></pre>
 
 <ul>
-<li>
+  <li>
 <code>-a</code>: Archive mode. The most common option for syncing directories.</li>
   <li>
 <code>-v</code>: Verbose mode.</li>
@@ -78,7 +78,9 @@ a small shared server at <a href="http://asmallorange.com">A Small Ornage</a>. <
 <code>--delete-after</code>: Sync new and updated files, and wait until transfer is 
 complete before deleting any superfluous files. This is important when deploying
 a website, since otherwise a visitor might stumble upon missing pages.</li>
-</ul><h3 id="always-dry-run-first">Always Dry-Run First!</h3>
+</ul>
+
+<h3 id="always-dry-run-first">Always Dry-Run First!</h3>
 
 <p>It’s easy to make mistakes with rsync. A simple typo like <code>dir</code> instead of 
 <code>dir/</code> can mean a world of difference (and a world of pain if you accidentally 
@@ -87,6 +89,7 @@ a website, since otherwise a visitor might stumble upon missing pages.</li>
 <p>I always do a dry-run before I use an rsync command for the first time. The 
 dry-run option (<code>-n</code>) will show you the final output of the operation, 
 without actually running through it.</p>
+
 </article>
 <!-- START disqus copypasta: -->
 <div id="disqus_thread"></div>

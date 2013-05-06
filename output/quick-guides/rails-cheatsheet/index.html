@@ -39,6 +39,10 @@
   <h2>Rails Cheatsheet</h2>
   <!-- _. -->
 
+<p><strong>Updated:</strong> Instad of <code>.rvmrx</code>, I now use <code>.ruby-version</code> and <code>.ruby-gemset</code>.</p>
+
+<hr>
+
 <p>A little cheatsheet of Rails stuff I don’t want to forget. Many of these
 tips come from 
 <a href="http://ruby.railstutorial.org/" target="_blank">Michael Hartl’s Rails tutorial</a>.</p>
@@ -93,16 +97,25 @@ environment.</p>
 
 <h3 id="initialize-rails-app">Initialize Rails App</h3>
 
-<h4 id="set-up-rails-app-and-rvmrc">Set up Rails App and rvmrc</h4>
+<h4 id="set-up-rails-app-directory">Set up Rails App Directory</h4>
 
 <p>Skip TestUnit if you’re using rspec:</p>
 
 <pre><code>$ rails new project_name --skip-test-unit
 </code></pre>
 
-<p>Now create an rvmrc inside the project’s root directory:</p>
+<p>Now create two files: <code>.ruby-version</code> and <code>.ruby-gemset</code>. These files will 
+ensure that rvm, or whatever ruby envelope you use, know to switch to the 
+correct Ruby version (and gemset, in rvm). For example, if you’re using Ruby
+2.0.0 and a gemset called <code>my-project</code>, create a <code>.ruby-version</code> file with the
+following content:</p>
 
-<pre><code>$ rvm --rvmrc --create 1.9.3-head@projectname
+<pre><code>2.0.0
+</code></pre>
+
+<p>And a <code>.ruby-gemset</code> file with:</p>
+
+<pre><code>my-project
 </code></pre>
 
 <p>Now <code>cd</code> in and out of the directory and make sure that rvm is switching to the 
@@ -203,6 +216,7 @@ $ rake db:test:prepare
 
 <pre><code>$ rails console --sandbox
 </code></pre>
+
 </article>
 <!-- START disqus copypasta: -->
 <div id="disqus_thread"></div>

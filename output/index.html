@@ -49,8 +49,198 @@
 <h2 class="section-header">Latest Blog Posts and Articles</h2>
 
 
-  <article class="front-page"><h2><a href="/me/blog/2013/april/mathjax-rss/">MathJax RSS</a></h2>
-    <aside>Day posted: <time datetime="2013-04-17">2013-04-17</time></aside><!-- _. --><p>Yesterday I started using <a href="http://MathJax.org">MathJax</a> to render mathematical 
+  <article class="front-page">
+    <h2><a href="/quick-guides/rails-cheatsheet/">Rails Cheatsheet</a></h2>
+    <aside>Day posted: <time datetime="2013-05-06">2013-05-06</time></aside>
+    <!-- _. -->
+
+<p><strong>Updated:</strong> Instad of <code>.rvmrx</code>, I now use <code>.ruby-version</code> and <code>.ruby-gemset</code>.</p>
+
+<hr>
+
+<p>A little cheatsheet of Rails stuff I don’t want to forget. Many of these
+tips come from 
+<a href="http://ruby.railstutorial.org/" target="_blank">Michael Hartl’s Rails tutorial</a>.</p>
+
+<!-- _. -->
+
+<h3 id="setting-up-environment">Setting Up Environment</h3>
+
+<h4 id="install-rvm-ruby-bundler">Install RVM, Ruby, Bundler</h4>
+
+<p>Install RVM through instructions on <a href="http://rvm.io" target="_blank">rvm.io</a>.
+<!-- _. -->
+RVM now also eliminates the need to use <code>bundle exec</code> when used with bundler. </p>
+
+<p>Install latest ruby. The following OpenSSL option is needed on Ubuntu:</p>
+
+<pre><code>$ rvm install 1.9.3-head --with-openssl-dir=$HOME/.rvm/
+</code></pre>
+
+<blockquote>
+  <p><em>Aside:</em></p>
+
+  <p>If you ever get the following warning:</p>
+
+  <p><code>make: /usr/bin/gcc-4.2: No such file or directory</code></p>
+
+  <p>You will also need to run</p>
+
+  <p><code>$ rvm reinstall 1.9.3-head --with-gcc=clang</code></p>
+</blockquote>
+
+<p>Create project gemset and be in it before installing Rails:</p>
+
+<pre><code>$ rvm use 1.9.3-head@projectname --create
+</code></pre>
+
+<p>Project-specific gemsets prevent big headaches. Don’t forget to set a 
+project <code>rvmrc</code> file after Rail app is generated (see below).</p>
+
+<h4 id="install-rails">Install Rails</h4>
+
+<pre><code>$ gem install rails
+</code></pre>
+
+<p>And if on Linux, also run:</p>
+
+<pre><code>$ sudo apt-get install libxslt-dev libxml2-dev libsqlite3-dev
+</code></pre>
+
+<p>Install node.js so that rails server can run properly in your development
+environment.</p>
+
+<h3 id="initialize-rails-app">Initialize Rails App</h3>
+
+<h4 id="set-up-rails-app-directory">Set up Rails App Directory</h4>
+
+<p>Skip TestUnit if you’re using rspec:</p>
+
+<pre><code>$ rails new project_name --skip-test-unit
+</code></pre>
+
+<p>Now create two files: <code>.ruby-version</code> and <code>.ruby-gemset</code>. These files will 
+ensure that rvm, or whatever ruby envelope you use, know to switch to the 
+correct Ruby version (and gemset, in rvm). For example, if you’re using Ruby
+2.0.0 and a gemset called <code>my-project</code>, create a <code>.ruby-version</code> file with the
+following content:</p>
+
+<pre><code>2.0.0
+</code></pre>
+
+<p>And a <code>.ruby-gemset</code> file with:</p>
+
+<pre><code>my-project
+</code></pre>
+
+<p>Now <code>cd</code> in and out of the directory and make sure that rvm is switching to the 
+correct gemset with:</p>
+
+<pre><code>$ rvm gemset list
+</code></pre>
+
+<h4 id="set-up-rspec">Set up Rspec</h4>
+
+<p>Add rspec, guard and spork to development / test environment in Gemfile:</p>
+
+<pre><code>group :development, :test do
+  gem 'rspec-rails', '~&gt; 2'
+
+  # If using guard and spork:
+  gem 'guard-rspec', '~&gt; 2'
+  gem 'guard-spork', '~&gt; 1'
+  gem 'spork', '~&gt; 0.9'
+end
+</code></pre>
+
+<p>Make Rails use rspec instead of TestUnit:</p>
+
+<pre><code>$ rails g rspec:install
+</code></pre>
+
+<h4 id="speeding-up-tests-with-spork-and-guard">Speeding up Tests with Spork and Guard</h4>
+
+<p>Follow 
+<a href="http://ruby.railstutorial.org/chapters/static-pages#sec-guard" target="_blank">these instructions</a>.
+<!-- _. --></p>
+
+<h4 id="heroku--deployment">Heroku / Deployment</h4>
+
+<p>Add PostgreSQL gem and production-environment-specific gems. In gem file:</p>
+
+<pre><code>group :production do
+  gem 'pg'
+end
+</code></pre>
+
+<p>To run bundler without production gems</p>
+
+<pre><code>$ bundle install --without production
+</code></pre>
+
+<p>Bundler remembers this setting, no need to use it again.</p>
+
+<p>Initialize Heroku:</p>
+
+<pre><code>$ heroku login
+$ heroku create
+</code></pre>
+
+<p>Push to Heroku and rename:</p>
+
+<pre><code>$ git push heroku
+$ heroku rename project_name
+</code></pre>
+
+<h3 id="maintenance">Maintenance</h3>
+
+<h4 id="after-migrations">After Migrations</h4>
+
+<p>After running</p>
+
+<pre><code>$ rake db:migrate
+</code></pre>
+
+<p>The following come in handy:</p>
+
+<p>Stop the Rails server. This is obvious, but forgetting to restart the server
+after a migration is a sure way to waste time wondering why half your tests are
+suddenly failing.</p>
+
+<p>Annotate models and migrations (requires the <code>annotate</code> gem):</p>
+
+<pre><code>$ annotate
+</code></pre>
+
+<p>Tell the test database about the migration too:</p>
+
+<pre><code>$ rake db:test:prepare
+</code></pre>
+
+<p>Restart the Rails server.</p>
+
+<p>Sometimes you want to reset your test database:</p>
+
+<pre><code>$ rake db:reset
+$ rake db:test:prepare
+</code></pre>
+
+<h4 id="run-console-in-sandbox-mode">Run Console in Sandbox Mode!</h4>
+
+<p>Don’t break things:</p>
+
+<pre><code>$ rails console --sandbox
+</code></pre>
+
+    <p><a href="/quick-guides/rails-cheatsheet/">Comments? Click me!</a>
+  </p></article>
+
+  <article class="front-page">
+    <h2><a href="/me/blog/2013/april/mathjax-rss/">MathJax RSS</a></h2>
+    <aside>Day posted: <time datetime="2013-04-17">2013-04-17</time></aside>
+    <!-- _. -->
+
+<p>Yesterday I started using <a href="http://MathJax.org">MathJax</a> to render mathematical 
 equations on my blog. MathJax uses a Javascript library to render LaTex on the
 client side, as a result, <strong>mathematical equations will not render if you are 
 reading this blog through an RSS feed or email.</strong> </p>
@@ -58,9 +248,16 @@ reading this blog through an RSS feed or email.</strong> </p>
 <p>I toyed with the idea of rendering equations as <code>.png</code>s, but I like the 
 convenience of MathJax. From now on, posts that include mathematical equations
 will include a warning, so readers on RSS know to check the original post.</p>
+
     <p><a href="/me/blog/2013/april/mathjax-rss/">Comments? Click me!</a>
-  </p></article><article class="front-page"><h2><a href="/articles/rices_theorem/">Rice's Theorem</a></h2>
-    <aside>Day posted: <time datetime="2013-04-16">2013-04-16</time></aside><!-- _. --><p><em>The mathematical equations in this post require Javascript and will not 
+  </p></article>
+
+  <article class="front-page">
+    <h2><a href="/articles/rices_theorem/">Rice's Theorem</a></h2>
+    <aside>Day posted: <time datetime="2013-04-16">2013-04-16</time></aside>
+    <!-- _. -->
+
+<p><em>The mathematical equations in this post require Javascript and will not 
 render if you are on RSS or email.</em></p>
 
 <p>Rice’s theorem can be stated thus:</p>
@@ -72,6 +269,7 @@ render if you are on RSS or email.</em></p>
 <p>Before we prove the theorem, let’s break down that statement:</p>
 
 <hr>
+
 <h4 id="semantic-property">“Semantic Property”</h4>
 
 <p>A semantic property is a property of 
@@ -79,19 +277,22 @@ the language, <em>not the machine that is computing
 it</em>. For example, this is a semantic property of a language:</p>
 
 <ul>
-<li>All strings in language <script type="math/tex">L</script> are of the form <script type="math/tex">1^n0^n</script>.</li>
+  <li>All strings in language <script type="math/tex">L</script> are of the form <script type="math/tex">1^n0^n</script>.</li>
 </ul>
+
 <p>This is not a semantic property:</p>
 
 <ul>
-<li>It takes my program <script type="math/tex">n</script> steps to generate the first 100 strings in <script type="math/tex">L</script>. </li>
+  <li>It takes my program <script type="math/tex">n</script> steps to generate the first 100 strings in <script type="math/tex">L</script>. </li>
 </ul>
+
 <p>Note the importance of differentiating between a semantic property
 and not:</p>
 
 <ul>
-<li>The halting problem is actually decidable for <a href="https://en.wikipedia.org/wiki/Linear_bounded_automaton">Linear Bouned Automata</a>.</li>
+  <li>The halting problem is actually decidable for <a href="https://en.wikipedia.org/wiki/Linear_bounded_automaton">Linear Bouned Automata</a>.</li>
 </ul>
+
 <h4 id="non-trivial">“Non-Trivial”</h4>
 
 <p>A trivial property is a property that either all languages have or no language 
@@ -119,10 +320,11 @@ recognize it. For example, the following program reconizes <script type="math/te
 (the language made up of only the string “342”):</p>
 
 <ol>
-<li>Read input.</li>
+  <li>Read input.</li>
   <li>If input == “342” print “accept”.</li>
   <li>Else return to step 1. </li>
 </ol>
+
 <p>This program <em>recognizes</em> <script type="math/tex">L</script>, but it does not <em>decide</em> <script type="math/tex">L</script>: if the input is
 in <script type="math/tex">L</script>, it accepts, but if it’s not, then it will run forever, and you will 
 never know whether the input was not in <script type="math/tex">L</script> or the program is just taking a 
@@ -132,11 +334,13 @@ long time.</p>
 decidable languages are also recognizable. Here is a program that decides <script type="math/tex">L</script>:</p>
 
 <ol>
-<li>Read input.</li>
+  <li>Read input.</li>
   <li>If input == “342” print “accept”.</li>
   <li>Else print “input rejected”. </li>
 </ol>
+
 <hr>
+
 <h3 id="the-halting-problem">The Halting Problem</h3>
 
 <p>Take the following language: </p>
@@ -156,6 +360,7 @@ whether an algorithm halts.</p>
 <p>With this in mind, we can finally prove Rice’s theorem:</p>
 
 <hr>
+
 <h3 id="rices-theorem">Rice’s Theorem</h3>
 
 <p>Recall the theorem:</p>
@@ -181,6 +386,7 @@ regular (that is, if <script type="math/tex">M</script> can be simplified and re
 automation).</p>
 
 <hr>
+
 <h3 id="proof">Proof</h3>
 
 <p>We can prove Rice’s theorem by contradiction. We will show that <strong>if</strong> 
@@ -201,20 +407,22 @@ that takes <script type="math/tex">x</script> as its input and does the followin
 <p><strong><script type="math/tex">M_w</script>:</strong></p>
 
 <ol>
-<li>Run <script type="math/tex">M</script> on input <script type="math/tex">w</script>. If <script type="math/tex">M</script> halts, move on to step 2. </li>
+  <li>Run <script type="math/tex">M</script> on input <script type="math/tex">w</script>. If <script type="math/tex">M</script> halts, move on to step 2. </li>
   <li>Run <script type="math/tex">T</script> on <script type="math/tex">x</script>. Accept if <script type="math/tex">T</script> accepts, and reject if <script type="math/tex">T</script> rejects.</li>
 </ol>
+
 <p>Here’s the clever part. <em>We don’t actually have to run <script type="math/tex">M_w</script></em>:</p>
 
 <p>All we need to know is that, if we <em>were</em> to run <script type="math/tex">M_w</script>, there are two possible 
 outcomes: </p>
 
 <ul>
-<li>
+  <li>
 <script type="math/tex">M</script> halts on input <script type="math/tex">w</script>, in which case <script type="math/tex">M_w</script> reaches step 2.</li>
   <li>
 <script type="math/tex">M</script> never halts and never reaches step 2. </li>
 </ul>
+
 <p>But note that, if <script type="math/tex">M</script> halts on <script type="math/tex">w</script>, then step 2 is simply to run <script type="math/tex">T</script>, which 
 means that <strong>when <script type="math/tex">M</script> halts on <script type="math/tex">w</script>, <script type="math/tex">\langle M_w \rangle</script> is in <script type="math/tex">P_{ TM }</script>.</strong></p>
 
@@ -224,44 +432,12 @@ turn would tell us if <script type="math/tex">M</script> halts on <script type="
 
 <p>But this would mean that we
 could solve the halting problem, which we know  is not possible.</p>
+
     <p><a href="/articles/rices_theorem/">Comments? Click me!</a>
-  </p></article><article class="front-page"><h2><a href="/articles/classics_of_2053/">What Songs Released in the Last 10 Years do you Think Will be Considered Classics in 2053?</a></h2>
-    <aside>Day posted: <time datetime="2013-03-27">2013-03-27</time></aside><!-- _. --><p>Rock stars were the product of a world in which 
-independent media, for all intents and purposes, did not exist.</p>
+  </p></article>
 
-<p>There will never be another Beatles, because today, a band of such caliber would 
-most likely go to an independent label, where they can have full control of 
-only their music and their careers. In fact, they might not sign with a label 
-at all, but self release instead.</p>
 
-<p>There still are exceptions: great modern bands that go the big label route 
-(The Strokes, Queens of the Stone Age, The Mars Volta), but even they live at 
-the margins of what one would consider popular music… sometimes even 
-abandoning it altogether (Radiohead). </p>
-
-<p>Today, big labels are in the business of producing the hit of the summer, 
-not the album of the decade (which would be fine by me, if they weren’t also in 
-the business of ruining people with lawsuits). </p>
-
-<p>People now have the power to find their own music on their own terms, 
-without the help of radio critics. – When was the last time <em>you</em> cared what a 
-professional music critic had to say? </p>
-
-<p>Music fans simply don’t care about charts, because all the 
-talented musicians are flocking to smaller labels, and self-publishing.</p>
-
-<p>There are so many options now, so many niches, that music is no longer about the 
-massive, continent-sweeping phenomena it was about up until the mid-90’s. </p>
-
-<p>Back then, we’d ALL flock to whatever actual talent managed to fight its way to 
-the top of the big-media approved charts. What other option did we have? 
-Today, music is much more of a personal experience; it’s about small communities 
-of loyal followers, not giant mobs filling up stadiums; and, in three decades, 
-you’ll all remember the music that mattered to <em>you</em>, not everyone else.</p>
-
-<p>(<a href="http://www.reddit.com/r/AskReddit/comments/1b19ne/what_songs_released_in_the_last_10_years_do_you/">Original thread on Reddit</a>)</p>
-    <p><a href="/articles/classics_of_2053/">Comments? Click me!</a>
-  </p></article><a href="/all-articles">All Articles</a>
+<a href="/all-articles">All Articles</a>
           
         </div>
       </div>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://clusterfoo.com/</id>
   <title>CLUSTERfoo.com</title>
-  <updated>2013-04-17T04:00:00Z</updated>
+  <updated>2013-05-06T04:00:00Z</updated>
   <link rel="alternate" href="http://clusterfoo.com/"/>
   <link rel="self" href="http://clusterfoo.com/atom.xml"/>
   <author>
@@ -10,471 +10,16 @@
     <uri>http://CLUSTERfoo.com</uri>
   </author>
   <entry>
-    <id>tag:clusterfoo.com,2013-04-17:/me/blog/2013/april/mathjax-rss/</id>
-    <title type="html">MathJax RSS</title>
-    <published>2013-04-17T04:00:00Z</published>
-    <updated>2013-04-17T04:00:00Z</updated>
-    <link rel="alternate" href="http://clusterfoo.com/me/blog/2013/april/mathjax-rss/"/>
-    <content type="html">&lt;!-- _. --&gt;
-
-&lt;p&gt;Yesterday I started using &lt;a href="http://MathJax.org"&gt;MathJax&lt;/a&gt; to render mathematical 
-equations on my blog. MathJax uses a Javascript library to render LaTex on the
-client side, as a result, &lt;strong&gt;mathematical equations will not render if you are 
-reading this blog through an RSS feed or email.&lt;/strong&gt; &lt;/p&gt;
-
-&lt;p&gt;I toyed with the idea of rendering equations as &lt;code&gt;.png&lt;/code&gt;s, but I like the 
-convenience of MathJax. From now on, posts that include mathematical equations
-will include a warning, so readers on RSS know to check the original post.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:clusterfoo.com,2013-04-16:/articles/rices_theorem/</id>
-    <title type="html">Rice's Theorem</title>
-    <published>2013-04-16T04:00:00Z</published>
-    <updated>2013-04-16T04:00:00Z</updated>
-    <link rel="alternate" href="http://clusterfoo.com/articles/rices_theorem/"/>
-    <content type="html">&lt;!-- _. --&gt;
-
-&lt;p&gt;&lt;em&gt;The mathematical equations in this post require Javascript and will not 
-render if you are on RSS or email.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Rice’s theorem can be stated thus:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Every non-trivial semantic property of a program is undecidable. &lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Before we prove the theorem, let’s break down that statement:&lt;/p&gt;
-
-&lt;hr&gt;&lt;h4 id="semantic-property"&gt;“Semantic Property”&lt;/h4&gt;
-
-&lt;p&gt;A semantic property is a property of 
-the language, &lt;em&gt;not the machine that is computing 
-it&lt;/em&gt;. For example, this is a semantic property of a language:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;All strings in language &lt;script type="math/tex"&gt;L&lt;/script&gt; are of the form &lt;script type="math/tex"&gt;1^n0^n&lt;/script&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;This is not a semantic property:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;It takes my program &lt;script type="math/tex"&gt;n&lt;/script&gt; steps to generate the first 100 strings in &lt;script type="math/tex"&gt;L&lt;/script&gt;. &lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;Note the importance of differentiating between a semantic property
-and not:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The halting problem is actually decidable for &lt;a href="https://en.wikipedia.org/wiki/Linear_bounded_automaton"&gt;Linear Bouned Automata&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;h4 id="non-trivial"&gt;“Non-Trivial”&lt;/h4&gt;
-
-&lt;p&gt;A trivial property is a property that either all languages have or no language 
-has. A non-trivial property is everything else. &lt;/p&gt;
-
-&lt;h4 id="undecidable"&gt;“Undecidable”&lt;/h4&gt;
-
-&lt;p&gt;A program can either &lt;strong&gt;accept&lt;/strong&gt;, &lt;strong&gt;reject&lt;/strong&gt;, or &lt;strong&gt;run forever&lt;/strong&gt;. If a program
-reaches an accept or reject state, we say it &lt;strong&gt;halts&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;There are two types of programs: &lt;strong&gt;recognizers&lt;/strong&gt; and &lt;strong&gt;deciders&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;A recognizer is a program that can only tell you with certainty when it has 
-succeeded to solve 
-a problem (reached the accept state). It cannot always tell you when it has 
-failed (if it goes into an infinite loop, there is no way to know if it’s in a
-loop, or if it’s just taking very long to solve the problem).&lt;/p&gt;
-
-&lt;p&gt;A decider is a program that always reaches either accepts or rejects. That
-is, you not only know when the problem was solved, but you also know when it 
-was &lt;em&gt;not&lt;/em&gt; solved.&lt;/p&gt;
-
-&lt;p&gt;A language is &lt;strong&gt;recognizable&lt;/strong&gt; if there exists at least one program that can 
-recognize it. For example, the following program reconizes &lt;script type="math/tex"&gt;L = \{"342"\}&lt;/script&gt;
-(the language made up of only the string “342”):&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Read input.&lt;/li&gt;
-  &lt;li&gt;If input == “342” print “accept”.&lt;/li&gt;
-  &lt;li&gt;Else return to step 1. &lt;/li&gt;
-&lt;/ol&gt;&lt;p&gt;This program &lt;em&gt;recognizes&lt;/em&gt; &lt;script type="math/tex"&gt;L&lt;/script&gt;, but it does not &lt;em&gt;decide&lt;/em&gt; &lt;script type="math/tex"&gt;L&lt;/script&gt;: if the input is
-in &lt;script type="math/tex"&gt;L&lt;/script&gt;, it accepts, but if it’s not, then it will run forever, and you will 
-never know whether the input was not in &lt;script type="math/tex"&gt;L&lt;/script&gt; or the program is just taking a 
-long time.&lt;/p&gt;
-
-&lt;p&gt;A language is &lt;strong&gt;decidable&lt;/strong&gt; if there exists a program that can decide it. All
-decidable languages are also recognizable. Here is a program that decides &lt;script type="math/tex"&gt;L&lt;/script&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Read input.&lt;/li&gt;
-  &lt;li&gt;If input == “342” print “accept”.&lt;/li&gt;
-  &lt;li&gt;Else print “input rejected”. &lt;/li&gt;
-&lt;/ol&gt;&lt;hr&gt;&lt;h3 id="the-halting-problem"&gt;The Halting Problem&lt;/h3&gt;
-
-&lt;p&gt;Take the following language: &lt;/p&gt;
-
-&lt;p&gt;&lt;script type="math/tex"&gt; HALT_{ TM } = \{ \langle M, w \rangle | M &lt;/script&gt; is a program and &lt;script type="math/tex"&gt;M&lt;/script&gt; halts on 
-input &lt;script type="math/tex"&gt;w \} &lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Remember, a program is itself just a string: any program can be written down as 
-a description, say an &lt;code&gt;.rb&lt;/code&gt; file, and that file can be used as an input for 
-another program (or itself!). So &lt;script type="math/tex"&gt;HALT_{ TM }&lt;/script&gt; is a language that consists
-of all programs &lt;script type="math/tex"&gt;M&lt;/script&gt; and inputs &lt;script type="math/tex"&gt;w&lt;/script&gt; such that &lt;script type="math/tex"&gt;M&lt;/script&gt; halts on &lt;script type="math/tex"&gt;w&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;I won’t prove it in this post, but, as it turns out, &lt;script type="math/tex"&gt;HALT_{ TM }&lt;/script&gt; is 
-undecidable. Meaning it is not possible to write a program that decides
-whether an algorithm halts.&lt;/p&gt;
-
-&lt;p&gt;With this in mind, we can finally prove Rice’s theorem:&lt;/p&gt;
-
-&lt;hr&gt;&lt;h3 id="rices-theorem"&gt;Rice’s Theorem&lt;/h3&gt;
-
-&lt;p&gt;Recall the theorem:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Every non-trivial semantic property of a program is undecidable. &lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Yet another way of stating this is as follows:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The language &lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt;, described below, is undecidable:&lt;/p&gt;
-
-  &lt;p&gt;&lt;script type="math/tex"&gt;P_{ TM } = \{ \langle M \rangle | M&lt;/script&gt; is a program and &lt;script type="math/tex"&gt;L(M)&lt;/script&gt; has 
-non-trivial property &lt;script type="math/tex"&gt;P \}&lt;/script&gt;&lt;/p&gt;
-
-  &lt;p&gt;Where &lt;script type="math/tex"&gt;L(M)&lt;/script&gt; means “The language of &lt;script type="math/tex"&gt;M&lt;/script&gt;”. &lt;!-- _. --&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;So, for example, it is not possible to write a program &lt;script type="math/tex"&gt;R&lt;/script&gt; that takes as its 
-input another program &lt;script type="math/tex"&gt;M&lt;/script&gt; and decides whether the language of &lt;script type="math/tex"&gt;M&lt;/script&gt; is 
-regular (that is, if &lt;script type="math/tex"&gt;M&lt;/script&gt; can be simplified and represented as a finite 
-automation).&lt;/p&gt;
-
-&lt;hr&gt;&lt;h3 id="proof"&gt;Proof&lt;/h3&gt;
-
-&lt;p&gt;We can prove Rice’s theorem by contradiction. We will show that &lt;strong&gt;if&lt;/strong&gt; 
-&lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt; is decidable &lt;strong&gt;then&lt;/strong&gt; so is &lt;script type="math/tex"&gt;HALT_{ TM }&lt;/script&gt;. 
-Since we know that &lt;script type="math/tex"&gt;HALT_{ TM }&lt;/script&gt; is 
-undecidable, then &lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt; must be undecidable too. &lt;/p&gt;
-
-&lt;p&gt;Assume that &lt;script type="math/tex"&gt;P&lt;/script&gt; is some non-trivial semantic property and that 
-it is possible to write a program &lt;script type="math/tex"&gt;R&lt;/script&gt; that decides &lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt;. Here is
-how we could solve the halting problem with that program:&lt;!-- _. --&gt;&lt;/p&gt;
-
-&lt;p&gt;First, we write a program &lt;script type="math/tex"&gt;T&lt;/script&gt; such that &lt;script type="math/tex"&gt;\langle T \rangle &lt;/script&gt; is in &lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt;.
-Because &lt;script type="math/tex"&gt;P&lt;/script&gt; is non-trivial, such a program must exist.&lt;/p&gt;
-
-&lt;p&gt;Take input &lt;script type="math/tex"&gt;\langle M, w \rangle&lt;/script&gt; and use it to write a program &lt;script type="math/tex"&gt;M_w&lt;/script&gt;
-that takes &lt;script type="math/tex"&gt;x&lt;/script&gt; as its input and does the following:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;script type="math/tex"&gt;M_w&lt;/script&gt;:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Run &lt;script type="math/tex"&gt;M&lt;/script&gt; on input &lt;script type="math/tex"&gt;w&lt;/script&gt;. If &lt;script type="math/tex"&gt;M&lt;/script&gt; halts, move on to step 2. &lt;/li&gt;
-  &lt;li&gt;Run &lt;script type="math/tex"&gt;T&lt;/script&gt; on &lt;script type="math/tex"&gt;x&lt;/script&gt;. Accept if &lt;script type="math/tex"&gt;T&lt;/script&gt; accepts, and reject if &lt;script type="math/tex"&gt;T&lt;/script&gt; rejects.&lt;/li&gt;
-&lt;/ol&gt;&lt;p&gt;Here’s the clever part. &lt;em&gt;We don’t actually have to run &lt;script type="math/tex"&gt;M_w&lt;/script&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;All we need to know is that, if we &lt;em&gt;were&lt;/em&gt; to run &lt;script type="math/tex"&gt;M_w&lt;/script&gt;, there are two possible 
-outcomes: &lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;
-&lt;script type="math/tex"&gt;M&lt;/script&gt; halts on input &lt;script type="math/tex"&gt;w&lt;/script&gt;, in which case &lt;script type="math/tex"&gt;M_w&lt;/script&gt; reaches step 2.&lt;/li&gt;
-  &lt;li&gt;
-&lt;script type="math/tex"&gt;M&lt;/script&gt; never halts and never reaches step 2. &lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;But note that, if &lt;script type="math/tex"&gt;M&lt;/script&gt; halts on &lt;script type="math/tex"&gt;w&lt;/script&gt;, then step 2 is simply to run &lt;script type="math/tex"&gt;T&lt;/script&gt;, which 
-means that &lt;strong&gt;when &lt;script type="math/tex"&gt;M&lt;/script&gt; halts on &lt;script type="math/tex"&gt;w&lt;/script&gt;, &lt;script type="math/tex"&gt;\langle M_w \rangle&lt;/script&gt; is in &lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt;.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;So, if we were to run &lt;script type="math/tex"&gt;R&lt;/script&gt; with input &lt;script type="math/tex"&gt;\langle M_w \rangle&lt;/script&gt;, 
-it would be able to tell us whether it is in &lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt;, and that in
-turn would tell us if &lt;script type="math/tex"&gt;M&lt;/script&gt; halts on &lt;script type="math/tex"&gt;w&lt;/script&gt;. &lt;/p&gt;
-
-&lt;p&gt;But this would mean that we
-could solve the halting problem, which we know  is not possible.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:clusterfoo.com,2013-03-27:/articles/classics_of_2053/</id>
-    <title type="html">What Songs Released in the Last 10 Years do you Think Will be Considered Classics in 2053?</title>
-    <published>2013-03-27T04:00:00Z</published>
-    <updated>2013-03-27T04:00:00Z</updated>
-    <link rel="alternate" href="http://clusterfoo.com/articles/classics_of_2053/"/>
-    <content type="html">&lt;!-- _. --&gt;
-
-&lt;p&gt;Rock stars were the product of a world in which 
-independent media, for all intents and purposes, did not exist.&lt;/p&gt;
-
-&lt;p&gt;There will never be another Beatles, because today, a band of such caliber would 
-most likely go to an independent label, where they can have full control of 
-only their music and their careers. In fact, they might not sign with a label 
-at all, but self release instead.&lt;/p&gt;
-
-&lt;p&gt;There still are exceptions: great modern bands that go the big label route 
-(The Strokes, Queens of the Stone Age, The Mars Volta), but even they live at 
-the margins of what one would consider popular music… sometimes even 
-abandoning it altogether (Radiohead). &lt;/p&gt;
-
-&lt;p&gt;Today, big labels are in the business of producing the hit of the summer, 
-not the album of the decade (which would be fine by me, if they weren’t also in 
-the business of ruining people with lawsuits). &lt;/p&gt;
-
-&lt;p&gt;People now have the power to find their own music on their own terms, 
-without the help of radio critics. – When was the last time &lt;em&gt;you&lt;/em&gt; cared what a 
-professional music critic had to say? &lt;/p&gt;
-
-&lt;p&gt;Music fans simply don’t care about charts, because all the 
-talented musicians are flocking to smaller labels, and self-publishing.&lt;/p&gt;
-
-&lt;p&gt;There are so many options now, so many niches, that music is no longer about the 
-massive, continent-sweeping phenomena it was about up until the mid-90’s. &lt;/p&gt;
-
-&lt;p&gt;Back then, we’d ALL flock to whatever actual talent managed to fight its way to 
-the top of the big-media approved charts. What other option did we have? 
-Today, music is much more of a personal experience; it’s about small communities 
-of loyal followers, not giant mobs filling up stadiums; and, in three decades, 
-you’ll all remember the music that mattered to &lt;em&gt;you&lt;/em&gt;, not everyone else.&lt;/p&gt;
-
-&lt;p&gt;(&lt;a href="http://www.reddit.com/r/AskReddit/comments/1b19ne/what_songs_released_in_the_last_10_years_do_you/"&gt;Original thread on Reddit&lt;/a&gt;)&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:clusterfoo.com,2013-03-27:/articles/ruby_fizzbuzz_by_exhaustion/</id>
-    <title type="html">Fizz-Buzz by Exhaustion in Ruby</title>
-    <published>2013-03-27T04:00:00Z</published>
-    <updated>2013-03-27T04:00:00Z</updated>
-    <link rel="alternate" href="http://clusterfoo.com/articles/ruby_fizzbuzz_by_exhaustion/"/>
-    <content type="html">&lt;!-- _. --&gt;
-
-&lt;p&gt;Here’s a cute solution to &lt;a href="https://en.wikipedia.org/wiki/Bizz_buzz"&gt;Fizz-Buzz&lt;/a&gt; 
-that occurred to me when I read about the 
-&lt;code&gt;unless&lt;/code&gt; statement in Ruby; it uses only the unless statement. 
-I’m doing the Bitmaker Labs workshop, and one of the questions for the
-interview was Fizz-Buzz. &lt;/p&gt;
-
-&lt;p&gt;I call it “by exhaustion” because, instead of using &lt;code&gt;if&lt;/code&gt;-statements to look for 
-which terms to include, it uses &lt;code&gt;unless&lt;/code&gt;-statements to look for which terms
-to exclude (until all possibilities are exhausted, in which case it just
-gives up and says “Let’s just assume it’s ‘Buzz’”).&lt;/p&gt;
-
-&lt;div&gt;
-&lt;div class="CodeRay"&gt;
-  &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="line-numbers"&gt;&lt;a href="#n1" name="n1"&gt;1&lt;/a&gt;&lt;/span&gt;(&lt;span style="color:#00D"&gt;1&lt;/span&gt;..&lt;span style="color:#00D"&gt;100&lt;/span&gt;).each &lt;span style="color:#080;font-weight:bold"&gt;do&lt;/span&gt; |n|
-&lt;span class="line-numbers"&gt;&lt;a href="#n2" name="n2"&gt;2&lt;/a&gt;&lt;/span&gt;  (puts n.to_s; &lt;span style="color:#080;font-weight:bold"&gt;next&lt;/span&gt;) &lt;span style="color:#080;font-weight:bold"&gt;unless&lt;/span&gt; (n % &lt;span style="color:#00D"&gt;3&lt;/span&gt; == &lt;span style="color:#00D"&gt;0&lt;/span&gt;) &lt;span style="color:#080;font-weight:bold"&gt;or&lt;/span&gt; (n % &lt;span style="color:#00D"&gt;5&lt;/span&gt; == &lt;span style="color:#00D"&gt;0&lt;/span&gt;)
-&lt;span class="line-numbers"&gt;&lt;a href="#n3" name="n3"&gt;3&lt;/a&gt;&lt;/span&gt;  (puts &lt;span style="background-color:hsla(0,100%,50%,0.05)"&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;span style="color:#D20"&gt;Fizz&lt;/span&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;/span&gt;; &lt;span style="color:#080;font-weight:bold"&gt;next&lt;/span&gt;) &lt;span style="color:#080;font-weight:bold"&gt;unless&lt;/span&gt; (n % &lt;span style="color:#00D"&gt;5&lt;/span&gt; == &lt;span style="color:#00D"&gt;0&lt;/span&gt;) &lt;span style="color:#080;font-weight:bold"&gt;or&lt;/span&gt; (n % &lt;span style="color:#00D"&gt;3&lt;/span&gt; != &lt;span style="color:#00D"&gt;0&lt;/span&gt;)
-&lt;span class="line-numbers"&gt;&lt;a href="#n4" name="n4"&gt;4&lt;/a&gt;&lt;/span&gt;  (puts &lt;span style="background-color:hsla(0,100%,50%,0.05)"&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;span style="color:#D20"&gt;FizzBuzz&lt;/span&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;/span&gt;; &lt;span style="color:#080;font-weight:bold"&gt;next&lt;/span&gt;) &lt;span style="color:#080;font-weight:bold"&gt;unless&lt;/span&gt; (n % &lt;span style="color:#00D"&gt;3&lt;/span&gt; != &lt;span style="color:#00D"&gt;0&lt;/span&gt;)
-&lt;span class="line-numbers"&gt;&lt;a href="#n5" name="n5"&gt;5&lt;/a&gt;&lt;/span&gt;  puts &lt;span style="background-color:hsla(0,100%,50%,0.05)"&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;span style="color:#D20"&gt;Buzz&lt;/span&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;/span&gt;
-&lt;span class="line-numbers"&gt;&lt;a href="#n6" name="n6"&gt;6&lt;/a&gt;&lt;/span&gt;&lt;span style="color:#080;font-weight:bold"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:clusterfoo.com,2013-03-26:/articles/dysfunctional_institutions_and_policy/</id>
-    <title type="html">Dysfunctional Institutions and their Totally Reasonable Policy</title>
-    <published>2013-03-26T04:00:00Z</published>
-    <updated>2013-03-26T04:00:00Z</updated>
-    <link rel="alternate" href="http://clusterfoo.com/articles/dysfunctional_institutions_and_policy/"/>
-    <content type="html">&lt;!-- _. --&gt;
-
-&lt;p&gt;There is an inverse relationship between the robustness of a social
-group, and how crucial it is deemed within that group to implement 
-and follow policy: the more punctilious its law books, 
-the more dysfunctional an institution is likely to be. &lt;/p&gt;
-
-&lt;p&gt;When a group is well-organized, there is no need for managerial
-oversight. From personal experience, we know that our healthiest partnerships
-can operate successfully for long periods of time without anyone finding the 
-need to introduce some inflexible set of rules of conduct. &lt;/p&gt;
-
-&lt;p&gt;There is no need
-to meddle in the minutia of how this or that partner is to behave at all times,
-because communication is strong and the team is productive. A mere tacit 
-understanding of each partner’s strengths and boundaries will 
-suffice. At most, a written list of general guidelines. &lt;/p&gt;
-
-&lt;p&gt;It is only when trust, communication, and morale begin to break down that we
-perceive the need to introduce strict policies, carefully worded rules of proper
-and improper conduct, and, of course, arbitrary ranks of authority. &lt;/p&gt;
-
-&lt;p&gt;I say “perceive” because, in practice, these regulatory measures are not only
-corrosive, but, in fact, engender 
-&lt;a href="/articles/bureaucratic_bloat"&gt;a bureaucratic positive feedback loop&lt;/a&gt;
-out of which the organization cannot break, and which eventually permeates the 
-culture so fundamentally that the institution may become too inefficient 
-to operate at all… this is the organizational equivalent of 
-&lt;a href="https://en.wikipedia.org/wiki/Software_bloat"&gt;software bloat&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;We can follow this trend by starting with the example of a healthy, productive 
-partnerships. Even a friendship, perhaps. – These relationships are invariably 
-anarchistic. If a husband were to demand from his wife that she ask permission 
-to leave her 
-home, based on some arbitrary claim to authority, we’d say that husband is 
-overbearing. If the wife were to begin making unreasonable demands of her husband,
-and ask that he follow this and that rule, with no explanation as to why, 
-we’d say she is too controlling. &lt;/p&gt;
-
-&lt;p&gt;We immediately recognize that the healthiest, most robust partnerships are those
-marked not by efficient policy, but by a &lt;em&gt;lack&lt;/em&gt; thereof. Not because rules of 
-conduct are a bad thing in and of themselves, but because we understand that, 
-when communication is strong, &lt;em&gt;there is no need to explicitly define those 
-rules in the first place.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;To continue our thought experiment, we now climb down the ladder of 
-organizational robustness, lower and lower, until we reach the very bottom:&lt;/p&gt;
-
-&lt;p&gt;We have before us the most inflexible, micro-managerial and arbitrarily 
-hierarchical institutions our society has to offer; which, not surprisingly, 
-are also the most dysfunctional and ineffective I could think to name: &lt;strong&gt;our 
-prisons, our governments, and our schools.&lt;/strong&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:clusterfoo.com,2013-03-26:/articles/bureaucratic_bloat/</id>
-    <title type="html">Bureaucratic Bloat</title>
-    <published>2013-03-26T04:00:00Z</published>
-    <updated>2013-03-26T04:00:00Z</updated>
-    <link rel="alternate" href="http://clusterfoo.com/articles/bureaucratic_bloat/"/>
-    <content type="html">&lt;!-- _. --&gt;
-
-&lt;p&gt;Bureaucratic bloat is the organizational equivalent of 
-&lt;a href="https://en.wikipedia.org/wiki/Software_bloat"&gt;software bloat&lt;/a&gt;. &lt;/p&gt;
-
-&lt;p&gt;Bureaucracies fetter the most productive members of an organization by impeding
-them from exercising their creativity and best judgement. To make matters worse, 
-within a bureaucratic institution, the atmosphere is such that advantage is most 
-easily gained not by fostering progress, but by gaming the system.&lt;/p&gt;
-
-&lt;p&gt;Individuals “rise to the top” most easily when they stifle the advancement of 
-others. These individuals will abuse the inflexible institutional rule-sets and 
-hierarchies, and use them as roadblocks with which to slow down their 
-competitors. At the same time, they will take advantage of the many 
-loopholes that inevitably arise within bureaucracies. &lt;/p&gt;
-
-&lt;p&gt;This is not, as some would argue, “an unfortunate, but inevitable consequence of 
-the human character, for which there is no getting around,” but, rather, it is 
-an inextricable property of pyramidal hierarchies. &lt;/p&gt;
-
-&lt;p&gt;A second inevitable consequence is 
-&lt;a href="/articles/dysfunctional_institutions_and_policy"&gt;the bureaucratic positive feedback loop&lt;/a&gt;:&lt;/p&gt;
-
-&lt;p&gt;When the gaming of regulatory loopholes becomes pandemic, we fool ourselves into
-believing that the problem of inefficient policy must be remedied by… 
-what else, but the introduction of &lt;em&gt;more&lt;/em&gt; policy! &lt;/p&gt;
-
-&lt;p&gt;(In other words: 
-more loopholes to be exploited by charlatans, and more roadblocks for 
-innovators.)&lt;/p&gt;
-
-&lt;p&gt;This is bureaucratic entropy. And fighting entropy is a losing battle. &lt;strong&gt;To expect
-new policy to make more efficient an institution that is already mired by
-inefficient policy, is to expect an egg to become less scrambled if only we
-turn up the heat and stir faster!&lt;/strong&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:clusterfoo.com,2013-03-08:/quick-guides/rsync-over-ssh/</id>
-    <title type="html">Syncing with a Remote Server Using Rsync Over SSH</title>
-    <published>2013-03-08T05:00:00Z</published>
-    <updated>2013-03-08T05:00:00Z</updated>
-    <link rel="alternate" href="http://clusterfoo.com/quick-guides/rsync-over-ssh/"/>
-    <content type="html">&lt;!-- _. --&gt;
-
-&lt;p&gt;Rsync is a command-line utility for copying and syncing files. Rsync can be 
-used over ssh to sync files between remote servers. The basic command
-for use over ssh is&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ rsync [options] -e "ssh" source target
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you’ve set up private and public keys to secure your ssh connection, you must 
-specify the location of the identity key (also known as “private key”), which 
-is usually found in the &lt;code&gt;~/.ssh&lt;/code&gt; directory:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ rsync [options] -e "ssh -i /home/user/.ssh/private_key_file"
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I use rsync to deploy my blog. All of its contents are found &lt;a href="http://github.com/clusterfoo/clusterfoo-dot-com"&gt;in the &lt;code&gt;output&lt;/code&gt;
-directory&lt;/a&gt;, which I sync with
-a small shared server at &lt;a href="http://asmallorange.com"&gt;A Small Ornage&lt;/a&gt;. &lt;/p&gt;
-
-&lt;p&gt;I use the following simple command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ rsync -avh [-n] --progress --delete-after -e "ssh -i /home/username/.ssh/id_rsa" \
-  output/ username@clusterfoo.com:/home/username/public_html/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;
-&lt;code&gt;-a&lt;/code&gt;: Archive mode. The most common option for syncing directories.&lt;/li&gt;
-  &lt;li&gt;
-&lt;code&gt;-v&lt;/code&gt;: Verbose mode.&lt;/li&gt;
-  &lt;li&gt;
-&lt;code&gt;-h&lt;/code&gt;: Human readable. Print numbers in human-readable formats.&lt;/li&gt;
-  &lt;li&gt;
-&lt;code&gt;-n&lt;/code&gt;: Dry run.&lt;/li&gt;
-  &lt;li&gt;
-&lt;code&gt;--progress&lt;/code&gt;: Show progress during transfer.&lt;/li&gt;
-  &lt;li&gt;
-&lt;code&gt;--delete-after&lt;/code&gt;: Sync new and updated files, and wait until transfer is 
-complete before deleting any superfluous files. This is important when deploying
-a website, since otherwise a visitor might stumble upon missing pages.&lt;/li&gt;
-&lt;/ul&gt;&lt;h3 id="always-dry-run-first"&gt;Always Dry-Run First!&lt;/h3&gt;
-
-&lt;p&gt;It’s easy to make mistakes with rsync. A simple typo like &lt;code&gt;dir&lt;/code&gt; instead of 
-&lt;code&gt;dir/&lt;/code&gt; can mean a world of difference (and a world of pain if you accidentally 
-&lt;code&gt;-rm&lt;/code&gt; an entire directory!).&lt;/p&gt;
-
-&lt;p&gt;I always do a dry-run before I use an rsync command for the first time. The 
-dry-run option (&lt;code&gt;-n&lt;/code&gt;) will show you the final output of the operation, 
-without actually running through it.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:clusterfoo.com,2013-03-04:/me/blog/2013/march/new-blog/</id>
-    <title type="html">New Blog</title>
-    <published>2013-03-04T05:00:00Z</published>
-    <updated>2013-03-04T05:00:00Z</updated>
-    <link rel="alternate" href="http://clusterfoo.com/me/blog/2013/march/new-blog/"/>
-    <content type="html">&lt;p&gt;I’ve been thinking about rebuilding this blog with 
-&lt;a href="http://nanoc.ws" target="_blank"&gt;nanoc&lt;/a&gt; for a while now. &lt;/p&gt;
-
-&lt;p&gt;Well, yesterday I
-decided to finally get to it, and here it is, in all its minimalistic glory. I’m
-still figuring out how to add all the features I want, so everything is still 
-pretty half-baked. But here’s what I’m liking so far:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;
-    &lt;p&gt;I can back up my entire site in a github repo. Everything from the layout to
-the actual content of my articles lives as real text files I can open, edit, and 
-move around. &lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Extremely portable and small. To deploy, I simply dump static HTML files 
-into an affordable shared server at 
-&lt;a href="http://asmallorange.com" target="_blank"&gt;A Small Orange&lt;/a&gt; and barely see a
-dent in my data usage.
-&lt;!-- _. --&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Nothing to maintain. No security issues to worry about. Everything is static 
-HTML/CSS/Javascipt. Any interactivity I wish to add (comments, etc) can be taken 
-care of by a third party like &lt;a href="http://disqus.com" target="_blank"&gt;Disqus&lt;/a&gt;… 
-let &lt;em&gt;them&lt;/em&gt; worry about security issues and database backups :p
-&lt;!-- _. --&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;I can write all my posts in markdown, or whatever markup I choose. &lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;My content is not tied to a platform or database. Even an open platform like
-Wordpress or Drupal can be a pain to migrate if you decide to switch to 
-something else. &lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;It’s fun to roll your own! &lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;You can see the source for this blog on 
-&lt;a href="http://github.com/clusterfoo/clusterfoo-dot-com" target="_blank"&gt;my github&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:clusterfoo.com,2013-03-01:/quick-guides/rails-cheatsheet/</id>
+    <id>tag:clusterfoo.com,2013-05-06:/quick-guides/rails-cheatsheet/</id>
     <title type="html">Rails Cheatsheet</title>
-    <published>2013-03-01T05:00:00Z</published>
-    <updated>2013-03-01T05:00:00Z</updated>
+    <published>2013-05-06T04:00:00Z</published>
+    <updated>2013-05-06T04:00:00Z</updated>
     <link rel="alternate" href="http://clusterfoo.com/quick-guides/rails-cheatsheet/"/>
     <content type="html">&lt;!-- _. --&gt;
+
+&lt;p&gt;&lt;strong&gt;Updated:&lt;/strong&gt; Instad of &lt;code&gt;.rvmrx&lt;/code&gt;, I now use &lt;code&gt;.ruby-version&lt;/code&gt; and &lt;code&gt;.ruby-gemset&lt;/code&gt;.&lt;/p&gt;
+
+&lt;hr&gt;
 
 &lt;p&gt;A little cheatsheet of Rails stuff I don’t want to forget. Many of these
 tips come from 
@@ -530,16 +75,25 @@ environment.&lt;/p&gt;
 
 &lt;h3 id="initialize-rails-app"&gt;Initialize Rails App&lt;/h3&gt;
 
-&lt;h4 id="set-up-rails-app-and-rvmrc"&gt;Set up Rails App and rvmrc&lt;/h4&gt;
+&lt;h4 id="set-up-rails-app-directory"&gt;Set up Rails App Directory&lt;/h4&gt;
 
 &lt;p&gt;Skip TestUnit if you’re using rspec:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ rails new project_name --skip-test-unit
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Now create an rvmrc inside the project’s root directory:&lt;/p&gt;
+&lt;p&gt;Now create two files: &lt;code&gt;.ruby-version&lt;/code&gt; and &lt;code&gt;.ruby-gemset&lt;/code&gt;. These files will 
+ensure that rvm, or whatever ruby envelope you use, know to switch to the 
+correct Ruby version (and gemset, in rvm). For example, if you’re using Ruby
+2.0.0 and a gemset called &lt;code&gt;my-project&lt;/code&gt;, create a &lt;code&gt;.ruby-version&lt;/code&gt; file with the
+following content:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ rvm --rvmrc --create 1.9.3-head@projectname
+&lt;pre&gt;&lt;code&gt;2.0.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And a &lt;code&gt;.ruby-gemset&lt;/code&gt; file with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;my-project
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Now &lt;code&gt;cd&lt;/code&gt; in and out of the directory and make sure that rvm is switching to the 
@@ -639,7 +193,501 @@ $ rake db:test:prepare
 &lt;p&gt;Don’t break things:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ rails console --sandbox
-&lt;/code&gt;&lt;/pre&gt;</content>
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:clusterfoo.com,2013-04-17:/me/blog/2013/april/mathjax-rss/</id>
+    <title type="html">MathJax RSS</title>
+    <published>2013-04-17T04:00:00Z</published>
+    <updated>2013-04-17T04:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/me/blog/2013/april/mathjax-rss/"/>
+    <content type="html">&lt;!-- _. --&gt;
+
+&lt;p&gt;Yesterday I started using &lt;a href="http://MathJax.org"&gt;MathJax&lt;/a&gt; to render mathematical 
+equations on my blog. MathJax uses a Javascript library to render LaTex on the
+client side, as a result, &lt;strong&gt;mathematical equations will not render if you are 
+reading this blog through an RSS feed or email.&lt;/strong&gt; &lt;/p&gt;
+
+&lt;p&gt;I toyed with the idea of rendering equations as &lt;code&gt;.png&lt;/code&gt;s, but I like the 
+convenience of MathJax. From now on, posts that include mathematical equations
+will include a warning, so readers on RSS know to check the original post.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:clusterfoo.com,2013-04-16:/articles/rices_theorem/</id>
+    <title type="html">Rice's Theorem</title>
+    <published>2013-04-16T04:00:00Z</published>
+    <updated>2013-04-16T04:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/articles/rices_theorem/"/>
+    <content type="html">&lt;!-- _. --&gt;
+
+&lt;p&gt;&lt;em&gt;The mathematical equations in this post require Javascript and will not 
+render if you are on RSS or email.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Rice’s theorem can be stated thus:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Every non-trivial semantic property of a program is undecidable. &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Before we prove the theorem, let’s break down that statement:&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="semantic-property"&gt;“Semantic Property”&lt;/h4&gt;
+
+&lt;p&gt;A semantic property is a property of 
+the language, &lt;em&gt;not the machine that is computing 
+it&lt;/em&gt;. For example, this is a semantic property of a language:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;All strings in language &lt;script type="math/tex"&gt;L&lt;/script&gt; are of the form &lt;script type="math/tex"&gt;1^n0^n&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is not a semantic property:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It takes my program &lt;script type="math/tex"&gt;n&lt;/script&gt; steps to generate the first 100 strings in &lt;script type="math/tex"&gt;L&lt;/script&gt;. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note the importance of differentiating between a semantic property
+and not:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The halting problem is actually decidable for &lt;a href="https://en.wikipedia.org/wiki/Linear_bounded_automaton"&gt;Linear Bouned Automata&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="non-trivial"&gt;“Non-Trivial”&lt;/h4&gt;
+
+&lt;p&gt;A trivial property is a property that either all languages have or no language 
+has. A non-trivial property is everything else. &lt;/p&gt;
+
+&lt;h4 id="undecidable"&gt;“Undecidable”&lt;/h4&gt;
+
+&lt;p&gt;A program can either &lt;strong&gt;accept&lt;/strong&gt;, &lt;strong&gt;reject&lt;/strong&gt;, or &lt;strong&gt;run forever&lt;/strong&gt;. If a program
+reaches an accept or reject state, we say it &lt;strong&gt;halts&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are two types of programs: &lt;strong&gt;recognizers&lt;/strong&gt; and &lt;strong&gt;deciders&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;A recognizer is a program that can only tell you with certainty when it has 
+succeeded to solve 
+a problem (reached the accept state). It cannot always tell you when it has 
+failed (if it goes into an infinite loop, there is no way to know if it’s in a
+loop, or if it’s just taking very long to solve the problem).&lt;/p&gt;
+
+&lt;p&gt;A decider is a program that always reaches either accepts or rejects. That
+is, you not only know when the problem was solved, but you also know when it 
+was &lt;em&gt;not&lt;/em&gt; solved.&lt;/p&gt;
+
+&lt;p&gt;A language is &lt;strong&gt;recognizable&lt;/strong&gt; if there exists at least one program that can 
+recognize it. For example, the following program reconizes &lt;script type="math/tex"&gt;L = \{"342"\}&lt;/script&gt;
+(the language made up of only the string “342”):&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Read input.&lt;/li&gt;
+  &lt;li&gt;If input == “342” print “accept”.&lt;/li&gt;
+  &lt;li&gt;Else return to step 1. &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This program &lt;em&gt;recognizes&lt;/em&gt; &lt;script type="math/tex"&gt;L&lt;/script&gt;, but it does not &lt;em&gt;decide&lt;/em&gt; &lt;script type="math/tex"&gt;L&lt;/script&gt;: if the input is
+in &lt;script type="math/tex"&gt;L&lt;/script&gt;, it accepts, but if it’s not, then it will run forever, and you will 
+never know whether the input was not in &lt;script type="math/tex"&gt;L&lt;/script&gt; or the program is just taking a 
+long time.&lt;/p&gt;
+
+&lt;p&gt;A language is &lt;strong&gt;decidable&lt;/strong&gt; if there exists a program that can decide it. All
+decidable languages are also recognizable. Here is a program that decides &lt;script type="math/tex"&gt;L&lt;/script&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Read input.&lt;/li&gt;
+  &lt;li&gt;If input == “342” print “accept”.&lt;/li&gt;
+  &lt;li&gt;Else print “input rejected”. &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="the-halting-problem"&gt;The Halting Problem&lt;/h3&gt;
+
+&lt;p&gt;Take the following language: &lt;/p&gt;
+
+&lt;p&gt;&lt;script type="math/tex"&gt; HALT_{ TM } = \{ \langle M, w \rangle | M &lt;/script&gt; is a program and &lt;script type="math/tex"&gt;M&lt;/script&gt; halts on 
+input &lt;script type="math/tex"&gt;w \} &lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Remember, a program is itself just a string: any program can be written down as 
+a description, say an &lt;code&gt;.rb&lt;/code&gt; file, and that file can be used as an input for 
+another program (or itself!). So &lt;script type="math/tex"&gt;HALT_{ TM }&lt;/script&gt; is a language that consists
+of all programs &lt;script type="math/tex"&gt;M&lt;/script&gt; and inputs &lt;script type="math/tex"&gt;w&lt;/script&gt; such that &lt;script type="math/tex"&gt;M&lt;/script&gt; halts on &lt;script type="math/tex"&gt;w&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;I won’t prove it in this post, but, as it turns out, &lt;script type="math/tex"&gt;HALT_{ TM }&lt;/script&gt; is 
+undecidable. Meaning it is not possible to write a program that decides
+whether an algorithm halts.&lt;/p&gt;
+
+&lt;p&gt;With this in mind, we can finally prove Rice’s theorem:&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="rices-theorem"&gt;Rice’s Theorem&lt;/h3&gt;
+
+&lt;p&gt;Recall the theorem:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Every non-trivial semantic property of a program is undecidable. &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Yet another way of stating this is as follows:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The language &lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt;, described below, is undecidable:&lt;/p&gt;
+
+  &lt;p&gt;&lt;script type="math/tex"&gt;P_{ TM } = \{ \langle M \rangle | M&lt;/script&gt; is a program and &lt;script type="math/tex"&gt;L(M)&lt;/script&gt; has 
+non-trivial property &lt;script type="math/tex"&gt;P \}&lt;/script&gt;&lt;/p&gt;
+
+  &lt;p&gt;Where &lt;script type="math/tex"&gt;L(M)&lt;/script&gt; means “The language of &lt;script type="math/tex"&gt;M&lt;/script&gt;”. &lt;!-- _. --&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So, for example, it is not possible to write a program &lt;script type="math/tex"&gt;R&lt;/script&gt; that takes as its 
+input another program &lt;script type="math/tex"&gt;M&lt;/script&gt; and decides whether the language of &lt;script type="math/tex"&gt;M&lt;/script&gt; is 
+regular (that is, if &lt;script type="math/tex"&gt;M&lt;/script&gt; can be simplified and represented as a finite 
+automation).&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="proof"&gt;Proof&lt;/h3&gt;
+
+&lt;p&gt;We can prove Rice’s theorem by contradiction. We will show that &lt;strong&gt;if&lt;/strong&gt; 
+&lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt; is decidable &lt;strong&gt;then&lt;/strong&gt; so is &lt;script type="math/tex"&gt;HALT_{ TM }&lt;/script&gt;. 
+Since we know that &lt;script type="math/tex"&gt;HALT_{ TM }&lt;/script&gt; is 
+undecidable, then &lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt; must be undecidable too. &lt;/p&gt;
+
+&lt;p&gt;Assume that &lt;script type="math/tex"&gt;P&lt;/script&gt; is some non-trivial semantic property and that 
+it is possible to write a program &lt;script type="math/tex"&gt;R&lt;/script&gt; that decides &lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt;. Here is
+how we could solve the halting problem with that program:&lt;!-- _. --&gt;&lt;/p&gt;
+
+&lt;p&gt;First, we write a program &lt;script type="math/tex"&gt;T&lt;/script&gt; such that &lt;script type="math/tex"&gt;\langle T \rangle &lt;/script&gt; is in &lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt;.
+Because &lt;script type="math/tex"&gt;P&lt;/script&gt; is non-trivial, such a program must exist.&lt;/p&gt;
+
+&lt;p&gt;Take input &lt;script type="math/tex"&gt;\langle M, w \rangle&lt;/script&gt; and use it to write a program &lt;script type="math/tex"&gt;M_w&lt;/script&gt;
+that takes &lt;script type="math/tex"&gt;x&lt;/script&gt; as its input and does the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;script type="math/tex"&gt;M_w&lt;/script&gt;:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;script type="math/tex"&gt;M&lt;/script&gt; on input &lt;script type="math/tex"&gt;w&lt;/script&gt;. If &lt;script type="math/tex"&gt;M&lt;/script&gt; halts, move on to step 2. &lt;/li&gt;
+  &lt;li&gt;Run &lt;script type="math/tex"&gt;T&lt;/script&gt; on &lt;script type="math/tex"&gt;x&lt;/script&gt;. Accept if &lt;script type="math/tex"&gt;T&lt;/script&gt; accepts, and reject if &lt;script type="math/tex"&gt;T&lt;/script&gt; rejects.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here’s the clever part. &lt;em&gt;We don’t actually have to run &lt;script type="math/tex"&gt;M_w&lt;/script&gt;&lt;/em&gt;:&lt;/p&gt;
+
+&lt;p&gt;All we need to know is that, if we &lt;em&gt;were&lt;/em&gt; to run &lt;script type="math/tex"&gt;M_w&lt;/script&gt;, there are two possible 
+outcomes: &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+&lt;script type="math/tex"&gt;M&lt;/script&gt; halts on input &lt;script type="math/tex"&gt;w&lt;/script&gt;, in which case &lt;script type="math/tex"&gt;M_w&lt;/script&gt; reaches step 2.&lt;/li&gt;
+  &lt;li&gt;
+&lt;script type="math/tex"&gt;M&lt;/script&gt; never halts and never reaches step 2. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But note that, if &lt;script type="math/tex"&gt;M&lt;/script&gt; halts on &lt;script type="math/tex"&gt;w&lt;/script&gt;, then step 2 is simply to run &lt;script type="math/tex"&gt;T&lt;/script&gt;, which 
+means that &lt;strong&gt;when &lt;script type="math/tex"&gt;M&lt;/script&gt; halts on &lt;script type="math/tex"&gt;w&lt;/script&gt;, &lt;script type="math/tex"&gt;\langle M_w \rangle&lt;/script&gt; is in &lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;So, if we were to run &lt;script type="math/tex"&gt;R&lt;/script&gt; with input &lt;script type="math/tex"&gt;\langle M_w \rangle&lt;/script&gt;, 
+it would be able to tell us whether it is in &lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt;, and that in
+turn would tell us if &lt;script type="math/tex"&gt;M&lt;/script&gt; halts on &lt;script type="math/tex"&gt;w&lt;/script&gt;. &lt;/p&gt;
+
+&lt;p&gt;But this would mean that we
+could solve the halting problem, which we know  is not possible.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:clusterfoo.com,2013-03-27:/articles/ruby_fizzbuzz_by_exhaustion/</id>
+    <title type="html">Fizz-Buzz by Exhaustion in Ruby</title>
+    <published>2013-03-27T04:00:00Z</published>
+    <updated>2013-03-27T04:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/articles/ruby_fizzbuzz_by_exhaustion/"/>
+    <content type="html">&lt;!-- _. --&gt;
+
+&lt;p&gt;Here’s a cute solution to &lt;a href="https://en.wikipedia.org/wiki/Bizz_buzz"&gt;Fizz-Buzz&lt;/a&gt; 
+that occurred to me when I read about the 
+&lt;code&gt;unless&lt;/code&gt; statement in Ruby; it uses only the unless statement. 
+I’m doing the Bitmaker Labs workshop, and one of the questions for the
+interview was Fizz-Buzz. &lt;/p&gt;
+
+&lt;p&gt;I call it “by exhaustion” because, instead of using &lt;code&gt;if&lt;/code&gt;-statements to look for 
+which terms to include, it uses &lt;code&gt;unless&lt;/code&gt;-statements to look for which terms
+to exclude (until all possibilities are exhausted, in which case it just
+gives up and says “Let’s just assume it’s ‘Buzz’”).&lt;/p&gt;
+
+&lt;div&gt;
+&lt;div class="CodeRay"&gt;
+  &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="line-numbers"&gt;&lt;a href="#n1" name="n1"&gt;1&lt;/a&gt;&lt;/span&gt;(&lt;span style="color:#00D"&gt;1&lt;/span&gt;..&lt;span style="color:#00D"&gt;100&lt;/span&gt;).each &lt;span style="color:#080;font-weight:bold"&gt;do&lt;/span&gt; |n|
+&lt;span class="line-numbers"&gt;&lt;a href="#n2" name="n2"&gt;2&lt;/a&gt;&lt;/span&gt;  (puts n.to_s; &lt;span style="color:#080;font-weight:bold"&gt;next&lt;/span&gt;) &lt;span style="color:#080;font-weight:bold"&gt;unless&lt;/span&gt; (n % &lt;span style="color:#00D"&gt;3&lt;/span&gt; == &lt;span style="color:#00D"&gt;0&lt;/span&gt;) &lt;span style="color:#080;font-weight:bold"&gt;or&lt;/span&gt; (n % &lt;span style="color:#00D"&gt;5&lt;/span&gt; == &lt;span style="color:#00D"&gt;0&lt;/span&gt;)
+&lt;span class="line-numbers"&gt;&lt;a href="#n3" name="n3"&gt;3&lt;/a&gt;&lt;/span&gt;  (puts &lt;span style="background-color:hsla(0,100%,50%,0.05)"&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;span style="color:#D20"&gt;Fizz&lt;/span&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;/span&gt;; &lt;span style="color:#080;font-weight:bold"&gt;next&lt;/span&gt;) &lt;span style="color:#080;font-weight:bold"&gt;unless&lt;/span&gt; (n % &lt;span style="color:#00D"&gt;5&lt;/span&gt; == &lt;span style="color:#00D"&gt;0&lt;/span&gt;) &lt;span style="color:#080;font-weight:bold"&gt;or&lt;/span&gt; (n % &lt;span style="color:#00D"&gt;3&lt;/span&gt; != &lt;span style="color:#00D"&gt;0&lt;/span&gt;)
+&lt;span class="line-numbers"&gt;&lt;a href="#n4" name="n4"&gt;4&lt;/a&gt;&lt;/span&gt;  (puts &lt;span style="background-color:hsla(0,100%,50%,0.05)"&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;span style="color:#D20"&gt;FizzBuzz&lt;/span&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;/span&gt;; &lt;span style="color:#080;font-weight:bold"&gt;next&lt;/span&gt;) &lt;span style="color:#080;font-weight:bold"&gt;unless&lt;/span&gt; (n % &lt;span style="color:#00D"&gt;3&lt;/span&gt; != &lt;span style="color:#00D"&gt;0&lt;/span&gt;)
+&lt;span class="line-numbers"&gt;&lt;a href="#n5" name="n5"&gt;5&lt;/a&gt;&lt;/span&gt;  puts &lt;span style="background-color:hsla(0,100%,50%,0.05)"&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;span style="color:#D20"&gt;Buzz&lt;/span&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line-numbers"&gt;&lt;a href="#n6" name="n6"&gt;6&lt;/a&gt;&lt;/span&gt;&lt;span style="color:#080;font-weight:bold"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:clusterfoo.com,2013-03-27:/articles/classics_of_2053/</id>
+    <title type="html">What Songs Released in the Last 10 Years do you Think Will be Considered Classics in 2053?</title>
+    <published>2013-03-27T04:00:00Z</published>
+    <updated>2013-03-27T04:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/articles/classics_of_2053/"/>
+    <content type="html">&lt;!-- _. --&gt;
+
+&lt;p&gt;Rock stars were the product of a world in which 
+independent media, for all intents and purposes, did not exist.&lt;/p&gt;
+
+&lt;p&gt;There will never be another Beatles, because today, a band of such caliber would 
+most likely go to an independent label, where they can have full control of 
+only their music and their careers. In fact, they might not sign with a label 
+at all, but self release instead.&lt;/p&gt;
+
+&lt;p&gt;There still are exceptions: great modern bands that go the big label route 
+(The Strokes, Queens of the Stone Age, The Mars Volta), but even they live at 
+the margins of what one would consider popular music… sometimes even 
+abandoning it altogether (Radiohead). &lt;/p&gt;
+
+&lt;p&gt;Today, big labels are in the business of producing the hit of the summer, 
+not the album of the decade (which would be fine by me, if they weren’t also in 
+the business of ruining people with lawsuits). &lt;/p&gt;
+
+&lt;p&gt;People now have the power to find their own music on their own terms, 
+without the help of radio critics. – When was the last time &lt;em&gt;you&lt;/em&gt; cared what a 
+professional music critic had to say? &lt;/p&gt;
+
+&lt;p&gt;Music fans simply don’t care about charts, because all the 
+talented musicians are flocking to smaller labels, and self-publishing.&lt;/p&gt;
+
+&lt;p&gt;There are so many options now, so many niches, that music is no longer about the 
+massive, continent-sweeping phenomena it was about up until the mid-90’s. &lt;/p&gt;
+
+&lt;p&gt;Back then, we’d ALL flock to whatever actual talent managed to fight its way to 
+the top of the big-media approved charts. What other option did we have? 
+Today, music is much more of a personal experience; it’s about small communities 
+of loyal followers, not giant mobs filling up stadiums; and, in three decades, 
+you’ll all remember the music that mattered to &lt;em&gt;you&lt;/em&gt;, not everyone else.&lt;/p&gt;
+
+&lt;p&gt;(&lt;a href="http://www.reddit.com/r/AskReddit/comments/1b19ne/what_songs_released_in_the_last_10_years_do_you/"&gt;Original thread on Reddit&lt;/a&gt;)&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:clusterfoo.com,2013-03-26:/articles/dysfunctional_institutions_and_policy/</id>
+    <title type="html">Dysfunctional Institutions and their Totally Reasonable Policy</title>
+    <published>2013-03-26T04:00:00Z</published>
+    <updated>2013-03-26T04:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/articles/dysfunctional_institutions_and_policy/"/>
+    <content type="html">&lt;!-- _. --&gt;
+
+&lt;p&gt;There is an inverse relationship between the robustness of a social
+group, and how crucial it is deemed within that group to implement 
+and follow policy: the more punctilious its law books, 
+the more dysfunctional an institution is likely to be. &lt;/p&gt;
+
+&lt;p&gt;When a group is well-organized, there is no need for managerial
+oversight. From personal experience, we know that our healthiest partnerships
+can operate successfully for long periods of time without anyone finding the 
+need to introduce some inflexible set of rules of conduct. &lt;/p&gt;
+
+&lt;p&gt;There is no need
+to meddle in the minutia of how this or that partner is to behave at all times,
+because communication is strong and the team is productive. A mere tacit 
+understanding of each partner’s strengths and boundaries will 
+suffice. At most, a written list of general guidelines. &lt;/p&gt;
+
+&lt;p&gt;It is only when trust, communication, and morale begin to break down that we
+perceive the need to introduce strict policies, carefully worded rules of proper
+and improper conduct, and, of course, arbitrary ranks of authority. &lt;/p&gt;
+
+&lt;p&gt;I say “perceive” because, in practice, these regulatory measures are not only
+corrosive, but, in fact, engender 
+&lt;a href="/articles/bureaucratic_bloat"&gt;a bureaucratic positive feedback loop&lt;/a&gt;
+out of which the organization cannot break, and which eventually permeates the 
+culture so fundamentally that the institution may become too inefficient 
+to operate at all… this is the organizational equivalent of 
+&lt;a href="https://en.wikipedia.org/wiki/Software_bloat"&gt;software bloat&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We can follow this trend by starting with the example of a healthy, productive 
+partnerships. Even a friendship, perhaps. – These relationships are invariably 
+anarchistic. If a husband were to demand from his wife that she ask permission 
+to leave her 
+home, based on some arbitrary claim to authority, we’d say that husband is 
+overbearing. If the wife were to begin making unreasonable demands of her husband,
+and ask that he follow this and that rule, with no explanation as to why, 
+we’d say she is too controlling. &lt;/p&gt;
+
+&lt;p&gt;We immediately recognize that the healthiest, most robust partnerships are those
+marked not by efficient policy, but by a &lt;em&gt;lack&lt;/em&gt; thereof. Not because rules of 
+conduct are a bad thing in and of themselves, but because we understand that, 
+when communication is strong, &lt;em&gt;there is no need to explicitly define those 
+rules in the first place.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;To continue our thought experiment, we now climb down the ladder of 
+organizational robustness, lower and lower, until we reach the very bottom:&lt;/p&gt;
+
+&lt;p&gt;We have before us the most inflexible, micro-managerial and arbitrarily 
+hierarchical institutions our society has to offer; which, not surprisingly, 
+are also the most dysfunctional and ineffective I could think to name: &lt;strong&gt;our 
+prisons, our governments, and our schools.&lt;/strong&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:clusterfoo.com,2013-03-26:/articles/bureaucratic_bloat/</id>
+    <title type="html">Bureaucratic Bloat</title>
+    <published>2013-03-26T04:00:00Z</published>
+    <updated>2013-03-26T04:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/articles/bureaucratic_bloat/"/>
+    <content type="html">&lt;!-- _. --&gt;
+
+&lt;p&gt;Bureaucratic bloat is the organizational equivalent of 
+&lt;a href="https://en.wikipedia.org/wiki/Software_bloat"&gt;software bloat&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;Bureaucracies fetter the most productive members of an organization by impeding
+them from exercising their creativity and best judgement. To make matters worse, 
+within a bureaucratic institution, the atmosphere is such that advantage is most 
+easily gained not by fostering progress, but by gaming the system.&lt;/p&gt;
+
+&lt;p&gt;Individuals “rise to the top” most easily when they stifle the advancement of 
+others. These individuals will abuse the inflexible institutional rule-sets and 
+hierarchies, and use them as roadblocks with which to slow down their 
+competitors. At the same time, they will take advantage of the many 
+loopholes that inevitably arise within bureaucracies. &lt;/p&gt;
+
+&lt;p&gt;This is not, as some would argue, “an unfortunate, but inevitable consequence of 
+the human character, for which there is no getting around,” but, rather, it is 
+an inextricable property of pyramidal hierarchies. &lt;/p&gt;
+
+&lt;p&gt;A second inevitable consequence is 
+&lt;a href="/articles/dysfunctional_institutions_and_policy"&gt;the bureaucratic positive feedback loop&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;When the gaming of regulatory loopholes becomes pandemic, we fool ourselves into
+believing that the problem of inefficient policy must be remedied by… 
+what else, but the introduction of &lt;em&gt;more&lt;/em&gt; policy! &lt;/p&gt;
+
+&lt;p&gt;(In other words: 
+more loopholes to be exploited by charlatans, and more roadblocks for 
+innovators.)&lt;/p&gt;
+
+&lt;p&gt;This is bureaucratic entropy. And fighting entropy is a losing battle. &lt;strong&gt;To expect
+new policy to make more efficient an institution that is already mired by
+inefficient policy, is to expect an egg to become less scrambled if only we
+turn up the heat and stir faster!&lt;/strong&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:clusterfoo.com,2013-03-08:/quick-guides/rsync-over-ssh/</id>
+    <title type="html">Syncing with a Remote Server Using Rsync Over SSH</title>
+    <published>2013-03-08T05:00:00Z</published>
+    <updated>2013-03-08T05:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/quick-guides/rsync-over-ssh/"/>
+    <content type="html">&lt;!-- _. --&gt;
+
+&lt;p&gt;Rsync is a command-line utility for copying and syncing files. Rsync can be 
+used over ssh to sync files between remote servers. The basic command
+for use over ssh is&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rsync [options] -e "ssh" source target
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you’ve set up private and public keys to secure your ssh connection, you must 
+specify the location of the identity key (also known as “private key”), which 
+is usually found in the &lt;code&gt;~/.ssh&lt;/code&gt; directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rsync [options] -e "ssh -i /home/user/.ssh/private_key_file"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I use rsync to deploy my blog. All of its contents are found &lt;a href="http://github.com/clusterfoo/clusterfoo-dot-com"&gt;in the &lt;code&gt;output&lt;/code&gt;
+directory&lt;/a&gt;, which I sync with
+a small shared server at &lt;a href="http://asmallorange.com"&gt;A Small Ornage&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;I use the following simple command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rsync -avh [-n] --progress --delete-after -e "ssh -i /home/username/.ssh/id_rsa" \
+  output/ username@clusterfoo.com:/home/username/public_html/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+&lt;code&gt;-a&lt;/code&gt;: Archive mode. The most common option for syncing directories.&lt;/li&gt;
+  &lt;li&gt;
+&lt;code&gt;-v&lt;/code&gt;: Verbose mode.&lt;/li&gt;
+  &lt;li&gt;
+&lt;code&gt;-h&lt;/code&gt;: Human readable. Print numbers in human-readable formats.&lt;/li&gt;
+  &lt;li&gt;
+&lt;code&gt;-n&lt;/code&gt;: Dry run.&lt;/li&gt;
+  &lt;li&gt;
+&lt;code&gt;--progress&lt;/code&gt;: Show progress during transfer.&lt;/li&gt;
+  &lt;li&gt;
+&lt;code&gt;--delete-after&lt;/code&gt;: Sync new and updated files, and wait until transfer is 
+complete before deleting any superfluous files. This is important when deploying
+a website, since otherwise a visitor might stumble upon missing pages.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="always-dry-run-first"&gt;Always Dry-Run First!&lt;/h3&gt;
+
+&lt;p&gt;It’s easy to make mistakes with rsync. A simple typo like &lt;code&gt;dir&lt;/code&gt; instead of 
+&lt;code&gt;dir/&lt;/code&gt; can mean a world of difference (and a world of pain if you accidentally 
+&lt;code&gt;-rm&lt;/code&gt; an entire directory!).&lt;/p&gt;
+
+&lt;p&gt;I always do a dry-run before I use an rsync command for the first time. The 
+dry-run option (&lt;code&gt;-n&lt;/code&gt;) will show you the final output of the operation, 
+without actually running through it.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:clusterfoo.com,2013-03-04:/me/blog/2013/march/new-blog/</id>
+    <title type="html">New Blog</title>
+    <published>2013-03-04T05:00:00Z</published>
+    <updated>2013-03-04T05:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/me/blog/2013/march/new-blog/"/>
+    <content type="html">&lt;p&gt;I’ve been thinking about rebuilding this blog with 
+&lt;a href="http://nanoc.ws" target="_blank"&gt;nanoc&lt;/a&gt; for a while now. &lt;/p&gt;
+
+&lt;p&gt;Well, yesterday I
+decided to finally get to it, and here it is, in all its minimalistic glory. I’m
+still figuring out how to add all the features I want, so everything is still 
+pretty half-baked. But here’s what I’m liking so far:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;I can back up my entire site in a github repo. Everything from the layout to
+the actual content of my articles lives as real text files I can open, edit, and 
+move around. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Extremely portable and small. To deploy, I simply dump static HTML files 
+into an affordable shared server at 
+&lt;a href="http://asmallorange.com" target="_blank"&gt;A Small Orange&lt;/a&gt; and barely see a
+dent in my data usage.
+&lt;!-- _. --&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Nothing to maintain. No security issues to worry about. Everything is static 
+HTML/CSS/Javascipt. Any interactivity I wish to add (comments, etc) can be taken 
+care of by a third party like &lt;a href="http://disqus.com" target="_blank"&gt;Disqus&lt;/a&gt;… 
+let &lt;em&gt;them&lt;/em&gt; worry about security issues and database backups :p
+&lt;!-- _. --&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I can write all my posts in markdown, or whatever markup I choose. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;My content is not tied to a platform or database. Even an open platform like
+Wordpress or Drupal can be a pain to migrate if you decide to switch to 
+something else. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It’s fun to roll your own! &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can see the source for this blog on 
+&lt;a href="http://github.com/clusterfoo/clusterfoo-dot-com" target="_blank"&gt;my github&lt;/a&gt;&lt;/p&gt;
+</content>
   </entry>
   <entry>
     <id>tag:clusterfoo.com,2013-02-28:/quick-guides/screencasting-in-linux/</id>
@@ -654,7 +702,7 @@ $ rake db:test:prepare
 &lt;h3 id="tools-used"&gt;Tools used&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;
+  &lt;li&gt;
     &lt;p&gt;arandr (easily manage your screens and their resolution)&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -675,7 +723,9 @@ $ rake db:test:prepare
   &lt;li&gt;
     &lt;p&gt;openshot (edit and export final video)&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;&lt;h3 id="preparation"&gt;Preparation&lt;/h3&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="preparation"&gt;Preparation&lt;/h3&gt;
 
 &lt;p&gt;Using arandr, change screen resolution to 1280x720 (720p) and switch to
 a large terminal font.&lt;/p&gt;
@@ -691,7 +741,8 @@ a large terminal font.&lt;/p&gt;
 
 &lt;h3 id="exporting-for-youtube"&gt;Exporting for YouTube&lt;/h3&gt;
 
-&lt;p&gt;I export the file as a 720p flv, using aac for audio codec.&lt;/p&gt;</content>
+&lt;p&gt;I export the file as a 720p flv, using aac for audio codec.&lt;/p&gt;
+</content>
   </entry>
 </feed>
 

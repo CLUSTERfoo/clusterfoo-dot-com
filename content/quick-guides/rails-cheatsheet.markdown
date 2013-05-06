@@ -1,9 +1,13 @@
 ---
 title: Rails Cheatsheet
 kind: article
-created_at: 2013-03-01
+created_at: 2013-05-06
 ---
 <!-- _. -->
+
+**Updated:** Instad of `.rvmrc`, I now use `.ruby-version` and `.ruby-gemset`.
+
+***
 
 A little cheatsheet of Rails stuff I don't want to forget. Many of these
 tips come from 
@@ -58,15 +62,23 @@ environment.
 
 ### Initialize Rails App
 
-#### Set up Rails App and rvmrc
+#### Set up Rails App Directory
 
 Skip TestUnit if you're using rspec:
 
     $ rails new project_name --skip-test-unit
     
-Now create an rvmrc inside the project's root directory:
+Now create two files: `.ruby-version` and `.ruby-gemset`. These files will 
+ensure that rvm, or whatever ruby envelope you use, know to switch to the 
+correct Ruby version (and gemset, in rvm). For example, if you're using Ruby
+2.0.0 and a gemset called `my-project`, create a `.ruby-version` file with the
+following content:
 
-    $ rvm --rvmrc --create 1.9.3-head@projectname
+    2.0.0
+
+And a `.ruby-gemset` file with:
+
+    my-project
 
 Now `cd` in and out of the directory and make sure that rvm is switching to the 
 correct gemset with:
