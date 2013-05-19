@@ -16,7 +16,7 @@ Compass.add_project_configuration 'compass_config.rb'
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
-compile '/style/stylesheet/' do
+compile '/assets/style/stylesheet/' do
   filter :sass, Compass.sass_engine_options   #syntax: :scss
 end
 
@@ -47,8 +47,8 @@ compile '*' do
   end
 end
 
-route '/style/stylesheet/' do
-  '/style/style.css'
+route '/assets/style/stylesheet/' do
+  '/assets/style/style.css'
 end
 
 route '/atom/' do

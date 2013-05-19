@@ -5,9 +5,9 @@ require 'susy'
 # Set this to the root of your project when deployed:
 http_path     = "/"
 project_path  = "." #File.dirname(__FILE__)
-css_dir       = "output/style/"
-sass_dir      = "content/style/"
-images_dir    = "content/style/images/"
+css_dir       = "output/assets/style/"
+sass_dir      = "content/assets/style/"
+images_dir    = "content/assets/style/images/"
 
 sass_options  = {
   :syntax => :scss
