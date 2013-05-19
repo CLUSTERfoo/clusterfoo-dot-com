@@ -3,4 +3,6 @@
 .sass-cache/
 tmp/
 crash.log
+Gemfile.lock
+output/*
 
