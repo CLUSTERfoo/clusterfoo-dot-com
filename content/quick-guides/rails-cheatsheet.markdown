@@ -1,11 +1,11 @@
 ---
 title: Rails Cheatsheet
 kind: article
-created_at: 2013-05-06
+created_at: 2013-06-19
 ---
 <!-- _. -->
 
-**Updated:** Instad of `.rvmrc`, I now use `.ruby-version` and `.ruby-gemset`.
+**Updated:** Now using vagrant and postgresql.
 
 ***
 
@@ -18,9 +18,66 @@ tips come from
 
 ### Setting Up Environment
 
+#### Set Up Vagrant with Ubuntu VM 
+
+(This can be skipped, just set up the same environment in your host machine).
+For more complete instructions on setting up Vagrant, visit their site, as their
+docs are extremely easy to follow.
+
+Rails uses port 3000 by default. This means that your `Vagrantfile` requires:
+
+    config.vm.network :forwarded_port, host: 4567, guest: 3000
+
+This will make your rails app available through [http://localhost:4567].
+
+Next, (if your vm is ubuntu), you'll need the following packages:
+
+    sudo apt-get install git vim libpq-dev libxslt-dev libxml2-dev \
+                         postgresql libsqlite3-dev
+
+You'll also need to install `nvm` (nodejs version manager) by following the
+instructions on the nvm github and run the latest version of nodejs.
+
+##### Set Up Postgres
+
+Finally, you'll need to actually set up postgres to work with your rails app.
+First, in your `config/database.yml`, you want the following settings:
+
+    development:
+      adapter: postgresql
+      encoding: unicode
+      database: database
+      host: localhost
+      pool: 5
+      username: username
+      password: password
+
+Next, you need to create the corresponding username and password on postgres:
+
+    $ sudo -u postgres psql
+    
+Now, to set up user password:
+
+    postgres=# \password
+
+Next create user and password:
+
+    postgres=# create user username with password 'password';
+
+... and a database:
+
+    postgres=# create database database owner username;
+
+All done! Your (vm) environment is all set up. In a vm environment, I don't use
+gemsets (though you could), so if you did this on vagrant, you can skip the
+gemset instructions.
+
+
 #### Install RVM, Ruby, Bundler
 
 Install RVM through instructions on [rvm.io](http://rvm.io){: target="_blank" }.
+If you're using vagrant, remember to `vagrant ssh` into your vm for this.
+
 <!-- _. -->
 RVM now also eliminates the need to use `bundle exec` when used with bundler. 
 
@@ -37,27 +94,7 @@ Install latest ruby. The following OpenSSL option is needed on Ubuntu:
 > 
 > You will also need to run
 > 
-> `$ rvm reinstall 1.9.3-head --with-gcc=clang`
-
-
-Create project gemset and be in it before installing Rails:
-
-    $ rvm use 1.9.3-head@projectname --create
-
-Project-specific gemsets prevent big headaches. Don't forget to set a 
-project `rvmrc` file after Rail app is generated (see below).
-
-#### Install Rails
-
-    $ gem install rails
-    
-And if on Linux, also run:
-
-    $ sudo apt-get install libxslt-dev libxml2-dev libsqlite3-dev
-
-Install node.js so that rails server can run properly in your development
-environment.
-
+> `$ rvm reinstall 2.0.0-head --with-gcc=clang`
 
 
 ### Initialize Rails App
@@ -111,12 +148,6 @@ Follow
 
 
 #### Heroku / Deployment
-
-Add PostgreSQL gem and production-environment-specific gems. In gem file:
-
-    group :production do
-      gem 'pg'
-    end
 
 To run bundler without production gems
 
