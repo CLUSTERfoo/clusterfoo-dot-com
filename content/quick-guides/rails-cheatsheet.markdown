@@ -9,9 +9,7 @@ created_at: 2013-06-19
 
 ***
 
-A little cheatsheet of Rails stuff I don't want to forget. Many of these
-tips come from 
-[Michael Hartl's Rails tutorial](http://ruby.railstutorial.org/){: target="_blank" }.
+A little cheatsheet of Rails stuff I don't want to forget.
 
 <!-- _. -->
 
@@ -33,7 +31,7 @@ This will make your rails app available through [http://localhost:4567].
 Next, (if your vm is ubuntu), you'll need the following packages:
 
     sudo apt-get install git vim libpq-dev libxslt-dev libxml2-dev \
-                         postgresql libsqlite3-dev
+                         postgresql curl libsqlite3-dev
 
 You'll also need to install `nvm` (nodejs version manager) by following the
 instructions on the nvm github and run the latest version of nodejs.
@@ -41,6 +39,10 @@ instructions on the nvm github and run the latest version of nodejs.
 ##### Set Up Postgres
 
 Finally, you'll need to actually set up postgres to work with your rails app.
+If you've not started the app yet, run:
+
+    $ rails new project_name --database=postgresql
+
 First, in your `config/database.yml`, you want the following settings:
 
     development:
