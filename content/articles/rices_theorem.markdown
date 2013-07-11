@@ -2,6 +2,7 @@
 title: Rice's Theorem
 kind: article
 created_at: 2013-04-16
+category: article
 ---
 
 <!-- _. -->

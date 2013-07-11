@@ -2,6 +2,7 @@
 title: Managing Multiple Computers with One bashrc/zshrc
 kind: article
 created_at: 2013-05-06
+category: quick-guide
 ---
 
 <!-- _. -->

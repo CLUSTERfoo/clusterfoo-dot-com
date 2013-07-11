@@ -2,6 +2,7 @@
 title: Syncing with a Remote Server Using Rsync Over SSH
 kind: article
 created_at: 2013-03-08
+category: quick-guide
 ---
 <!-- _. -->
 

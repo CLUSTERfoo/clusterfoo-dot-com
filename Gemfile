@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'compass'
 gem 'susy', '~> 1.0'
-gem 'nanoc', '~> 3.5'
+gem 'nanoc' , '~> 3.6.0'
 gem 'adsf'
 gem 'kramdown'
 

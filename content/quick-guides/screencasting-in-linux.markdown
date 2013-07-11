@@ -2,6 +2,7 @@
 title: Screencasting In Linux
 kind: article
 created_at: 2013-02-28
+category: quick-guide
 ---
 <!-- i_i -->
 

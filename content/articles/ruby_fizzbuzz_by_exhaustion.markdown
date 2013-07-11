@@ -3,6 +3,7 @@ title: Fizz-Buzz by Exhaustion in Ruby
 kind: article
 category: code
 created_at: 2013-03-27
+category: article
 ---
 
 <!-- _. -->
