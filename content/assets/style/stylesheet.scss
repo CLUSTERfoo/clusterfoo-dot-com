@@ -172,7 +172,7 @@ h5 { text-decoration: underline; }
 p {
   @include margin-leader(0.75);
 }
-pre, code { 
+pre, code, .mj { 
   border-radius: 15px;
   font-family: $code-font; 
   background: #efe;
