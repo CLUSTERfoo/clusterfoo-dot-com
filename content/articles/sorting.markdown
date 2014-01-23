@@ -5,14 +5,14 @@ created_at: 2014-01-20
 category: article
 ---
 
-At Functional Imperative we're building the new *CANLII Connects* website
+At Functional Imperative we're building the new *CanLII Connects* website
 (a social portal for Canada's largest database of legal cases), and 
 this week I was given the task of figuring out a sensible way of sorting posts.
 
 Figuring out how to sort user-generated content is
 a common problem that many social websites face.
 
-Here's Reddit's scoring equation for 'Best' [(source)](http://www.evanmiller.org/how-not-to-sort-by-average-rating.html):
+Here's Reddit's scoring equation for 'Best' [(source and explanation)](http://www.evanmiller.org/how-not-to-sort-by-average-rating.html):
 
 
 ![Reddit's 'best' scoring equation](/assets/images/2014/reddit_best.png)
@@ -20,7 +20,7 @@ Here's Reddit's scoring equation for 'Best' [(source)](http://www.evanmiller.org
 Not all scoring equations are that hairy, 
 [here are a few more](http://moz.com/blog/reddit-stumbleupon-delicious-and-hacker-news-algorithms-exposed).
 
-Interestingly enough, Reddit's 'Hot' scoring function:
+Interestingly enough, Reddit's 'Hot' scoring function (explained in link above):
 
 ![Reddit's scoring equation](/assets/images/2014/reddit_hot_algo.png)
 
@@ -36,7 +36,7 @@ whereas the value of scores calculated with `time_now` will change on every
 request.
 
 Anyway, while all those scoring functions work pretty well, they didn't quite
-fit the requirements for *CANLII Connects*.
+fit the requirements for *CanLII Connects*.
 
 In this post, I'll walk through the decision process of creating a scoring
 function. Hopefully this will be useful if you encounter a similar feature to
@@ -46,7 +46,7 @@ implement.
 
 ### Requirements:
 
-*CANLII Connects* links to a databse of legal cases, and users can post opinions
+*CanLII Connects* links to a database of legal cases, and users can post opinions
 on those cases. Moreover:
 
 1. A user can post.
@@ -58,7 +58,7 @@ So what's a sensible way of sorting posts?
 
 Right away, we're dealing with a different problem than Reddit or HN: while
 it makes sense to slowly degrade the score of a post on those sites over time,
-the same does not make sense for CANLII. Old cases might be cited at any time, 
+the same does not make sense for CanLII. Old cases might be cited at any time, 
 no matter how old they are, so what matters is not how old a discussion is, but
 rather how actively engaged users are within a given discussion.
 
