@@ -4,10 +4,9 @@ title: About Me
 
 ## About Me
 
-My name is Noam Gagliardi and I like making things.
+My name is Noam Gagliardi Rabinovich and I like making and understanding things.
 
 I’ve been programming since the Summer of 2012.
-Before that I was a math student. 
-I play the guitar, kind of.
+I like theory as much as practice, if not more, sometimes.
 
-That's it.
+I can't think of more things about me.
