@@ -174,7 +174,7 @@ $$ \bar{ t } = \cfrac{\sum_{i=1}^3 \left(\frac{1}{2}\right)^{i-1} * (t_i - t_{i-
 If we plot this equation for `x = number of points` and `y = time`, we can see the
 shape of this function and check for different values if they make sense:
 
-![Scoring function 3D plot](http://clusterfoo.com/assets/images/2014/scoring_function_shape.jpg)
+![Scoring function 3D plot](http://clusterfoo.com/assets/images/2014/scoring_function_shape_2.jpg)
 
 
 As expected, there is a steep 10-day "boost" period, followed by an increasingly 
