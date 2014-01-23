@@ -1,7 +1,7 @@
 ---
 title: Sorting Posts by User Engagement Level (With Elasticsearch Implementation)
 kind: article
-created_at: 2014-01-20
+created_at: 2014-01-23
 category: article
 ---
 
@@ -15,14 +15,14 @@ a common problem that many social websites face.
 Here's Reddit's scoring equation for 'Best' [(source and explanation)](http://www.evanmiller.org/how-not-to-sort-by-average-rating.html):
 
 
-![Reddit's 'best' scoring equation](/assets/images/2014/reddit_best.png)
+![Reddit's 'best' scoring equation](http://clusterfoo.com/assets/images/2014/reddit_best.png)
 
 Not all scoring equations are that hairy, 
 [here are a few more](http://moz.com/blog/reddit-stumbleupon-delicious-and-hacker-news-algorithms-exposed).
 
 Interestingly enough, Reddit's 'Hot' scoring function (explained in link above):
 
-![Reddit's scoring equation](/assets/images/2014/reddit_hot_algo.png)
+![Reddit's scoring equation](http://clusterfoo.com/assets/images/2014/reddit_hot_algo.png)
 
 is [quite flawed](http://technotes.iangreenleaf.com/posts/2013-12-09-reddits-empire-is-built-on-a-flawed-algorithm.html).
 
@@ -174,7 +174,7 @@ $$ \bar{ t } = \cfrac{\sum_{i=1}^3 \left(\frac{1}{2}\right)^{i-1} * (t_i - t_{i-
 If we plot this equation for `x = number of points` and `y = time`, we can see the
 shape of this function and check for different values if they make sense:
 
-![Scoring function 3D plot](/assets/images/2014/scoring_function_shape.jpg)
+![Scoring function 3D plot](http://clusterfoo.com/assets/images/2014/scoring_function_shape.jpg)
 
 
 As expected, there is a steep 10-day "boost" period, followed by an increasingly 
