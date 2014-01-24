@@ -71,17 +71,12 @@ of taking the base-10 log of its upvotes. This makes sense because, the more
 popular a post already is, the more likely people are to see it, and therefore
 upvote it, which gives it an unfair advantage. 
 
-So <span class="mj">`log_10(2 + u)`</span>$$\log_{10} (2+u)$$ is a good start (we add 2
-so we don't take the log of 1, which would cause our function to always return 0). 
 In our case, we're not only trying to
 measure how much people "like" a post, but rather how engaged they are with it.
 It makes sense that, while an upvote is a fine indicator of "engagedness", a
 user actually bothering to comment on a post is even more of an indicator. I'll
-count that as equivalent to two upvotes. And if a user bothers to not only
-comment on a post, but read the other comments and then comment on one of
-those? Well, clearly that user is very engaged. 
-I'd say that's worth three upvotes:
-
+count that as equivalent to two upvotes, and a user commenting on a comment will
+count as three upvotes (the 2 is so we don't take the log of 1 or 0): 
 
 <span class="mj">`log_10(2 + u + 2c + 3cc)`</span>
 <script type="math/tex; mode=display">
@@ -111,11 +106,9 @@ recent user interactions with  a post.
 We define a user interaction to be: a user creates a post, a user comments on
 a post, or a user upvotes a post.
 
-Also, we want the most recent interactions to weigh more than older interactions
-(if a post is slowing down, or speeding up, we want the value of `t_1` to be 
-higher than that of `t_3`). So let's say each `t` weighs twice as much
-as the previous. What we get is <span class="mj">`t_ave`</span>$$ \bar{ t }$$
-equal to the weighed average of the previous three interaction times:
+Also, we want the most recent interactions to weigh more than older interactions. 
+So let's say each `t` weighs twice as much
+as the previous:
 
 
 
@@ -137,12 +130,14 @@ at now, in seconds.
 <span class="mj">`t_n`</span>$$ t_n $$ = [UNIX timestamp](http://en.wikipedia.org/wiki/Unix_time) 
 of n<sup>th</sup> interaction.
 
+
+
 ### One Final Detail
 
-There is one last property I wanted this function to have, which is the following:
+There is one last property we want this function to have, which is the following:
 if interactions are very frequent right now (within a timeframe of, say, 10 days), 
-then clearly the post is "hot", and its score should be boosted. But as more
-and more time passes, it really doesn't matter as much how much distance there 
+then clearly the post is "hot", and its score should be boosted. But as
+time passes, it really doesn't matter as much how much distance there 
 is between interactions. If a post has already gone a full year without anyone
 commenting on it, does it 
 really make that much difference if it goes another month without a comment?
@@ -153,6 +148,9 @@ by the number of seconds in 10 days: `60*60*24*10`.
 To accomplish the second property, what we are looking for is some sort of
 always-increasing, concave function (positive derivative, negative second derivative).
 The first thing that comes to mind is the square-root function, which is good enough.
+
+
+
 
 ### Result
 
@@ -181,10 +179,13 @@ shape of this function and check for different values if they make sense:
 As expected, there is a steep 10-day "boost" period, followed by an increasingly 
 slower decline in the value as more and more time passes.
 
-> **Note:** The function is also heavily biased toward very new posts, which will always come
+> The function is also heavily biased toward very new posts, which will always come
 out on top, giving them a chance. This might be a bad idea if posting becomes 
 frequent, but user interaction is low (many summaries a day, few votes or comments), 
 and might have to be changed.
+
+> There are many ways to tweak this equation (changing the boost period, for example)
+to make it more or less biased towards either time or user interaction.
 
 
 
@@ -215,7 +216,7 @@ plugin.
 Here is our script:
 
 > **Sidenote:** Notice the logger function. This enables us to implement a sort of "console.log"
-which we can read using the following shell command `tail -f /var/log/elasticsearch/elasticsearch.log`: 
+which we can read using the following shell command `tail -f /var/log/elasticsearch/elasticsearch.log`.
 
     // Logger function:
     var logger = org.elasticsearch.common.logging.Loggers.getLogger("rails_logger");
