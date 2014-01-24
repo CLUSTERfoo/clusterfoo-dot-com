@@ -47,12 +47,12 @@ implement.
 ### Requirements:
 
 *CanLII Connects* links to a database of legal cases, and users can post opinions
-on those cases. Moreover:
+on those cases:
 
 1. A user can post.
-2. A user can upvote an post.
-3. A user can comment on an post.
-4. A user can comment on a comment on an post.
+2. A user can upvote a post.
+3. A user can comment on a post.
+4. A user can comment on a comment on a post.
 
 So what's a sensible way of sorting posts?
 
@@ -71,7 +71,8 @@ of taking the base-10 log of its upvotes. This makes sense because, the more
 popular a post already is, the more likely people are to see it, and therefore
 upvote it, which gives it an unfair advantage. 
 
-So <span class="mj">`log_10(u)`</span>$$\log_{10} u$$ is a good start. 
+So <span class="mj">`log_10(2 + u)`</span>$$\log_{10} (2+u)$$ is a good start (we add 2
+so we don't take the log of 1, which would cause our function to always return 0). 
 In our case, we're not only trying to
 measure how much people "like" a post, but rather how engaged they are with it.
 It makes sense that, while an upvote is a fine indicator of "engagedness", a
@@ -82,9 +83,9 @@ those? Well, clearly that user is very engaged.
 I'd say that's worth three upvotes:
 
 
-<span class="mj">`log_10(u + 2c + 3cc)`</span>
+<span class="mj">`log_10(2 + u + 2c + 3cc)`</span>
 <script type="math/tex; mode=display">
-    log_{10}(u + 2c + 3cc)
+    log_{10}(2 + u + 2c + 3cc)
 </script>
 
 
@@ -98,7 +99,7 @@ sense to divide the intial score by some factor of time:
 
 <span class="mj">`log_10(score)/t_ave`</span>
 <script type="math/tex; mode=display">
-    \cfrac{ log_{10} u+2c+3cc }{ \bar{t} }
+    \cfrac{ log_{10} (2+u+2c+3cc) }{ \bar{t} }
 </script>
 
 
@@ -163,7 +164,7 @@ And thus we have our final scoring function:
 `log(u + 2c + 3cc)/(sqrt(t_ave/60*60*24*10)); t_ave defined above -- ENABLE JAVASCRIPT FOR PRETTY EQUATIONS`
 </span>
 <script type="math/tex; mode=display">
-    \cfrac{ log_{10} (u + 2c + 3cc) }{ \sqrt{ \bar{t}/60*60*24*10 }}
+    \cfrac{ log_{10} (2 + u + 2c + 3cc) }{ \sqrt{ \bar{t}/60*60*24*10 }}
 </script>
 
 $$ \bar{ t } = \cfrac{\sum_{i=1}^3 \left(\frac{1}{2}\right)^{i-1} * (t_i - t_{i-1}) }{ \sum_{i=1}^3  \left(\frac{1}{2}\right)^{i-1}} $$
@@ -179,6 +180,11 @@ shape of this function and check for different values if they make sense:
 
 As expected, there is a steep 10-day "boost" period, followed by an increasingly 
 slower decline in the value as more and more time passes.
+
+> **Note:** The function is also heavily biased toward very new posts, which will always come
+out on top, giving them a chance. This might be a bad idea if posting becomes 
+frequent, but user interaction is low (many summaries a day, few votes or comments), 
+and might have to be changed.
 
 
 
