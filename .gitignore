@@ -6,4 +6,5 @@ crash.log
 Gemfile.lock
 output/*
 .ruby-version
+.DS*
 
