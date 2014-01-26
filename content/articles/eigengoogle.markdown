@@ -1,5 +1,5 @@
 ---
-title: Eigengoogle
+title: Eigengoogle: How the Google PageRank Algorithm Works
 kind: article
 created_at: 2014-01-25
 category: article
