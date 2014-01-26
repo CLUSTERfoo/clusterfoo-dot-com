@@ -12,10 +12,10 @@ IF YOU ARE ON RSS, VISIT THE ORIGINAL POST. JAVASCRIPT REQUIRED. --</span>
 </script>
 
 While we're on the topic of [sorting things online](http://clusterfoo.com/articles/sorting/), 
-we might as well talk about Google. Cause if there's 
-someone who knows about sorting things,
-it's Google: the 93-billion dollar company whose main export is taking all
-the things ever and putting them in the right order.
+we might as well talk about Google: 
+the 93-billion dollar company whose main export is taking all
+the things ever and putting them in the right order. If there's one thing Google
+knows best, it's sorting stuff.
 
 And it all started with an algorithm called PageRank. 
 [According to Wikipedia](http://en.wikipedia.org/wiki/PageRank),
@@ -51,8 +51,8 @@ A graph of `n` nodes can be represented in the form of an
 `n x n` *adjacency matrix*,
 <span class="mj">`M = [m_ij]`</span>$$ M = [m_{ij}]$$ such that 
 <span class="mj">m_ij</span>$$m_{ij}$$ is equal to the weight of the edge going
-from node <span class="mj">i</span>$$i$$ to node
-<span class="mj">j</span>$$j$$:
+from node <span class="mj">j</span>$$j$$ to node
+<span class="mj">i</span>$$i$$:
 
             
     [0, 1, 0, 0]
@@ -71,10 +71,12 @@ in probabilistic terms (i.e: the likelihood of some event happening at any given
 time).
 
 > **Scenario**: 
-Consider two liquor stores. Every month, the first store loses 30% of its customers to
-the second store, while the second store loses 60% of its customers to the first
-store. The two stores start out with the same number of customers. How
-many customers will each store have after a month? After a year?
+Consider two competing websites. Every month, the first website loses 30% of its 
+audience to
+the second website, while the second website loses 60% of its audience to the first. 
+>
+> If the two websites start out with 50% of the global audience, how
+many users will each website have after a month? After a year?
 
 This scenario can be represented as the following system:
 
@@ -91,14 +93,19 @@ The transition matrix is called a *stochastic matrix*; it represents the
 likelihood that some individual in a system will transition from one state
 to another. The columns on a stochastic matrix are always non-negative numbers
 that add up to 1 (i.e: the probability of *at least one*
-of the events occurring is always 1).
+of the events occurring is always 1 -- the likelihood of a user either staying
+on the same website, or leaving, is always 100%. He must choose one of the two).
 
 The state after the first month is 
 <span class="mj">`x_1 = P*x_0 = [0.65, 0.35]`</span>
 $$ \mathbf{ x^{ (1) } } = P \mathbf{ x^{ (0) } } = [0.65, 0.35]$$.
 
+So, after the first month, the second website will have only 35% of the
+global audience.
+
 To get the state of the system after two months, we simply
-apply the transition matrix again, and so on.
+apply the transition matrix again, and so on. That is, the current state of
+a Markov chain depends only on its previous state.
 Thus, the state vector at month $$k$$ can be defined recursively:
 
 <span class="mj">`-- EQUATION NOT RENDERED IN RSS OR WITH JAVASCRIPT DISABLED --`</span>
@@ -106,7 +113,7 @@ Thus, the state vector at month $$k$$ can be defined recursively:
     \mathbf{ x^{(k)} } = P\mathbf{ x^{ (k - 1) } }
 </script>
 
-Which means that
+From which, through substitution, we can derive the following equation:
 
 <span class="mj">`-- EQUATION NOT RENDERED IN RSS OR WITH JAVASCRIPT DISABLED --`</span>
 <script type="math/tex; mode=display">
@@ -197,15 +204,21 @@ not all stochastic matrices converge. Take as an example:
 {: class="language-python" }
 
 The state vectors of this matrix will oscillate in such a way forever. This 
-is easy to see intuitively once we notice that the matrix can be thought of
+matrix can be thought of
 as the transformation matrix for reflection about a line in the x,y axis... this
 system will never converge (indeed, it has no leading eigenvalue: 
 <span class="mj">EQ</span>$$ |\lambda_1| = |\lambda_2| = |\lambda_3| = 1 $$).
 
-Even more intuitively, its graph should instantly give away that it
-would be absurd to claim this system can ever reach a steady state:
+Another way of looking at $$P$$ is by drawing its graph:
 
 ![](/assets/images/2014/oscillating_chain.png)
+
+Using our example of competing websites, this matrix describes a system such that,
+every month, *all* of the first website's users leave and join the seconds website,
+only to abandon the second website again a month later and return to the first, 
+and so on, forever.
+
+It would be absurd to hope for this system to converge to a steady state.
 
 States 1 and 2 are examples of *recurrent states*. These are states that,
 once reached, there is a probability of 1 (absolute certainty) 
@@ -222,13 +235,28 @@ There are two conditions a transition matrix must meet if we want to ensure that
 it converges to a steady state:
 
 It must be *irreducible*: an irreducible transition matrix is a
-matrix whose graph has no closed subsets.
+matrix whose graph has no closed subsets. (A closed subset is such that no state
+within it can reach a state outside of it. 1, 2 and 3 above are closed from
+4 and 5.)
 
-It must be *regular*: 
-for some integer <span class="mj">EQ</span>$$n$$, <span class="mj">EQ</span>$$P^n$$ is such 
+It must be *primitive*: 
+A primitive matrix $$P$$ is such that, for some positive
+integer <span class="mj">EQ</span>$$n$$, <span class="mj">EQ</span>$$P^n$$ is such 
 that <span class="mj">EQ</span>$$p_{ ij } > 0$$ for all <span class="mj">EQ</span>$$p_{ ij } \in P$$
 (that is: all of its entries are positive numbers).
 
+> More generally, it must be *positive recurrent* and *aperiodic*. 
+>
+> Positive recurrence means that it takes, on average,
+a finite number of steps to return to any given state. Periodicity means the
+number of steps it takes to return to a particular state is always divisible
+by some natural number $$n$$ (its period). 
+>
+> Since we're dealing
+> with finite Markov chains, irreducibility implies positive recurrence, and 
+primitiveness ensures aperiodicity.
+
+![](/assets/images/2014/periodic.png)
 
 ### Google PageRank
 
@@ -251,7 +279,7 @@ with the following adjacency matrix:
     [0, 0, 0,   0.5, 0]
 
 For the algorithm to work, we must transform this original matrix in such a way
-that we end up with an irreducible, regular matrix. First,
+that we end up with an irreducible, primitive matrix. First,
 
 > If a page has no links to other pages, it becomes a sink and therefore 
 terminates the random surfing process. If the random surfer arrives at a sink 
@@ -268,7 +296,7 @@ out to all other pages in the collection.
             [0, 0, 0,   0.5, 0.2]
 
 We are now ready to produce $$G$$, the Google Matrix, which is both irreducible
-and regular. Its steady state vector gives us the final PageRank score for
+and primitive. Its steady state vector gives us the final PageRank score for
 each page. 
 
 
@@ -280,21 +308,30 @@ for an $$n \times n$$ matrix $$S$$ is derived from the equation
 
 <span class="mj">`-- EQUATION NOT RENDERED IN RSS OR WITH JAVASCRIPT DISABLED --`</span>
 <script type="math/tex; mode=display">
-    G = \alpha S + (1 - \alpha) \frac{1}{n} \mathbf{ 1 }
+    G = \alpha S + (1 - \alpha) \frac{1}{n} E
 </script>
 
-Where $$\mathbf{1}$$ is an $$n \times n$$ matrix whose entries are all 1, and
-$$0 \lt \alpha \lt 1$$ is referred to as the *damping factor*. 
+Where $$E = \mathbf{ e }\mathbf{ e }^T$$ is an $$n \times n$$ matrix whose entries are all 1, and
+$$0 \le \alpha \le 1$$ is referred to as the *damping factor*. 
 
 If $$\alpha = 1$$, then $$G = S$$. Meanwhile, if $$\alpha = 0$$ all of the entries
 in $$G$$ are the same (hence, the original structure of the network is
-"dampened" by $$\alpha$$, until we lose it altogether). Google uses a damping
-factor of around 0.85.
+"dampened" by $$\alpha$$, until we lose it altogether).
 
-So the matrix $$(1 - \alpha) \frac{1}{n} \mathbf{ 1 }$$ is a matrix that
+So the matrix $$(1 - \alpha) \frac{1}{n} E$$ is a matrix that
 represents a "flat" network in which all pages link to all pages, and the user is
 equally likely to click any given link (with likelihood $$\frac{ (1-\alpha) }{ n }$$),
 while $$S$$ is dampened by a factor of $$\alpha$$.
+
+> Google uses a damping factor of around 0.85. If you would like to research
+further, [this paper](http://ilpubs.stanford.edu:8090/582/1/2003-20.pdf) 
+is a good place to start and is quite readable. 
+> 
+> **tl;dr:** the second eigenvalue
+of a Google matrix is $$|\lambda_2| = \alpha \le |\lambda_1| = 1$$ , and the rate of convergence
+of the power iteration is given by $$\frac{ |\lambda_2| }{ |\lambda_1| } = \alpha$$.
+So higher values of $$\alpha$$ imply better accuracy but worse performance. 0.85
+is a good compromise between the two.
 
 With some elementary algebra we can see that
 
@@ -305,7 +342,7 @@ With some elementary algebra we can see that
 </script>
 
 For all $$j$$ up to $$n$$, which means that $$G$$ is indeed stochastic, 
-irreducible, and regular.
+irreducible, and primitive.
 
 In conclusion,
 
