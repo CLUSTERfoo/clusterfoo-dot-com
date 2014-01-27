@@ -168,6 +168,8 @@ h5 { text-decoration: underline; }
   text-align: center;
 }
 
+small { @include adjust-font-size-to(12px); }
+
 // Blocks
 p {
   @include margin-leader(0.75);
