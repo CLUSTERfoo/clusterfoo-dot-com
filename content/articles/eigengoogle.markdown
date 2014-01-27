@@ -1,7 +1,7 @@
 ---
-title: Eigengoogle: How the Google PageRank Algorithm Works
+title: Eigengoogle. How the Google PageRank Algorithm Works
 kind: article
-created_at: 2014-01-25
+created_at: 2014-01-27
 category: article
 ---
 
@@ -11,13 +11,13 @@ IF YOU ARE ON RSS, VISIT THE ORIGINAL POST. JAVASCRIPT REQUIRED. --</span>
 <script type="math/tex">
 </script>
 
-While we're on the topic of [sorting things online](http://clusterfoo.com/articles/sorting/), 
+While we're on the subject of [sorting things online](http://clusterfoo.com/articles/sorting/), 
 we might as well talk about Google: 
 the 93-billion dollar company whose main export is taking all
 the things ever and putting them in the right order. If there's one thing Google
 knows best, it's sorting stuff.
 
-And it all started with an algorithm called PageRank. 
+And it all started with an algorithm called PageRank<sup>1</sup>. 
 [According to Wikipedia](http://en.wikipedia.org/wiki/PageRank),
 
 > Pagerank uses a model of a random surfer who gets bored after several 
@@ -30,7 +30,7 @@ page at random).
 > The PageRank values are the entries of the dominant eigenvector of the 
 modified adjacency matrix. 
 
-![](/assets/images/2014/eigenvectors.png)
+![](http://clusterfoo.com/assets/images/2014/eigenvectors.png)
 
 In this post I'll try to break that down and provide some of the background
 necessary to understand Google PageRank.
@@ -39,12 +39,12 @@ necessary to understand Google PageRank.
 
 ### Graphs as Matrices
 
-A graph is a connection of nodes joined by edges. If the edges are arrows
+A graph is a collection of nodes joined by edges. If the edges are arrows
 that flow in one direction, we call that a *directed graph*. A graph whose edges
 have each been assigned a "weight" (usually some real number) is a *weighted
 graph*.
 
-![](/assets/images/2014/weighted_graph01.png)
+![](http://clusterfoo.com/assets/images/2014/weighted_graph01.png)
 
 
 A graph of `n` nodes can be represented in the form of an 
@@ -75,7 +75,7 @@ Consider two competing websites. Every month, the first website loses 30% of its
 audience to
 the second website, while the second website loses 60% of its audience to the first. 
 >
-> If the two websites start out with 50% of the global audience, how
+> If the two websites start out with 50% of the global audience each, how
 many users will each website have after a month? After a year?
 
 This scenario can be represented as the following system:
@@ -84,7 +84,7 @@ This scenario can be represented as the following system:
         [0.3, 0.4]
 
 
-![](/assets/images/2014/competing_stores_graph.png)
+![](http://clusterfoo.com/assets/images/2014/competing_stores_graph.png)
 
 This is a *Markov chain* with *transition matrix* <span class="mj">`P`</span>$$P$$
 and a *state vector* <span class="mj">`x_0`</span>$$\mathbf{ x^{(0)} }$$.
@@ -97,8 +97,11 @@ of the events occurring is always 1 -- the likelihood of a user either staying
 on the same website, or leaving, is always 100%. He must choose one of the two).
 
 The state after the first month is 
-<span class="mj">`x_1 = P*x_0 = [0.65, 0.35]`</span>
-$$ \mathbf{ x^{ (1) } } = P \mathbf{ x^{ (0) } } = [0.65, 0.35]$$.
+
+<span class="mj">`-- EQUATION NOT RENDERED IN RSS OR WITH JAVASCRIPT DISABLED --`</span>
+<script type="math/tex; mode=display">
+    \mathbf{ x^{ (1) } } = P \mathbf{ x^{ (0) } } = [(0.7 + 0.6)\times0.5, (0.3 + 0.4)\times0.5] = [0.65, 0.35]
+</script>
 
 So, after the first month, the second website will have only 35% of the
 global audience.
@@ -156,7 +159,7 @@ is a vector $$\mathbf{x}$$ such that:
 
 for some scalar <span class="mj">EQ</span>$$\lambda$$ (the *eigenvalue*). A *leading eigenvalue* is an
 eigenvalue <span class="mj">EQ</span>$$\lambda_{ 1 }$$ such that its absolute value is greater than 
-any other eigenvalue of a given matrix. 
+any other eigenvalue for the given matrix. 
 
 One method of finding the leading eigenvector of a matrix is through 
 a [power iteration](http://en.wikipedia.org/wiki/Power_iteration) sequence, defined
@@ -211,7 +214,7 @@ system will never converge (indeed, it has no leading eigenvalue:
 
 Another way of looking at $$P$$ is by drawing its graph:
 
-![](/assets/images/2014/oscillating_chain.png)
+![](http://clusterfoo.com/assets/images/2014/oscillating_chain.png)
 
 Using our example of competing websites, this matrix describes a system such that,
 every month, *all* of the first website's users leave and join the seconds website,
@@ -229,7 +232,7 @@ never be reached again. (If the probability *is* 0, we call such a state
 *ephemeral* -- in terms of Google PageRank, this would be a page that no
 other page links to):
 
-![](/assets/images/2014/diffrent_states.png)
+![](http://clusterfoo.com/assets/images/2014/diffrent_states.png)
 
 There are two conditions a transition matrix must meet if we want to ensure that
 it converges to a steady state:
@@ -256,7 +259,7 @@ by some natural number $$n$$ (its period).
 > with finite Markov chains, irreducibility implies positive recurrence, and 
 primitiveness ensures aperiodicity.
 
-![](/assets/images/2014/periodic.png)
+![](http://clusterfoo.com/assets/images/2014/periodic.png)
 
 ### Google PageRank
 
@@ -320,18 +323,17 @@ in $$G$$ are the same (hence, the original structure of the network is
 
 So the matrix $$(1 - \alpha) \frac{1}{n} E$$ is a matrix that
 represents a "flat" network in which all pages link to all pages, and the user is
-equally likely to click any given link (with likelihood $$\frac{ (1-\alpha) }{ n }$$),
+equally likely to click any given link (with likelihood $$\frac{ 1-\alpha }{ n }$$),
 while $$S$$ is dampened by a factor of $$\alpha$$.
 
-> Google uses a damping factor of around 0.85. If you would like to research
+> Google uses a damping factor of 0.85. If you would like to research
 further, [this paper](http://ilpubs.stanford.edu:8090/582/1/2003-20.pdf) 
 is a good place to start and is quite readable. 
 > 
 > **tl;dr:** the second eigenvalue
 of a Google matrix is $$|\lambda_2| = \alpha \le |\lambda_1| = 1$$ , and the rate of convergence
 of the power iteration is given by $$\frac{ |\lambda_2| }{ |\lambda_1| } = \alpha$$.
-So higher values of $$\alpha$$ imply better accuracy but worse performance. 0.85
-is a good compromise between the two.
+So higher values of $$\alpha$$ imply better accuracy but worse performance.
 
 With some elementary algebra we can see that
 
@@ -346,4 +348,11 @@ irreducible, and primitive.
 
 In conclusion,
 
-![Imgur](/assets/images/2014/eigensnotsicles.png)
+![Imgur](http://clusterfoo.com/assets/images/2014/eigensnotsicles.png)
+
+***
+<small>
+1. Actually, it all started with the [HITS algorithm](http://en.wikipedia.org/wiki/HITS_algorithm),
+which PageRank is based off of. 
+More details [here](http://www.math.cornell.edu/~mec/Winter2009/RalucaRemus/Lecture4/lecture4.html).
+</small>
