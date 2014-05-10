@@ -7,11 +7,11 @@ category: quick-guide
 
 <!-- ._ -->
 
-Here's a simple method you can use to namespace your client-side javascripts.
+Here's a simple method you can use to namespace your client-side scripts.
 There's many ways to do this, probably better ones. The point is to do it at
 all.
 
-Suppose we've two javascripts. `foo.js` and `bar.js`.
+Suppose we've two scripts, `foo.js` and `bar.js`.
 
 ### foo.js:
 
@@ -140,4 +140,6 @@ Of course, it's possible to do this in such a way that initialization is not
 necessary at all. The reason I choose to it this way is because explicitly
 requiring the script to initialize the namespace makes it easier to write
 scripts that play nice across platforms (say, when using libraries
-like browserify).
+like browserify -- 
+<a href="/quick-guides/double_dipping_your_scripts">
+see my guide on sharing scripts across environments</a>).
