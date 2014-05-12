@@ -140,6 +140,6 @@ Of course, it's possible to do this in such a way that initialization is not
 necessary at all. The reason I choose to it this way is because explicitly
 requiring the script to initialize the namespace makes it easier to write
 scripts that play nice across platforms (say, when using libraries
-like browserify -- 
+like browserify --
 <a href="/quick-guides/double_dipping_your_scripts">
 see my guide on sharing scripts across environments</a>).

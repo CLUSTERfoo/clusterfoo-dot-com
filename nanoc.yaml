@@ -89,6 +89,6 @@ deploy:
     kind: rsync
     dst: "clusterfoo.com:/www/nanoc"
     options: [ '-aP', '--delete-after']
-  staging: 
+  staging:
     kind: rsync
     dst: "nanoc.clusterfoo.com"

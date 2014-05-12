@@ -7,9 +7,9 @@ category: quick-guide
 
 <!-- _. -->
 
-Here is a simple way to share the same `.bashrc` / `.zshrc` / `.bash_profile` 
-across multiple computers, while still retaining unique settings in between 
-computers. 
+Here is a simple way to share the same `.bashrc` / `.zshrc` / `.bash_profile`
+across multiple computers, while still retaining unique settings in between
+computers.
 
 Suppose you want some special setting to apply only to your laptop.
 

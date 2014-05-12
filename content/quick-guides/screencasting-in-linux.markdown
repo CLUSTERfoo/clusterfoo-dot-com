@@ -6,7 +6,7 @@ category: quick-guide
 ---
 <!-- i_i -->
 
-Some quick notes on screencasting in Linux. 
+Some quick notes on screencasting in Linux.
 
 ### Tools used
 
@@ -37,7 +37,7 @@ For the actual recording, the following command gives me best results:
 recordmydesktop --freq 48000 -o [path]
 ~~~
 
-`CTRL-C` when finished. 
+`CTRL-C` when finished.
 
 ### Exporting for YouTube
 

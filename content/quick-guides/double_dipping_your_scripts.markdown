@@ -127,7 +127,7 @@ Now all we need to do to use our script is install...
     $ npm install git://github.com/clusterfoo/my_module
     $ bower install clusterfoo/my_module
 
-... and `require` our module (will also work in the browser if you use 
+... and `require` our module (will also work in the browser if you use
 browserify):
 
 ### some_script.js

@@ -1,5 +1,5 @@
 ---
-title: Fizz-Buzz by Exhaustion in Ruby 
+title: Fizz-Buzz by Exhaustion in Ruby
 kind: article
 category: code
 created_at: 2013-03-27
@@ -8,13 +8,13 @@ category: article
 
 <!-- _. -->
 
-Here's a cute solution to [Fizz-Buzz](https://en.wikipedia.org/wiki/Bizz_buzz) 
-that occurred to me when I read about the 
-`unless` statement in Ruby; it uses only the unless statement. 
+Here's a cute solution to [Fizz-Buzz](https://en.wikipedia.org/wiki/Bizz_buzz)
+that occurred to me when I read about the
+`unless` statement in Ruby; it uses only the unless statement.
 I'm doing the Bitmaker Labs workshop, and one of the questions for the
-interview was Fizz-Buzz. 
+interview was Fizz-Buzz.
 
-I call it "by exhaustion" because, instead of using `if`-statements to look for 
+I call it "by exhaustion" because, instead of using `if`-statements to look for
 which terms to include, it uses `unless`-statements to look for which terms
 to exclude (until all possibilities are exhausted, in which case it just
 gives up and says "Let's just assume it's 'Buzz'").
