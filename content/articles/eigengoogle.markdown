@@ -17,7 +17,9 @@ the 93-billion dollar company whose main export is taking all
 the things ever and putting them in the right order. If there's one thing Google
 knows best, it's sorting stuff.
 
-And it all started with an algorithm called PageRank<sup>1</sup>.
+I was curious how it all works, and it turned out really interesting, plus I
+got to learn a bit about Markov chains.
+It all starts with an algorithm called PageRank<sup>1</sup>.
 [According to Wikipedia](http://en.wikipedia.org/wiki/PageRank),
 
 > Pagerank uses a model of a random surfer who gets bored after several
@@ -326,16 +328,15 @@ represents a "flat" network in which all pages link to all pages, and the user i
 equally likely to click any given link (with likelihood $$\frac{ 1-\alpha }{ n }$$),
 while $$S$$ is dampened by a factor of $$\alpha$$.
 
-> Google uses a damping factor of 0.85. If you would like to research
-further, [this paper](http://ilpubs.stanford.edu:8090/582/1/2003-20.pdf)
-is a good place to start and is quite readable.
+> Google uses a damping factor of 0.85. For more on this, I
+found [this paper](https://s3.amazonaws.com/clusterfoo.img/2014/eigenpaper.pdf).
 >
 > **tl;dr:** the second eigenvalue
 of a Google matrix is $$|\lambda_2| = \alpha \le |\lambda_1| = 1$$ , and the rate of convergence
 of the power iteration is given by $$\frac{ |\lambda_2| }{ |\lambda_1| } = \alpha$$.
 So higher values of $$\alpha$$ imply better accuracy but worse performance.
 
-With some elementary algebra we can see that
+With some moving stuff around, we can see that
 
 <span class="mj">`-- EQUATION NOT RENDERED IN RSS OR WITH JAVASCRIPT DISABLED --`</span>
 <script type="math/tex; mode=display">
@@ -344,7 +345,7 @@ With some elementary algebra we can see that
 </script>
 
 For all $$j$$ up to $$n$$, which means that $$G$$ is indeed stochastic,
-irreducible, and primitive.
+irreducible, and primitive. Cool.
 
 In conclusion,
 
