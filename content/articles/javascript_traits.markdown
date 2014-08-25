@@ -5,26 +5,12 @@ created_at: 2014-08-04
 category: article
 ---
 
-I wanted to learn more about hot to deal with code complexity, and figured writing a simple
-multiplayer game engine would be the perfect exercise. Shortly after banging out a prototype
-it became obvious that my methods would not scale, and if I did not take a step back I 
-would end up with either an unmanageable mess of OO code, or
-dumping all of my game logic in 
-some horrid giant [god object](http://gamedev.stackexchange.com/q/79261/49827).
 
-After banging my head for a bit,
-I stumbled upon the wonderful world of [data driven design](http://gamedev.stackexchange.com/q/59638/49827)
-and [component systems](http://www.raywenderlich.com/24878/introduction-to-component-based-architecture-in-games).
 
-This insipired me to start thinking about how to apply more modular logic to my own
-applications.
-
-I really like Rust's system of [traits](http://doc.rust-lang.org/rust.html#traits) and [implementations](http://doc.rust-lang.org/rust.html#implementations)
-and wanted something similar.
-
-Granted, the following implementation of traits is a bit of a bastardization of the strict types/traits found in 
-languages like Rust, but with some discipline I found that it provides
-some of the same benefits.
+The method I use
+in development is a bit different from what I wrote here for brevity's sake, 
+since it allows for inheritance among traits,
+and includes various checks to avoid clashes; but the concept is the same.
 
 The basic idea is to make constructors "traitable":
 
@@ -57,7 +43,7 @@ Now making a constructor traitable is just a matter of calling the mixin:
     }
 {: class="language-js" }
 
-Now we can write our first trait:
+And we can write our first trait:
 
     function Moveable(_constructor, initialX, initialY) {
         _constructor.prototype._registerTrait("Moveable");
@@ -71,7 +57,7 @@ Now we can write our first trait:
     }; 
 {: class="language-js" }
 
-And that's all there is to it!
+That's all there is to it!
 
     /**
      * Our new dude will respond to the same predictable
@@ -113,9 +99,7 @@ Usage:
     //-> -1
 {: class="language-js" }
 
-I've found it really pleasant to try different things this way. For example,
-one might imagine registering all moveable objects into some array, and a second array
-of all directions in which they're expected to move:
+This lends itself well to manipulating application objects with functional logic:
 
     _.zipWith(move, moevables, directions);
 
@@ -124,9 +108,6 @@ of all directions in which they're expected to move:
     }
 {: class="language-js" }
 
+It's also less prone to unexpected behavior.
 I can confidently register new objects, mix or remove traits, and not fear the
 application will break.
-
-Now I don't know how well this follows the principles
-that data driven design proponents recommend, but at least for my current
-needs it's been a step forward.
