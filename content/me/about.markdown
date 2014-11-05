@@ -5,7 +5,7 @@ title: About Me
 ## About Me
 
 I discovered the joys of math and programming in my 20's, and wish I has done so sooner!
-I’ve been programming since the Summer of 2012, and worked at [Functional Imperative](http://www.functionalimperative.com/) from 
-Summer 2013 to Summer 2014.
+I’ve been programming since summer 2012, and in the summer of 2013 I moved to Toronto
+to work as a software developer. I currently work at [theScore](http://thescore.com).
 
 I can't think of more things about me.
