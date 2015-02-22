@@ -39,7 +39,7 @@ compile '*' do
       filter :erb
       filter :colorize_syntax
       layout 'default'
-    when 'markdown'
+    when 'markdown' || 'md'
       filter :kramdown
       filter :colorize_syntax
       layout 'default'

@@ -15,15 +15,17 @@ title: Home
   </script>
 </div>
 
-<h2 class="section-header">Latest Blog Posts and Articles</h2>
+<h2 class="section-header">Pinned</h2>
 
-<% sorted_articles[0..2].each do |article| %>
-  <article class="front-page">
-    <h2><%= link_to article[:title], article.path %></h2>
-    <aside>Day posted: <time datetime="<%= article[:created_at] %>"><%= article[:created_at] %></aside>
-    <%= article.compiled_content %>
-    <p><%= link_to "Comments? Click me!", article.path %>
-  </article>
+<% sorted_articles.each do |article| %>
+  <% if article[:pinned] == true %>
+    <article class="front-page">
+      <h2><%= link_to article[:title], article.path %></h2>
+      <aside>Day posted: <time datetime="<%= article[:created_at] %>"><%= article[:created_at] %></aside>
+      <%= article.compiled_content %>
+      <p><%= link_to "Comments? Click me!", article.path %>
+    </article>
+  <% end %>
 <% end %>
 
 <a href="/all-articles">All Articles</a>

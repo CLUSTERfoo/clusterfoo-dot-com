@@ -1,1 +1,1 @@
-nanoc compile && nanoc view
+bundle exec nanoc compile && bundle exec nanoc view

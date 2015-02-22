@@ -2,7 +2,7 @@
 title: A Simple Implementation of Trait Mixins for Javascript
 kind: article
 created_at: 2014-08-04
-category: article
+category: quick-guide
 ---
 
 

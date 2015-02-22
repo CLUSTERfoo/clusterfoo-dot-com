@@ -1,6 +1,7 @@
 ---
 title: Eigengoogle. How the Google PageRank Algorithm Works
 kind: article
+pinned: true
 created_at: 2014-01-27
 category: article
 ---

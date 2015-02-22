@@ -1,20 +1,11 @@
 ---
-title: All Articles
+title: Technical Articles
 ---
 
 <h2>Articles</h2>
 <ol>
   <% sorted_articles.each do |article| %>
     <% if article[:category] == "article" %>
-        <li><time datetime="<%= article[:created_at] %>"><%= article[:created_at] %>: <%= link_to article[:title], article.path %>
-    <% end %>
-  <% end %>
-</ol>
-
-<h2>Writings and Poems</h2>
-<ol>
-  <% sorted_articles.each do |article| %>
-    <% if article[:category] == "writing" %>
         <li><time datetime="<%= article[:created_at] %>"><%= article[:created_at] %>: <%= link_to article[:title], article.path %>
     <% end %>
   <% end %>
